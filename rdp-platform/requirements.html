@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研发管理平台需求详情</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #4a90e2;
+            --accent: #f39c12;
+        }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; }
+        .serif { font-family: 'Noto Serif SC', serif; }
+        .toc-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 260px;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e4a8a 100%);
+            color: white;
+            overflow-y: auto;
+            z-index: 50;
+            padding: 2rem 1.5rem;
+            box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+        }
+        .main-content { margin-left: 260px; min-height: 100vh; }
+        .section-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+        }
+        @media (max-width: 1024px) {
+            .toc-fixed { transform: translateX(-100%); transition: transform 0.3s ease; }
+            .toc-fixed.open { transform: translateX(0); }
+            .main-content { margin-left: 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="toc-fixed">
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4 serif">需求导航</h2>
+            <div class="h-px bg-white/30 mb-6"></div>
+        </div>
+        <ul class="space-y-3 text-sm">
+            <li><a href="#org" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">组织架构</a></li>
+            <li><a href="#user" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">用户管理模块</a></li>
+            <li><a href="#project" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">项目管理模块</a></li>
+            <li><a href="#workflow" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">工作台设计</a></li>
+            <li><a href="#tech" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">技术架构</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <!-- Header -->
+        <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
+            <div class="container mx-auto px-8">
+                <div class="max-w-4xl">
+                    <div class="text-sm font-medium text-blue-200 tracking-wider uppercase mb-4">需求规格说明书</div>
+                    <h1 class="text-4xl font-bold serif mb-6">研发管理平台需求详情</h1>
+                    <p class="text-xl text-blue-100">微波通信与探测系统研发部门数字化管理平台 - 详细需求定义</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 组织架构 -->
+        <section id="org" class="py-16 bg-white">
+            <div class="container mx-auto px-8">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 serif"><i class="fas fa-sitemap text-blue-600 mr-3"></i>组织架构</h2>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="section-card p-8">
+                            <h3 class="text-xl font-bold mb-6 text-blue-800"><i class="fas fa-users mr-2"></i>团队结构</h3>
+                            <div class="space-y-6">
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <div class="font-bold text-gray-800 mb-2"><i class="fas fa-cube mr-2"></i>产品管理团队</div>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• 型号管理</li>
+                                        <li>• 可靠性管理</li>
+                                        <li>• 通信和探测微波系统需求对接</li>
+                                        <li>• 需求分析</li>
+                                        <li>• 产品批产保障</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="border-l-4 border-green-500 pl-4">
+                                    <div class="font-bold text-gray-800 mb-2"><i class="fas fa-microchip mr-2"></i>产品开发团队</div>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• A产品线（硬件开发）</li>
+                                        <li>• B产品线（硬件开发）</li>
+                                        <li>• C产品线（硬件开发）</li>
+                                        <li>• 通用模块集成实现单机功能</li>
+                                        <li>• 性能指标分解与计算</li>
+                                        <li>• 单机集成</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="border-l-4 border-orange-500 pl-4">
+                                    <div class="font-bold text-gray-800 mb-2"><i class="fas fa-flask mr-2"></i>技术开发团队</div>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• 天线设计师（微带、阵列、相控阵、宽带天线）</li>
+                                        <li>• 射频设计师（接收通道、功放、频率源、变频模块等）</li>
+                                        <li>• 数字设计师（FPGA+ADC/SDR、RFSoC等硬件设计）</li>
+                                        <li>• 电源设计师（低压二次电源）</li>
+                                        <li>• 通用模块/技术开发</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="border-l-4 border-purple-500 pl-4">
+                                    <div class="font-bold text-gray-800 mb-2"><i class="fas fa-user-friends mr-2"></i>综合管理虚拟团队</div>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• 兼职人员组成</li>
+                                        <li>• 安全管理</li>
+                                        <li>• 保密管理</li>
+                                        <li>• 档案管理</li>
+                                        <li>• 宣传管理</li>
+                                        <li>• 6S管理</li>
+                                        <li>• 党建管理</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-card p-8">
+                            <h3 class="text-xl font-bold mb-6 text-blue-800"><i class="fas fa-graduation-cap mr-2"></i>职称体系</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-seedling text-blue-600"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">设计员</div>
+                                            <div class="text-xs text-gray-500">初级设计师</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-gray-500">0-2年</span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-leaf text-green-600"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">助理工程师</div>
+                                            <div class="text-xs text-gray-500">初级职称</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-gray-500">2-5年</span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-star text-yellow-600"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">工程师</div>
+                                            <div class="text-xs text-gray-500">中级职称</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-gray-500">5-10年</span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-crown text-orange-600"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">高级工程师</div>
+                                            <div class="text-xs text-gray-500">副高级职称</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-gray-500">10-15年</span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                            <i class="fas fa-gem text-red-600"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">研究员</div>
+                                            <div class="text-xs text-gray-500">正高级职称</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-gray-500">15年以上</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 用户管理模块 -->
+        <section id="user" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-8">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 serif"><i class="fas fa-user-cog text-blue-600 mr-3"></i>用户管理模块</h2>
+                    
+                    <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                        <div class="section-card p-6">
+                            <h3 class="text-lg font-bold mb-4 text-blue-800">角色体系</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3"><div class="w-3 h-3 bg-red-500 rounded-full"></div><div>系统管理员</div></div>
+                                <div class="flex items-center space-x-3"><div class="w-3 h-3 bg-orange-500 rounded-full"></div><div>部门领导</div></div>
+                                <div class="flex items-center space-x-3"><div class="w-3 h-3 bg-yellow-500 rounded-full"></div><div>团队组长</div></div>
+                                <div class="flex items-center space-x-3"><div class="w-3 h-3 bg-green-500 rounded-full"></div><div>设计师</div></div>
+                                <div class="flex items-center space-x-3"><div class="w-3 h-3 bg-blue-500 rounded-full"></div><div>其他人员</div></div>
+                            </div>
+                            <div class="mt-4 p-3 bg-blue-50 rounded-lg text-sm text-blue-700">
+                                <strong>说明：</strong>管理员可设置设计师的团队和岗位，设置后显示图示或可视化标记
+                            </div>
+                        </div>
+
+                        <div class="section-card p-6">
+                            <h3 class="text-lg font-bold mb-4 text-blue-800">个人主页功能</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>基本信息（工号、入职时间、专业方向、技能标签）</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>荣誉资质（奖项、专利、论文、证书时间轴）</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>历史项目卡片网格</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>当前负责的项目</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>能力雷达图（六维能力评估）</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>个人活动日志记录（类似GitHub）</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>近期使用研发平台时间统计</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="section-card p-6">
+                            <h3 class="text-lg font-bold mb-4 text-blue-800">成员展示方式</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>总览所有成员</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>按团队分类显示</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>按岗位分类显示</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>成员简介展示</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>可视化标记设置</span></li>
+                            </ul>
+                            <div class="mt-4 p-3 bg-yellow-50 rounded-lg text-sm text-yellow-700">
+                                <strong>参考：</strong>到GitHub上查找开源适配项目，直接使用开源项目进行开发
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目管理模块 -->
+        <section id="project" class="py-16 bg-white">
+            <div class="container mx-auto px-8">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 serif"><i class="fas fa-project-diagram text-blue-600 mr-3"></i>项目管理模块</h2>
+                    
+                    <div class="section-card p-8 mb-8">
+                        <h3 class="text-xl font-bold mb-6 text-blue-800">项目总览</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="p-4 bg-blue-50 rounded-xl">
+                                <div class="font-bold text-blue-800 mb-2">产品管理</div>
+                                <div class="text-sm text-blue-600">型号管理、可靠性管理相关项目</div>
+                            </div>
+                            <div class="p-4 bg-green-50 rounded-xl">
+                                <div class="font-bold text-green-800 mb-2">产品开发</div>
+                                <div class="text-sm text-green-600">A/B/C产品线硬件开发项目</div>
+                            </div>
+                            <div class="p-4 bg-orange-50 rounded-xl">
+                                <div class="font-bold text-orange-800 mb-2">技术开发</div>
+                                <div class="text-sm text-orange-600">通用模块和技术开发项目</div>
+                            </div>
+                            <div class="p-4 bg-purple-50 rounded-xl">
+                                <div class="font-bold text-purple-800 mb-2">基础开发</div>
+                                <div class="text-sm text-purple-600">知识库、流程、制度、标准规范</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-8 mb-8">
+                        <h3 class="text-xl font-bold mb-6 text-blue-800">筛选维度</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="text-center p-4 border-2 border-blue-200 rounded-lg">
+                                <i class="fas fa-layer-group text-blue-600 text-2xl mb-2"></i>
+                                <div class="font-medium">按产品线</div>
+                                <div class="text-sm text-gray-500">A线/B线/C线/通用</div>
+                            </div>
+                            <div class="text-center p-4 border-2 border-green-200 rounded-lg">
+                                <i class="fas fa-calendar text-green-600 text-2xl mb-2"></i>
+                                <div class="font-medium">按时间</div>
+                                <div class="text-sm text-gray-500">年度/季度/月度</div>
+                            </div>
+                            <div class="text-center p-4 border-2 border-orange-200 rounded-lg">
+                                <i class="fas fa-user-tie text-orange-600 text-2xl mb-2"></i>
+                                <div class="font-medium">按负责人</div>
+                                <div class="text-sm text-gray-500">项目负责人筛选</div>
+                            </div>
+                            <div class="text-center p-4 border-2 border-purple-200 rounded-lg">
+                                <i class="fas fa-tasks text-purple-600 text-2xl mb-2"></i>
+                                <div class="font-medium">按项目状态</div>
+                                <div class="text-sm text-gray-500">进行中/已完成/暂停</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-8">
+                        <h3 class="text-xl font-bold mb-6 text-blue-800">项目创建向导（五步流程）</h3>
+                        <div class="relative">
+                            <div class="absolute left-8 top-0 bottom-0 w-1 bg-blue-200"></div>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold z-10">1</div>
+                                    <div class="ml-6 flex-1">
+                                        <div class="font-bold text-lg">信息录入</div>
+                                        <div class="text-gray-600">项目名称、代号、简介、起止时间、预算、风险等级</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold z-10">2</div>
+                                    <div class="ml-6 flex-1">
+                                        <div class="font-bold text-lg">类别选择</div>
+                                        <div class="text-gray-600">单机/模块/软件/技术开发等类别，决定后续流程模板</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold z-10">3</div>
+                                    <div class="ml-6 flex-1">
+                                        <div class="font-bold text-lg">流程绑定</div>
+                                        <div class="text-gray-600">确认/调整流程模板，预览完整活动图</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold z-10">4</div>
+                                    <div class="ml-6 flex-1">
+                                        <div class="font-bold text-lg">团队分配</div>
+                                        <div class="text-gray-600">指定负责人，系统推荐候选人并提示负荷</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold z-10">5</div>
+                                    <div class="ml-6 flex-1">
+                                        <div class="font-bold text-lg">计划确认</div>
+                                        <div class="text-gray-600">查看甘特图，调整里程碑，正式创建项目</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工作台设计 -->
+        <section id="workflow" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-8">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 serif"><i class="fas fa-desktop text-blue-600 mr-3"></i>工作台设计</h2>
+                    
+                    <div class="section-card p-8 mb-8">
+                        <div class="flex items-center mb-6">
+                            <img src="https://github.com/Paniche/department_homepage/raw/main/screenshot.png" 
+                                 alt="部门主页参考" 
+                                 class="w-full max-w-md rounded-lg shadow-lg mr-6"
+                                 onerror="this.style.display='none'">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-4 text-blue-800">参考项目</h3>
+                                <p class="text-gray-600 mb-4">基于 vue-element-admin 框架，在部门主页基础上增加工作台功能</p>
+                                <a href="https://github.com/Paniche/department_homepage" 
+                                   target="_blank"
+                                   class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                    <i class="fab fa-github mr-2"></i>查看参考项目
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card p-8">
+                        <h3 class="text-xl font-bold mb-6 text-blue-800">工作台功能（类似飞书工作台）</h3>
+                        
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div>
+                                <h4 class="font-bold mb-4 flex items-center">
+                                    <i class="fas fa-th-large text-blue-600 mr-2"></i>模块快捷入口
+                                </h4>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li>• 可拖拽卡片式布局</li>
+                                    <li>• 支持自定义排序</li>
+                                    <li>• 支持显隐控制</li>
+                                    <li>• 常用功能快速访问</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold mb-4 flex items-center">
+                                    <i class="fas fa-bell text-orange-600 mr-2"></i>个人待办与通知
+                                </h4>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li>• 时间轴式任务聚合</li>
+                                    <li>• 多渠道消息推送</li>
+                                    <li>• 待办事项提醒</li>
+                                    <li>• 审批流程通知</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold mb-4 flex items-center">
+                                    <i class="fas fa-compass text-green-600 mr-2"></i>统一入口导航
+                                </h4>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li>• 沉浸式深色顶部导航</li>
+                                    <li>• 可折叠左侧边栏</li>
+                                    <li>• 自适应主内容区</li>
+                                    <li>• 面包屑导航</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl">
+                            <h4 class="font-bold mb-4 text-blue-800">工作台包含模块</h4>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="p-3 bg-white rounded-lg text-center"><i class="fas fa-user-cog text-blue-600 mb-2"></i><div class="text-sm font-medium">用户管理</div></div>
+                                <div class="p-3 bg-white rounded-lg text-center"><i class="fas fa-project-diagram text-green-600 mb-2"></i><div class="text-sm font-medium">项目管理</div></div>
+                                <div class="p-3 bg-white rounded-lg text-center"><i class="fas fa-code text-orange-600 mb-2"></i><div class="text-sm font-medium">项目开发</div></div>
+                                <div class="p-3 bg-white rounded-lg text-center"><i class="fas fa-box-open text-purple-600 mb-2"></i><div class="text-sm font-medium">产品货架</div></div>
+                                <div class="p-3 bg-white rounded-lg text-center"><i class="fas fa-flask text-red-600 mb-2"></i><div class="text-sm font-medium">技术货架</div></div>
+                                <div class="p-3 bg-white rounded-lg text-center"><i class="fas fa-book text-teal-600 mb-2"></i><div class="text-sm font-medium">知识库</div></div>
+                                <div class="p-3 bg-white rounded-lg text-center"><i class="fas fa-comments text-pink-600 mb-2"></i><div class="text-sm font-medium">技术论坛</div></div>
+                                <div class="p-3 bg-white rounded-lg text-center"><i class="fas fa-video text-indigo-600 mb-2"></i><div class="text-sm font-medium">即时通信</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技术架构 -->
+        <section id="tech" class="py-16 bg-white">
+            <div class="container mx-auto px-8">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 serif"><i class="fas fa-cubes text-blue-600 mr-3"></i>技术架构要求</h2>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="section-card p-8">
+                            <h3 class="text-xl font-bold mb-6 text-blue-800">架构原则</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="p-4 bg-blue-50 rounded-lg">
+                                    <div class="font-bold text-blue-800 mb-2"><i class="fas fa-puzzle-piece mr-2"></i>微前端架构</div>
+                                    <p class="text-sm text-blue-700">核心模块可独立放在架构中，支持多团队独立开发，提高开发效率</p>
+                                </div>
+                                
+                                <div class="p-4 bg-green-50 rounded-lg">
+                                    <div class="font-bold text-green-800 mb-2"><i class="fas fa-network-wired mr-2"></i>离线局域网部署</div>
+                                    <p class="text-sm text-green-700">纯内网部署，物理隔离，零依赖外部CDN，数据不出机房</p>
+                                </div>
+                                
+                                <div class="p-4 bg-orange-50 rounded-lg">
+                                    <div class="font-bold text-orange-800 mb-2"><i class="fas fa-shield-alt mr-2"></i>不使用虚拟化技术</div>
+                                    <p class="text-sm text-orange-700">项目不使用 Docker 和 K8S 这类虚拟技术</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-card p-8">
+                            <h3 class="text-xl font-bold mb-6 text-blue-800">技术栈选型</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center p-3 border-l-4 border-green-500 bg-green-50">
+                                    <i class="fab fa-vuejs text-green-600 text-2xl w-12"></i>
+                                    <div>
+                                        <div class="font-medium">Vue.js 3</div>
+                                        <div class="text-xs text-gray-600">前端框架（参考 vue-element-admin）</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center p-3 border-l-4 border-blue-500 bg-blue-50">
+                                    <i class="fas fa-th-large text-blue-600 text-2xl w-12"></i>
+                                    <div>
+                                        <div class="font-medium">Element Plus</div>
+                                        <div class="text-xs text-gray-600">UI组件库</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center p-3 border-l-4 border-purple-500 bg-purple-50">
+                                    <i class="fas fa-cube text-purple-600 text-2xl w-12"></i>
+                                    <div>
+                                        <div class="font-medium">qiankun</div>
+                                        <div class="text-xs text-gray-600">微前端框架</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center p-3 border-l-4 border-red-500 bg-red-50">
+                                    <i class="fab fa-java text-red-600 text-2xl w-12"></i>
+                                    <div>
+                                        <div class="font-medium">Spring Boot</div>
+                                        <div class="text-xs text-gray-600">后端服务</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center p-3 border-l-4 border-indigo-500 bg-indigo-50">
+                                    <i class="fas fa-database text-indigo-600 text-2xl w-12"></i>
+                                    <div>
+                                        <div class="font-medium">PostgreSQL</div>
+                                        <div class="text-xs text-gray-600">数据存储</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-8">
+            <div class="container mx-auto px-8">
+                <div class="max-w-6xl mx-auto text-center">
+                    <p>研发管理平台需求规格说明书 | 微波通信与探测系统研发部门</p>
+                    <p class="text-sm text-gray-500 mt-2">编制日期：2026-02-20 | 版本：v1.0</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.createElement('button');
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        menuToggle.className = 'fixed top-4 left-4 z-50 bg-white p-3 rounded-lg shadow-lg lg:hidden';
+        menuToggle.onclick = () => {
+            const toc = document.querySelector('.toc-fixed');
+            toc.classList.toggle('open');
+        };
+        document.body.appendChild(menuToggle);
+    </script>
+</body>
+</html>
