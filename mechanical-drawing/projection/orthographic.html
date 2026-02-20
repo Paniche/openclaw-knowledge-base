@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正投影法 - 机械制图知识库</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">机械制图知识库</h1>
+            <p class="site-subtitle">Mechanical Drawing Knowledge Base</p>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </header>
+    <div class="main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="nav-section"><h3 class="nav-title">首页</h3><ul class="nav-list"><li><a href="../index.html" class="nav-link">欢迎页面</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">机械制图基础</h3><ul class="nav-list"><li><a href="../basics/introduction.html" class="nav-link">制图概述</a></li><li><a href="../basics/drawing-tools.html" class="nav-link">制图工具与仪器</a></li><li><a href="../basics/sheet-layout.html" class="nav-link">图纸幅面与格式</a></li><li><a href="../basics/lines.html" class="nav-link">图线类型</a></li><li><a href="../basics/scales.html" class="nav-link">比例</a></li><li><a href="../basics/fonts.html" class="nav-link">字体</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">制图标准</h3><ul class="nav-list"><li><a href="../standards/iso.html" class="nav-link">国际标准 ISO</a></li><li><a href="../standards/gb.html" class="nav-link">中国国家标准 GB</a></li><li><a href="../standards/asme.html" class="nav-link">美国标准 ASME</a></li><li><a href="../standards/din.html" class="nav-link">德国标准 DIN</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">投影法</h3><ul class="nav-list"><li><a href="orthographic.html" class="nav-link active">正投影法</a></li><li><a href="views.html" class="nav-link">视图</a></li><li><a href="sections.html" class="nav-link">剖视图</a></li><li><a href="cuts.html" class="nav-link">断面图</a></li><li><a href="axonometric.html" class="nav-link">轴测图</a></li><li><a href="perspective.html" class="nav-link">透视图</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">尺寸标注</h3><ul class="nav-list"><li><a href="../dimensioning/principles.html" class="nav-link">标注基本原则</a></li><li><a href="../dimensioning/linear.html" class="nav-link">线性尺寸标注</a></li><li><a href="../dimensioning/angular.html" class="nav-link">角度尺寸标注</a></li><li><a href="../dimensioning/radii-diameters.html" class="nav-link">半径与直径标注</a></li><li><a href="../dimensioning/special.html" class="nav-link">特殊尺寸标注</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">公差与配合</h3><ul class="nav-list"><li><a href="../tolerances/fundamentals.html" class="nav-link">基本概念</a></li><li><a href="../tolerances/fits.html" class="nav-link">配合类型</a></li><li><a href="../tolerances/tolerance-grades.html" class="nav-link">公差等级</a></li><li><a href="../tolerances/deviation.html" class="nav-link">基本偏差</a></li><li><a href="../tolerances/geometric.html" class="nav-link">几何公差</a></li><li><a href="../tolerances/surface.html" class="nav-link">表面粗糙度</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">符号与标注</h3><ul class="nav-list"><li><a href="../symbols/welding.html" class="nav-link">焊接符号</a></li><li><a href="../symbols/threads.html" class="nav-link">螺纹画法与标注</a></li><li><a href="../symbols/gears.html" class="nav-link">齿轮画法</a></li><li><a href="../symbols/springs.html" class="nav-link">弹簧画法</a></li><li><a href="../symbols/bearings.html" class="nav-link">滚动轴承画法</a></li><li><a href="../symbols/surface-treatment.html" class="nav-link">表面处理与镀涂</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">材料与热处理</h3><ul class="nav-list"><li><a href="../materials/metals.html" class="nav-link">常用金属材料</a></li><li><a href="../materials/non-metals.html" class="nav-link">非金属材料</a></li><li><a href="../materials/heat-treatment.html" class="nav-link">热处理工艺</a></li><li><a href="../materials/designation.html" class="nav-link">材料牌号表示方法</a></li></ul></div>
+        </nav>
+        <main class="content">
+            <div class="page-header">
+                <h1>正投影法</h1>
+                <p class="subtitle">Orthographic Projection</p>
+            </div>
+            <section class="content-section">
+                <h2>正投影法原理</h2>
+                <p>正投影法是指投影线与投影平面垂直的投影方法。在正投影中，投影线相互平行且垂直于投影平面。物体上平行于投影平面的平面或直线，其投影反映实形或实长。</p>
+            </section>
+            <section class="content-section">
+                <h2>正投影特性</h2>
+                <ul>
+                    <li><strong>真实性：</strong>平行于投影面的平面或直线，其投影反映真实形状或长度</li>
+                    <li><strong>积聚性：</strong>垂直于投影面的平面或直线，其投影积聚为一条线或一个点</li>
+                    <li><strong>类似性：</strong>倾斜于投影面的平面，其投影为类似形（边数相同）</li>
+                </ul>
+            </section>
+            <section class="content-section">
+                <h2>三视图的形成</h2>
+                <p>三视图是指物体在三个相互垂直的投影面上的投影，包括主视图、俯视图和左视图。</p>
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <span class="definition-term">主视图</span>
+                        <span class="definition-desc">由前向后投影，在V面上所得的视图，反映物体的长度和高度</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">俯视图</span>
+                        <span class="definition-desc">由上向下投影，在H面上所得的视图，反映物体的长度和宽度</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">左视图</span>
+                        <span class="definition-desc">由左向右投影，在W面上所得的视图，反映物体的宽度和高度</span>
+                    </div>
+                </div>
+            </section>
+            <section class="content-section">
+                <h2>三视图的投影规律</h2>
+                <div class="card"><div class="card-title">三等规律</div><div class="card-content">主视图与俯视图长对正；主视图与左视图高平齐；俯视图与左视图宽相等。</div></div>
+            </section>
+            <section class="content-section">
+                <h2>点的投影</h2>
+                <p>点的三面投影规律：点的正面投影与水平投影的连线垂直于OX轴；点的正面投影与侧面投影的连线垂直于OZ轴；点的水平投影与侧面投影的连线垂直于OYH轴。</p>
+            </section>
+            <section class="content-section">
+                <h2>直线的投影</h2>
+                <p>直线相对于投影面的位置有三种：平行、垂直、倾斜。平行于投影面的直线，其投影反映实长；垂直于投影面的直线，其投影积聚为一点；倾斜于投影面的直线，其投影为缩短的线段。</p>
+            </section>
+            <section class="content-section">
+                <h2>平面的投影</h2>
+                <p>平面相对于投影面的位置有三种：平行、垂直、倾斜。平行于投影面的平面，其投影反映实形；垂直于投影面的平面，其投影积聚为一条线；倾斜于投影面的平面，其投影为类似形。</p>
+            </section>
+        </main>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>几何公差 - 机械制图知识库</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">机械制图知识库</h1>
+            <p class="site-subtitle">Mechanical Drawing Knowledge Base</p>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </header>
+    <div class="main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="nav-section"><h3 class="nav-title">首页</h3><ul class="nav-list"><li><a href="../index.html" class="nav-link">欢迎页面</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">机械制图基础</h3><ul class="nav-list"><li><a href="../basics/introduction.html" class="nav-link">制图概述</a></li><li><a href="../basics/drawing-tools.html" class="nav-link">制图工具与仪器</a></li><li><a href="../basics/sheet-layout.html" class="nav-link">图纸幅面与格式</a></li><li><a href="../basics/lines.html" class="nav-link">图线类型</a></li><li><a href="../basics/scales.html" class="nav-link">比例</a></li><li><a href="../basics/fonts.html" class="nav-link">字体</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">制图标准</h3><ul class="nav-list"><li><a href="../standards/iso.html" class="nav-link">国际标准 ISO</a></li><li><a href="../standards/gb.html" class="nav-link">中国国家标准 GB</a></li><li><a href="../standards/asme.html" class="nav-link">美国标准 ASME</a></li><li><a href="../standards/din.html" class="nav-link">德国标准 DIN</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">投影法</h3><ul class="nav-list"><li><a href="../projection/orthographic.html" class="nav-link">正投影法</a></li><li><a href="../projection/views.html" class="nav-link">视图</a></li><li><a href="../projection/sections.html" class="nav-link">剖视图</a></li><li><a href="../projection/cuts.html" class="nav-link">断面图</a></li><li><a href="../projection/axonometric.html" class="nav-link">轴测图</a></li><li><a href="../projection/perspective.html" class="nav-link">透视图</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">尺寸标注</h3><ul class="nav-list"><li><a href="../dimensioning/principles.html" class="nav-link">标注基本原则</a></li><li><a href="../dimensioning/linear.html" class="nav-link">线性尺寸标注</a></li><li><a href="../dimensioning/angular.html" class="nav-link">角度尺寸标注</a></li><li><a href="../dimensioning/radii-diameters.html" class="nav-link">半径与直径标注</a></li><li><a href="../dimensioning/special.html" class="nav-link">特殊尺寸标注</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">公差与配合</h3><ul class="nav-list"><li><a href="fundamentals.html" class="nav-link">基本概念</a></li><li><a href="fits.html" class="nav-link">配合类型</a></li><li><a href="tolerance-grades.html" class="nav-link">公差等级</a></li><li><a href="deviation.html" class="nav-link">基本偏差</a></li><li><a href="geometric.html" class="nav-link active">几何公差</a></li><li><a href="surface.html" class="nav-link">表面粗糙度</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">符号与标注</h3><ul class="nav-list"><li><a href="../symbols/welding.html" class="nav-link">焊接符号</a></li><li><a href="../symbols/threads.html" class="nav-link">螺纹画法与标注</a></li><li><a href="../symbols/gears.html" class="nav-link">齿轮画法</a></li><li><a href="../symbols/springs.html" class="nav-link">弹簧画法</a></li><li><a href="../symbols/bearings.html" class="nav-link">滚动轴承画法</a></li><li><a href="../symbols/surface-treatment.html" class="nav-link">表面处理与镀涂</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">材料与热处理</h3><ul class="nav-list"><li><a href="../materials/metals.html" class="nav-link">常用金属材料</a></li><li><a href="../materials/non-metals.html" class="nav-link">非金属材料</a></li><li><a href="../materials/heat-treatment.html" class="nav-link">热处理工艺</a></li><li><a href="../materials/designation.html" class="nav-link">材料牌号表示方法</a></li></ul></div>
+        </nav>
+        <main class="content">
+            <div class="page-header">
+                <h1>几何公差</h1>
+                <p class="subtitle">Geometric Dimensioning and Tolerancing (GD&T)</p>
+            </div>
+            <section class="content-section">
+                <h2>几何公差概述</h2>
+                <p>几何公差是指零件的实际形状和实际位置对理想形状和理想位置的允许变动量。几何公差包括形状公差、方向公差、位置公差和跳动公差四大类。几何公差用于控制零件几何特征的精度，确保零件的功能要求和装配互换性。</p>
+            </section>
+            <section class="content-section">
+                <h2>形状公差</h2>
+                <p>形状公差是指单一实际要素的形状所允许的变动全量，包括6个项目：</p>
+                <table>
+                    <thead><tr><th>项目</th><th>符号</th><th>说明</th><th>典型应用</th></tr></thead>
+                    <tbody>
+                        <tr><td>直线度</td><td>—</td><td>实际直线对理想直线的允许变动</td><td>轴心线、导轨、平面交线</td></tr>
+                        <tr><td>平面度</td><td>▱</td><td>实际平面对理想平面的允许变动</td><td>平板、工作台、法兰端面</td></tr>
+                        <tr><td>圆度</td><td>○</td><td>实际圆对理想圆的允许变动</td><td>轴颈、孔、滚珠、滚道</td></tr>
+                        <tr><td>圆柱度</td><td>⌭</td><td>实际圆柱面对理想圆柱面的允许变动</td><td>精密轴、轴承座孔</td></tr>
+                        <tr><td>线轮廓度</td><td>⌒</td><td>实际轮廓线对理想轮廓线的允许变动</td><td>凸轮、叶片、模具型腔</td></tr>
+                        <tr><td>面轮廓度</td><td>⌓</td><td>实际轮廓面对理想轮廓面的允许变动</td><td>复杂曲面、叶片、叶轮</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>方向公差</h2>
+                <p>方向公差是指关联实际要素对基准在方向上允许的变动全量，包括5个项目：</p>
+                <table>
+                    <thead><tr><th>项目</th><th>符号</th><th>说明</th><th>典型应用</th></tr></thead>
+                    <tbody>
+                        <tr><td>平行度</td><td>∥</td><td>实际要素对基准平行方向的允许变动</td><td>导轨面、安装面、连接面</td></tr>
+                        <tr><td>垂直度</td><td>⊥</td><td>实际要素对基准垂直方向的允许变动</td><td>安装面、端面、孔轴线</td></tr>
+                        <tr><td>倾斜度</td><td>∠</td><td>实际要素对基准成理论正确角度的允许变动</td><td>斜面、楔形零件、锥面</td></tr>
+                        <tr><td>线轮廓度（方向）</td><td>⌒</td><td>轮廓线对基准有方向要求的允许变动</td><td>导向槽、凸轮曲线</td></tr>
+                        <tr><td>面轮廓度（方向）</td><td>⌓</td><td>轮廓面对基准有方向要求的允许变动</td><td>精密曲面配合</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>位置公差</h2>
+                <p>位置公差是指关联实际要素对基准在位置上允许的变动全量，包括6个项目：</p>
+                <table>
+                    <thead><tr><th>项目</th><th>符号</th><th>说明</th><th>典型应用</th></tr></thead>
+                    <tbody>
+                        <tr><td>位置度</td><td>⌖</td><td>实际要素对理想位置的允许变动</td><td>孔组、螺纹孔、销孔</td></tr>
+                        <tr><td>同心度</td><td>◎</td><td>实际轴线对基准轴线的允许变动</td><td>阶梯轴、轴承内外圈</td></tr>
+                        <tr><td>同轴度</td><td>◎</td><td>实际轴线与基准轴线的重合程度</td><td>传动轴、主轴、套筒</td></tr>
+                        <tr><td>对称度</td><td>⌯</td><td>实际中心要素对基准中心要素的允许变动</td><td>键槽、凸台、对称零件</td></tr>
+                        <tr><td>线轮廓度（位置）</td><td>⌒</td><td>轮廓线对基准有位置要求的允许变动</td><td>精密配合曲线</td></tr>
+                        <tr><td>面轮廓度（位置）</td><td>⌓</td><td>轮廓面对基准有位置要求的允许变动</td><td>精密配合曲面</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>跳动公差</h2>
+                <p>跳动公差是指关联实际要素绕基准轴线回转一周或连续回转时所允许的最大跳动量，包括2个项目：</p>
+                <table>
+                    <thead><tr><th>项目</th><th>符号</th><th>说明</th><th>典型应用</th></tr></thead>
+                    <tbody>
+                        <tr><td>圆跳动</td><td>↗</td><td>实际要素绕基准轴线回转一周的最大允许跳动</td><td>轴颈、齿轮端面、法兰</td></tr>
+                        <tr><td>全跳动</td><td>↗↗</td><td>实际要素绕基准轴线连续回转的最大允许跳动</td><td>精密主轴、机床主轴颈</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>几何公差标注要素</h2>
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <span class="definition-term">公差框格</span>
+                        <span class="definition-desc">由两格或多格组成，从左到右依次为：几何特征符号、公差值、基准字母</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">被测要素</span>
+                        <span class="definition-desc">需要控制几何公差的要素，用带箭头的指引线指向</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">基准要素</span>
+                        <span class="definition-desc">作为参考的要素，用基准符号（三角形+字母）标注</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">公差带</span>
+                        <span class="definition-desc">限制实际要素变动的区域，可以是两平行线、两平行平面、圆柱面等</span>
+                    </div>
+                </div>
+            </section>
+            <section class="content-section">
+                <h2>几何公差等级</h2>
+                <p>几何公差分为12个等级，用数字1-12表示，1级精度最高，12级精度最低。常用等级为6-9级。</p>
+                <ul>
+                    <li><strong>1-4级：</strong>用于精密测量仪器和高精度机床</li>
+                    <li><strong>5-7级：</strong>用于精密机械、精密轴承</li>
+                    <li><strong>8-10级：</strong>用于一般机械零件</li>
+                    <li><strong>11-12级：</strong>用于低精度零件和铸造毛坯</li>
+                </ul>
+            </section>
+            <section class="content-section">
+                <h2>公差原则</h2>
+                <div class="card"><div class="card-title">独立原则</div><div class="card-content">尺寸公差和几何公差各自独立，分别满足要求。图样上未加注符号时，默认为独立原则。</div></div>
+                <div class="card"><div class="card-title">包容要求</div><div class="card-content">用ⓔ表示，要求实际要素处处位于理想包容面内。适用于保证配合性质的场合。</div></div>
+                <div class="card"><div class="card-title">最大实体要求</div><div class="card-content">用Ⓜ表示，当被测要素处于最大实体状态时，几何公差为给定值；偏离最大实体状态时，允许几何公差增值。</div></div>
+                <div class="card"><div class="card-title">最小实体要求</div><div class="card-content">用Ⓛ表示，当被测要素处于最小实体状态时，几何公差为给定值；偏离最小实体状态时，允许几何公差增值。</div></div>
+            </section>
+        </main>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

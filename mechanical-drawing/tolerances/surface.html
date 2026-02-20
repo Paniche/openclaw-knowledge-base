@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表面粗糙度 - 机械制图知识库</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">机械制图知识库</h1>
+            <p class="site-subtitle">Mechanical Drawing Knowledge Base</p>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </header>
+    <div class="main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="nav-section"><h3 class="nav-title">首页</h3><ul class="nav-list"><li><a href="../index.html" class="nav-link">欢迎页面</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">机械制图基础</h3><ul class="nav-list"><li><a href="../basics/introduction.html" class="nav-link">制图概述</a></li><li><a href="../basics/drawing-tools.html" class="nav-link">制图工具与仪器</a></li><li><a href="../basics/sheet-layout.html" class="nav-link">图纸幅面与格式</a></li><li><a href="../basics/lines.html" class="nav-link">图线类型</a></li><li><a href="../basics/scales.html" class="nav-link">比例</a></li><li><a href="../basics/fonts.html" class="nav-link">字体</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">制图标准</h3><ul class="nav-list"><li><a href="../standards/iso.html" class="nav-link">国际标准 ISO</a></li><li><a href="../standards/gb.html" class="nav-link">中国国家标准 GB</a></li><li><a href="../standards/asme.html" class="nav-link">美国标准 ASME</a></li><li><a href="../standards/din.html" class="nav-link">德国标准 DIN</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">投影法</h3><ul class="nav-list"><li><a href="../projection/orthographic.html" class="nav-link">正投影法</a></li><li><a href="../projection/views.html" class="nav-link">视图</a></li><li><a href="../projection/sections.html" class="nav-link">剖视图</a></li><li><a href="../projection/cuts.html" class="nav-link">断面图</a></li><li><a href="../projection/axonometric.html" class="nav-link">轴测图</a></li><li><a href="../projection/perspective.html" class="nav-link">透视图</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">尺寸标注</h3><ul class="nav-list"><li><a href="../dimensioning/principles.html" class="nav-link">标注基本原则</a></li><li><a href="../dimensioning/linear.html" class="nav-link">线性尺寸标注</a></li><li><a href="../dimensioning/angular.html" class="nav-link">角度尺寸标注</a></li><li><a href="../dimensioning/radii-diameters.html" class="nav-link">半径与直径标注</a></li><li><a href="../dimensioning/special.html" class="nav-link">特殊尺寸标注</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">公差与配合</h3><ul class="nav-list"><li><a href="fundamentals.html" class="nav-link">基本概念</a></li><li><a href="fits.html" class="nav-link">配合类型</a></li><li><a href="tolerance-grades.html" class="nav-link">公差等级</a></li><li><a href="deviation.html" class="nav-link">基本偏差</a></li><li><a href="geometric.html" class="nav-link">几何公差</a></li><li><a href="surface.html" class="nav-link active">表面粗糙度</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">符号与标注</h3><ul class="nav-list"><li><a href="../symbols/welding.html" class="nav-link">焊接符号</a></li><li><a href="../symbols/threads.html" class="nav-link">螺纹画法与标注</a></li><li><a href="../symbols/gears.html" class="nav-link">齿轮画法</a></li><li><a href="../symbols/springs.html" class="nav-link">弹簧画法</a></li><li><a href="../symbols/bearings.html" class="nav-link">滚动轴承画法</a></li><li><a href="../symbols/surface-treatment.html" class="nav-link">表面处理与镀涂</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">材料与热处理</h3><ul class="nav-list"><li><a href="../materials/metals.html" class="nav-link">常用金属材料</a></li><li><a href="../materials/non-metals.html" class="nav-link">非金属材料</a></li><li><a href="../materials/heat-treatment.html" class="nav-link">热处理工艺</a></li><li><a href="../materials/designation.html" class="nav-link">材料牌号表示方法</a></li></ul></div>
+        </nav>
+        <main class="content">
+            <div class="page-header">
+                <h1>表面粗糙度</h1>
+                <p class="subtitle">Surface Roughness</p>
+            </div>
+            <section class="content-section">
+                <h2>表面粗糙度概述</h2>
+                <p>表面粗糙度是指加工表面上具有的较小间距和微小峰谷所组成的微观几何形状特性。它是评定零件表面质量的重要指标，对零件的耐磨性、配合性质、疲劳强度、抗腐蚀性、密封性等都有重要影响。</p>
+            </section>
+            <section class="content-section">
+                <h2>表面粗糙度评定参数</h2>
+                <h3>高度参数（主要参数）</h3>
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <span class="definition-term">Ra（轮廓算术平均偏差）</span>
+                        <span class="definition-desc">在取样长度内，轮廓偏距绝对值的算术平均值。最常用的评定参数，单位μm。</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">Rz（轮廓最大高度）</span>
+                        <span class="definition-desc">在取样长度内，轮廓峰顶线与轮廓谷底线之间的距离。反映表面峰谷的最大高度。</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">Ry（轮廓峰谷高度）</span>
+                        <span class="definition-desc">在评定长度内，轮廓峰顶线与轮廓谷底线之间的最大距离。现已较少使用。</span>
+                    </div>
+                </div>
+                <h3>间距参数（附加参数）</h3>
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <span class="definition-term">Sm（轮廓单峰平均间距）</span>
+                        <span class="definition-desc">在取样长度内，轮廓单峰间距的平均值。</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">S（轮廓微观不平度平均间距）</span>
+                        <span class="definition-desc">在取样长度内，轮廓微观不平度间距的平均值。</span>
+                    </div>
+                </div>
+            </section>
+            <section class="content-section">
+                <h2>表面粗糙度符号及含义</h2>
+                <table>
+                    <thead><tr><th>符号</th><th>含义</th><th>说明</th></tr></thead>
+                    <tbody>
+                        <tr><td>✓</td><td>基本符号</td><td>表示表面可用任何方法获得，仅用于简化标注</td></tr>
+                        <tr><td>✓—</td><td>去除材料</td><td>表示表面用去除材料的方法获得（车、铣、磨等）</td></tr>
+                        <tr><td>✓○</td><td>不去除材料</td><td>表示表面用不去除材料的方法获得（铸、锻等）</td></tr>
+                        <tr><td>✓━</td><td>相同要求</td><td>表示所有表面具有相同的表面粗糙度要求</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>表面粗糙度数值系列</h2>
+                <table>
+                    <thead><tr><th>优先系列</th><th>补充系列</th><th>加工方法</th><th>应用举例</th></tr></thead>
+                    <tbody>
+                        <tr><td>0.012</td><td>—</td><td>研磨、超精磨</td><td>精密量仪、光学仪器</td></tr>
+                        <tr><td>0.025</td><td>—</td><td>研磨、珩磨</td><td>高精度轴承、液压阀</td></tr>
+                        <tr><td>0.05</td><td>—</td><td>精磨、研磨</td><td>精密主轴、高精度导轨</td></tr>
+                        <tr><td>0.1</td><td>0.08</td><td>精磨、精铰</td><td>精密齿轮、凸轮</td></tr>
+                        <tr><td>0.2</td><td>0.16</td><td>精磨、精车</td><td>轴承、机床导轨</td></tr>
+                        <tr><td>0.4</td><td>0.32</td><td>精车、精铣</td><td>一般轴承配合面、丝杠</td></tr>
+                        <tr><td>0.8</td><td>0.63</td><td>精车、半精磨</td><td>一般配合面、齿轮工作面</td></tr>
+                        <tr><td>1.6</td><td>1.25</td><td>半精车、粗磨</td><td>非配合面、一般连接面</td></tr>
+                        <tr><td>3.2</td><td>2.5</td><td>粗车、粗铣</td><td>自由表面、不重要面</td></tr>
+                        <tr><td>6.3</td><td>5.0</td><td>粗加工</td><td>铸造、锻造表面</td></tr>
+                        <tr><td>12.5</td><td>10.0</td><td>铸造、焊接</td><td>毛坯表面</td></tr>
+                        <tr><td>25</td><td>20.0</td><td>铸造、锻造</td><td>非加工表面</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>表面粗糙度标注方法</h2>
+                <div class="card"><div class="card-title">标注位置</div><div class="card-content">表面粗糙度符号应标注在可见轮廓线、尺寸界线、引出线或它们的延长线上。符号尖端指向材料外表面。</div></div>
+                <div class="card"><div class="card-title">数值标注</div><div class="card-content">Ra值标注在符号上方，数值单位为μm。Rz、Ry需注明参数代号，如Rz3.2。</div></div>
+                <div class="card"><div class="card-title">取样长度</div><div class="card-content">当需要指定取样长度时，在符号长边横线下方标注取样长度值，如/0.8。</div></div>
+                <div class="card"><div class="card-title">加工方法</div><div class="card-content">需要指定加工方法时，在符号长边横线上方标注，如"车"、"磨"、"镀"等。</div></div>
+                <div class="card"><div class="card-title">加工余量</div><div class="card-content">需要标注加工余量时，在符号左下角标注余量值，单位为mm。</div></div>
+            </section>
+            <section class="content-section">
+                <h2>表面粗糙度与加工方法的关系</h2>
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <span class="definition-term">研磨、超精磨</span>
+                        <span class="definition-desc">Ra 0.012～0.1 μm，最高精度</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">珩磨、精磨</span>
+                        <span class="definition-desc">Ra 0.05～0.4 μm，高精度</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">精车、精铣、精铰</span>
+                        <span class="definition-desc">Ra 0.4～1.6 μm，精密级</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">半精车、半精铣</span>
+                        <span class="definition-desc">Ra 1.6～6.3 μm，一般精度</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">粗车、粗铣、钻孔</span>
+                        <span class="definition-desc">Ra 6.3～25 μm，粗加工</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">铸造、锻造、焊接</span>
+                        <span class="definition-desc">Ra 12.5～100 μm，非加工面</span>
+                    </div>
+                </div>
+            </section>
+            <section class="content-section">
+                <h2>表面粗糙度选择原则</h2>
+                <ul>
+                    <li><strong>功能要求：</strong>根据零件功能选择，配合面、密封面要求较高</li>
+                    <li><strong>经济性：</strong>在满足功能前提下，尽量选用较大粗糙度值以降低成本</li>
+                    <li><strong>工艺可行：</strong>考虑现有加工设备和工艺能否达到</li>
+                    <li><strong>配合性质：</strong>间隙配合、过盈配合的粗糙度要求不同</li>
+                    <li><strong>运动形式：</strong>滑动配合比静止配合要求高</li>
+                    <li><strong>配合精度：</strong>精度等级高，粗糙度要求也高</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

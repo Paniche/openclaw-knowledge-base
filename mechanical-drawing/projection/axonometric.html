@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轴测图 - 机械制图知识库</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">机械制图知识库</h1>
+            <p class="site-subtitle">Mechanical Drawing Knowledge Base</p>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </header>
+    <div class="main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="nav-section"><h3 class="nav-title">首页</h3><ul class="nav-list"><li><a href="../index.html" class="nav-link">欢迎页面</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">机械制图基础</h3><ul class="nav-list"><li><a href="../basics/introduction.html" class="nav-link">制图概述</a></li><li><a href="../basics/drawing-tools.html" class="nav-link">制图工具与仪器</a></li><li><a href="../basics/sheet-layout.html" class="nav-link">图纸幅面与格式</a></li><li><a href="../basics/lines.html" class="nav-link">图线类型</a></li><li><a href="../basics/scales.html" class="nav-link">比例</a></li><li><a href="../basics/fonts.html" class="nav-link">字体</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">制图标准</h3><ul class="nav-list"><li><a href="../standards/iso.html" class="nav-link">国际标准 ISO</a></li><li><a href="../standards/gb.html" class="nav-link">中国国家标准 GB</a></li><li><a href="../standards/asme.html" class="nav-link">美国标准 ASME</a></li><li><a href="../standards/din.html" class="nav-link">德国标准 DIN</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">投影法</h3><ul class="nav-list"><li><a href="orthographic.html" class="nav-link">正投影法</a></li><li><a href="views.html" class="nav-link">视图</a></li><li><a href="sections.html" class="nav-link">剖视图</a></li><li><a href="cuts.html" class="nav-link">断面图</a></li><li><a href="axonometric.html" class="nav-link active">轴测图</a></li><li><a href="perspective.html" class="nav-link">透视图</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">尺寸标注</h3><ul class="nav-list"><li><a href="../dimensioning/principles.html" class="nav-link">标注基本原则</a></li><li><a href="../dimensioning/linear.html" class="nav-link">线性尺寸标注</a></li><li><a href="../dimensioning/angular.html" class="nav-link">角度尺寸标注</a></li><li><a href="../dimensioning/radii-diameters.html" class="nav-link">半径与直径标注</a></li><li><a href="../dimensioning/special.html" class="nav-link">特殊尺寸标注</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">公差与配合</h3><ul class="nav-list"><li><a href="../tolerances/fundamentals.html" class="nav-link">基本概念</a></li><li><a href="../tolerances/fits.html" class="nav-link">配合类型</a></li><li><a href="../tolerances/tolerance-grades.html" class="nav-link">公差等级</a></li><li><a href="../tolerances/deviation.html" class="nav-link">基本偏差</a></li><li><a href="../tolerances/geometric.html" class="nav-link">几何公差</a></li><li><a href="../tolerances/surface.html" class="nav-link">表面粗糙度</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">符号与标注</h3><ul class="nav-list"><li><a href="../symbols/welding.html" class="nav-link">焊接符号</a></li><li><a href="../symbols/threads.html" class="nav-link">螺纹画法与标注</a></li><li><a href="../symbols/gears.html" class="nav-link">齿轮画法</a></li><li><a href="../symbols/springs.html" class="nav-link">弹簧画法</a></li><li><a href="../symbols/bearings.html" class="nav-link">滚动轴承画法</a></li><li><a href="../symbols/surface-treatment.html" class="nav-link">表面处理与镀涂</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">材料与热处理</h3><ul class="nav-list"><li><a href="../materials/metals.html" class="nav-link">常用金属材料</a></li><li><a href="../materials/non-metals.html" class="nav-link">非金属材料</a></li><li><a href="../materials/heat-treatment.html" class="nav-link">热处理工艺</a></li><li><a href="../materials/designation.html" class="nav-link">材料牌号表示方法</a></li></ul></div>
+        </nav>
+        <main class="content">
+            <div class="page-header">
+                <h1>轴测图</h1>
+                <p class="subtitle">Axonometric Projection</p>
+            </section>
+            <section class="content-section">
+                <h2>轴测图的概念</h2>
+                <p>轴测图是一种单面投影图，能同时反映物体长、宽、高三个方向的形状，具有较强的立体感。轴测图分为正轴测图和斜轴测图两大类。</p>
+            </section>
+            <section class="content-section">
+                <h2>轴测投影的基本参数</h2>
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <span class="definition-term">轴测轴</span>
+                        <span class="definition-desc">空间坐标系OX、OY、OZ轴在轴测投影面上的投影</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">轴间角</span>
+                        <span class="definition-desc">轴测轴之间的夹角</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">轴向伸缩系数</span>
+                        <span class="definition-desc">轴测轴上单位长度与空间对应轴上单位长度的比值</span>
+                    </div>
+                </div>
+            </section>
+            <section class="content-section">
+                <h2>正等测图</h2>
+                <p>正等测图是三个轴向伸缩系数相等的正轴测图。轴间角均为120°，轴向伸缩系数p=q=r=0.82。正等测图的三个坐标面具有相同的变形系数。</p>
+                <div class="card"><div class="card-title">简化系数</div><div class="card-content">作图时通常采用简化系数1，图形会被放大1.22倍，但不影响表达效果。</div></div>
+            </section>
+            <section class="content-section">
+                <h2>斜二测图</h2>
+                <p>斜二测图是OX轴与OY轴垂直、OY轴与OZ轴垂直的斜轴测图。轴间角：∠XOY=90°，∠YOZ=135°，∠ZOX=135°。轴向伸缩系数：p=r=1，q=0.5。</p>
+            </section>
+            <section class="content-section">
+                <h2>轴测图的基本画法</h2>
+                <ul>
+                    <li><strong>坐标法：</strong>根据物体上各点的坐标，画出其轴测投影</li>
+                    <li><strong>切割法：</strong>先画出基本体的轴测图，再进行切割</li>
+                    <li><strong>叠加法：</strong>将物体分解为若干基本体，分别画出轴测图后叠加</li>
+                </ul>
+            </section>
+            <section class="content-section">
+                <h2>轴测图上圆的处理</h2>
+                <p>在轴测图中，圆通常画成椭圆。正等测图中三个坐标面内的椭圆长轴垂直于对应的轴测轴。斜二测图中XOZ面内的圆仍为圆，其他两坐标面内的圆为椭圆。</p>
+            </section>
+        </main>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

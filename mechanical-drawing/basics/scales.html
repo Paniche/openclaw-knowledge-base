@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比例 - 机械制图知识库</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">机械制图知识库</h1>
+            <p class="site-subtitle">Mechanical Drawing Knowledge Base</p>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </header>
+    <div class="main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="nav-section"><h3 class="nav-title">首页</h3><ul class="nav-list"><li><a href="../index.html" class="nav-link">欢迎页面</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">机械制图基础</h3><ul class="nav-list"><li><a href="introduction.html" class="nav-link">制图概述</a></li><li><a href="drawing-tools.html" class="nav-link">制图工具与仪器</a></li><li><a href="sheet-layout.html" class="nav-link">图纸幅面与格式</a></li><li><a href="lines.html" class="nav-link">图线类型</a></li><li><a href="scales.html" class="nav-link active">比例</a></li><li><a href="fonts.html" class="nav-link">字体</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">制图标准</h3><ul class="nav-list"><li><a href="../standards/iso.html" class="nav-link">国际标准 ISO</a></li><li><a href="../standards/gb.html" class="nav-link">中国国家标准 GB</a></li><li><a href="../standards/asme.html" class="nav-link">美国标准 ASME</a></li><li><a href="../standards/din.html" class="nav-link">德国标准 DIN</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">投影法</h3><ul class="nav-list"><li><a href="../projection/orthographic.html" class="nav-link">正投影法</a></li><li><a href="../projection/views.html" class="nav-link">视图</a></li><li><a href="../projection/sections.html" class="nav-link">剖视图</a></li><li><a href="../projection/cuts.html" class="nav-link">断面图</a></li><li><a href="../projection/axonometric.html" class="nav-link">轴测图</a></li><li><a href="../projection/perspective.html" class="nav-link">透视图</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">尺寸标注</h3><ul class="nav-list"><li><a href="../dimensioning/principles.html" class="nav-link">标注基本原则</a></li><li><a href="../dimensioning/linear.html" class="nav-link">线性尺寸标注</a></li><li><a href="../dimensioning/angular.html" class="nav-link">角度尺寸标注</a></li><li><a href="../dimensioning/radii-diameters.html" class="nav-link">半径与直径标注</a></li><li><a href="../dimensioning/special.html" class="nav-link">特殊尺寸标注</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">公差与配合</h3><ul class="nav-list"><li><a href="../tolerances/fundamentals.html" class="nav-link">基本概念</a></li><li><a href="../tolerances/fits.html" class="nav-link">配合类型</a></li><li><a href="../tolerances/tolerance-grades.html" class="nav-link">公差等级</a></li><li><a href="../tolerances/deviation.html" class="nav-link">基本偏差</a></li><li><a href="../tolerances/geometric.html" class="nav-link">几何公差</a></li><li><a href="../tolerances/surface.html" class="nav-link">表面粗糙度</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">符号与标注</h3><ul class="nav-list"><li><a href="../symbols/welding.html" class="nav-link">焊接符号</a></li><li><a href="../symbols/threads.html" class="nav-link">螺纹画法与标注</a></li><li><a href="../symbols/gears.html" class="nav-link">齿轮画法</a></li><li><a href="../symbols/springs.html" class="nav-link">弹簧画法</a></li><li><a href="../symbols/bearings.html" class="nav-link">滚动轴承画法</a></li><li><a href="../symbols/surface-treatment.html" class="nav-link">表面处理与镀涂</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">材料与热处理</h3><ul class="nav-list"><li><a href="../materials/metals.html" class="nav-link">常用金属材料</a></li><li><a href="../materials/non-metals.html" class="nav-link">非金属材料</a></li><li><a href="../materials/heat-treatment.html" class="nav-link">热处理工艺</a></li><li><a href="../materials/designation.html" class="nav-link">材料牌号表示方法</a></li></ul></div>
+        </nav>
+        <main class="content">
+            <div class="page-header">
+                <h1>比例</h1>
+                <p class="subtitle">Scales</p>
+            </div>
+            <section class="content-section">
+                <h2>比例的概念</h2>
+                <p>比例是指图中图形与其实物相应要素的线性尺寸之比。根据GB/T 14690-1993，绘制图样时一般采用比例。</p>
+            </section>
+            <section class="content-section">
+                <h2>比例系列</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>类别</th><th>比例</th><th>说明</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>原值比例</td><td>1:1</td><td>图形大小与实物相同</td></tr>
+                            <tr><td rowspan="3">放大比例</td><td>2:1、2.5:1、4:1</td><td>图形是实物的2、2.5、4倍</td></tr>
+                            <tr><td>5:1、5:1</td><td>图形是实物的5倍</td></tr>
+                            <tr><td>10^n:1</td><td>10的n次方倍</td></tr>
+                            <tr><td rowspan="3">缩小比例</td><td>1:1.5、1:2、1:2.5、1:3、1:4</td><td>图形是实物的1/1.5、1/2等</td></tr>
+                            <tr><td>1:5、1:10</td><td>图形是实物的1/5、1/10</td></tr>
+                            <tr><td>1:10^n</td><td>10的-n次方分之一</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="content-section">
+                <h2>比例的选择</h2>
+                <div class="card"><div class="card-title">选择原则</div><div class="card-content">应优先选用常用比例。需要缩小绘制时，通常采用缩小比例。同一视图的水平和垂直方向应采用同一比例。当图形不能表达清楚时，可采用局部放大图。</div></div>
+            </section>
+            <section class="content-section">
+                <h2>比例的标注</h2>
+                <p>比例应标注在标题栏的比例栏内。必要时可在视图名称下方或右侧标注比例，如：</p>
+                <ul>
+                    <li>A 1:1 — 表示A视图采用原值比例</li>
+                    <li>B 2:1 — 表示B视图采用放大比例</li>
+                    <li>C 1:2 — 表示C视图采用缩小比例</li>
+                </ul>
+            </section>
+            <section class="content-section">
+                <h2>注意事项</h2>
+                <ul>
+                    <li>无论图形放大或缩小，尺寸数值应标注实物的实际尺寸</li>
+                    <li>角度尺寸与比例无关，始终标注角度值</li>
+                    <li>表面粗糙度、螺纹等要素的标注与比例无关</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

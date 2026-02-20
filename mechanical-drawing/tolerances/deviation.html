@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本偏差 - 机械制图知识库</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">机械制图知识库</h1>
+            <p class="site-subtitle">Mechanical Drawing Knowledge Base</p>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </header>
+    <div class="main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="nav-section"><h3 class="nav-title">首页</h3><ul class="nav-list"><li><a href="../index.html" class="nav-link">欢迎页面</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">机械制图基础</h3><ul class="nav-list"><li><a href="../basics/introduction.html" class="nav-link">制图概述</a></li><li><a href="../basics/drawing-tools.html" class="nav-link">制图工具与仪器</a></li><li><a href="../basics/sheet-layout.html" class="nav-link">图纸幅面与格式</a></li><li><a href="../basics/lines.html" class="nav-link">图线类型</a></li><li><a href="../basics/scales.html" class="nav-link">比例</a></li><li><a href="../basics/fonts.html" class="nav-link">字体</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">制图标准</h3><ul class="nav-list"><li><a href="../standards/iso.html" class="nav-link">国际标准 ISO</a></li><li><a href="../standards/gb.html" class="nav-link">中国国家标准 GB</a></li><li><a href="../standards/asme.html" class="nav-link">美国标准 ASME</a></li><li><a href="../standards/din.html" class="nav-link">德国标准 DIN</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">投影法</h3><ul class="nav-list"><li><a href="../projection/orthographic.html" class="nav-link">正投影法</a></li><li><a href="../projection/views.html" class="nav-link">视图</a></li><li><a href="../projection/sections.html" class="nav-link">剖视图</a></li><li><a href="../projection/cuts.html" class="nav-link">断面图</a></li><li><a href="../projection/axonometric.html" class="nav-link">轴测图</a></li><li><a href="../projection/perspective.html" class="nav-link">透视图</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">尺寸标注</h3><ul class="nav-list"><li><a href="../dimensioning/principles.html" class="nav-link">标注基本原则</a></li><li><a href="../dimensioning/linear.html" class="nav-link">线性尺寸标注</a></li><li><a href="../dimensioning/angular.html" class="nav-link">角度尺寸标注</a></li><li><a href="../dimensioning/radii-diameters.html" class="nav-link">半径与直径标注</a></li><li><a href="../dimensioning/special.html" class="nav-link">特殊尺寸标注</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">公差与配合</h3><ul class="nav-list"><li><a href="fundamentals.html" class="nav-link">基本概念</a></li><li><a href="fits.html" class="nav-link">配合类型</a></li><li><a href="tolerance-grades.html" class="nav-link">公差等级</a></li><li><a href="deviation.html" class="nav-link active">基本偏差</a></li><li><a href="geometric.html" class="nav-link">几何公差</a></li><li><a href="surface.html" class="nav-link">表面粗糙度</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">符号与标注</h3><ul class="nav-list"><li><a href="../symbols/welding.html" class="nav-link">焊接符号</a></li><li><a href="../symbols/threads.html" class="nav-link">螺纹画法与标注</a></li><li><a href="../symbols/gears.html" class="nav-link">齿轮画法</a></li><li><a href="../symbols/springs.html" class="nav-link">弹簧画法</a></li><li><a href="../symbols/bearings.html" class="nav-link">滚动轴承画法</a></li><li><a href="../symbols/surface-treatment.html" class="nav-link">表面处理与镀涂</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">材料与热处理</h3><ul class="nav-list"><li><a href="../materials/metals.html" class="nav-link">常用金属材料</a></li><li><a href="../materials/non-metals.html" class="nav-link">非金属材料</a></li><li><a href="../materials/heat-treatment.html" class="nav-link">热处理工艺</a></li><li><a href="../materials/designation.html" class="nav-link">材料牌号表示方法</a></li></ul></div>
+        </nav>
+        <main class="content">
+            <div class="page-header">
+                <h1>基本偏差</h1>
+                <p class="subtitle">Fundamental Deviation</p>
+            </div>
+            <section class="content-section">
+                <h2>基本偏差概述</h2>
+                <p>基本偏差是指确定公差带相对零线位置的极限偏差，用拉丁字母表示。基本偏差确定了公差带的一个极限位置（上偏差或下偏差），另一个极限偏差由公差等级确定。国家标准规定了孔和轴各28个基本偏差代号。</p>
+            </section>
+            <section class="content-section">
+                <h2>孔的基本偏差代号（大写字母）</h2>
+                <p>孔的基本偏差用 A、B、C、CD、D、E、EF、F、FG、G、H、J、JS、K、M、N、P、R、S、T、U、V、X、Y、Z、ZA、ZB、ZC 表示，共28个。</p>
+                <div class="card"><div class="card-title">A-H：下偏差 EI > 0</div><div class="card-content">基本偏差为下偏差，且为正值。A级间隙最大，依次递减，H级下偏差为零。</div></div>
+                <div class="card"><div class="card-title">J：近似对称分布</div><div class="card-content">J级基本偏差近似对称分布，现已较少使用。</div></div>
+                <div class="card"><div class="card-title">JS：完全对称分布</div><div class="card-content">JS级公差带对称分布于零线两侧，基本偏差为 ±IT/2。</div></div>
+                <div class="card"><div class="card-title">K、M、N：过渡配合</div><div class="card-content">K、M、N级主要用于过渡配合，基本偏差为上偏差。</div></div>
+                <div class="card"><div class="card-title">P-ZC：过盈配合</div><div class="card-content">P至ZC级基本偏差为上偏差，用于过盈配合，过盈量逐渐增大。</div></div>
+            </section>
+            <section class="content-section">
+                <h2>轴的基本偏差代号（小写字母）</h2>
+                <p>轴的基本偏差用 a、b、c、cd、d、e、ef、f、fg、g、h、j、js、k、m、n、p、r、s、t、u、v、x、y、z、za、zb、zc 表示，共28个。</p>
+                <div class="card"><div class="card-title">a-h：上偏差 es < 0</div><div class="card-content">基本偏差为上偏差，且为负值。a级间隙最大，依次递减，h级上偏差为零。</div></div>
+                <div class="card"><div class="card-title">j：近似对称分布</div><div class="card-content">j级基本偏差近似对称分布，现已较少使用。</div></div>
+                <div class="card"><div class="card-title">js：完全对称分布</div><div class="card-content">js级公差带对称分布于零线两侧，基本偏差为 ±IT/2。</div></div>
+                <div class="card"><div class="card-title">k、m、n：过渡配合</div><div class="card-content">k、m、n级主要用于过渡配合，基本偏差为下偏差。</div></div>
+                <div class="card"><div class="card-title">p-zc：过盈配合</div><div class="card-content">p至zc级基本偏差为下偏差，用于过盈配合，过盈量逐渐增大。</div></div>
+            </section>
+            <section class="content-section">
+                <h2>常用基本偏差应用</h2>
+                <table>
+                    <thead><tr><th>代号</th><th>应用说明</th><th>典型配合</th></tr></thead>
+                    <tbody>
+                        <tr><td>H</td><td>基准孔</td><td>H7/g6、H7/k6、H7/p6</td></tr>
+                        <tr><td>h</td><td>基准轴</td><td>G7/h6、K7/h6、P7/h6</td></tr>
+                        <tr><td>G/g</td><td>间隙配合（较小间隙）</td><td>滑动轴承、精密导向</td></tr>
+                        <tr><td>F/f</td><td>间隙配合（中等间隙）</td><td>齿轮轴承、一般导向</td></tr>
+                        <tr><td>K/k</td><td>过渡配合（较小过盈）</td><td>定位销、键连接</td></tr>
+                        <tr><td>N/n</td><td>过渡配合（较大过盈）</td><td>齿轮与轴、联轴器</td></tr>
+                        <tr><td>P/p</td><td>过盈配合（轻压配合）</td><td>轴承与轴、齿轮与轴</td></tr>
+                        <tr><td>S/s</td><td>过盈配合（中压配合）</td><td>蜗轮轮缘与轮毂</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="content-section">
+                <h2>基准制</h2>
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <span class="definition-term">基孔制</span>
+                        <span class="definition-desc">以孔为基准件，基本偏差为H，下偏差为零。通过改变轴的基本偏差获得不同配合性质。优先采用基孔制。</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">基轴制</span>
+                        <span class="definition-desc">以轴为基准件，基本偏差为h，上偏差为零。通过改变孔的基本偏差获得不同配合性质。用于冷拉钢轴、一轴多孔配合。</span>
+                    </div>
+                </div>
+            </section>
+            <section class="content-section">
+                <h2>配合代号标注</h2>
+                <p>配合代号用分数形式表示，分子为孔的公差带代号，分母为轴的公差带代号。例如：</p>
+                <ul>
+                    <li><strong>φ50 H7/g6</strong>：基孔制间隙配合，孔公差带H7，轴公差带g6</li>
+                    <li><strong>φ50 K7/h6</strong>：基轴制过渡配合，孔公差带K7，轴公差带h6</li>
+                    <li><strong>φ50 H7/p6</strong>：基孔制过盈配合，孔公差带H7，轴公差带p6</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

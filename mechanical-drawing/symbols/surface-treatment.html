@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表面处理与镀涂 - 机械制图知识库</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">机械制图知识库</h1>
+            <p class="site-subtitle">Mechanical Drawing Knowledge Base</p>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </header>
+    <div class="main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="nav-section"><h3 class="nav-title">首页</h3><ul class="nav-list"><li><a href="../index.html" class="nav-link">欢迎页面</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">机械制图基础</h3><ul class="nav-list"><li><a href="../basics/introduction.html" class="nav-link">制图概述</a></li><li><a href="../basics/drawing-tools.html" class="nav-link">制图工具与仪器</a></li><li><a href="../basics/sheet-layout.html" class="nav-link">图纸幅面与格式</a></li><li><a href="../basics/lines.html" class="nav-link">图线类型</a></li><li><a href="../basics/scales.html" class="nav-link">比例</a></li><li><a href="../basics/fonts.html" class="nav-link">字体</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">制图标准</h3><ul class="nav-list"><li><a href="../standards/iso.html" class="nav-link">国际标准 ISO</a></li><li><a href="../standards/gb.html" class="nav-link">中国国家标准 GB</a></li><li><a href="../standards/asme.html" class="nav-link">美国标准 ASME</a></li><li><a href="../standards/din.html" class="nav-link">德国标准 DIN</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">投影法</h3><ul class="nav-list"><li><a href="../projection/orthographic.html" class="nav-link">正投影法</a></li><li><a href="../projection/views.html" class="nav-link">视图</a></li><li><a href="../projection/sections.html" class="nav-link">剖视图</a></li><li><a href="../projection/cuts.html" class="nav-link">断面图</a></li><li><a href="../projection/axonometric.html" class="nav-link">轴测图</a></li><li><a href="../projection/perspective.html" class="nav-link">透视图</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">尺寸标注</h3><ul class="nav-list"><li><a href="../dimensioning/principles.html" class="nav-link">标注基本原则</a></li><li><a href="../dimensioning/linear.html" class="nav-link">线性尺寸标注</a></li><li><a href="../dimensioning/angular.html" class="nav-link">角度尺寸标注</a></li><li><a href="../dimensioning/radii-diameters.html" class="nav-link">半径与直径标注</a></li><li><a href="../dimensioning/special.html" class="nav-link">特殊尺寸标注</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">公差与配合</h3><ul class="nav-list">
+            <li><a href="../tolerances/fundamentals.html" class="nav-link">基本概念</a></li><li><a href="../tolerances/fits.html" class="nav-link">配合类型</a></li>
+            <li><a href="../tolerances/tolerance-grades.html" class="nav-link">公差等级</a></li>
+            <li><a href="../tolerances/deviation.html" class="nav-link">基本偏差</a></li>
+            <li><a href="../tolerances/geometric.html" class="nav-link">几何公差</a></li>
+            <li><a href="../tolerances/surface.html" class="nav-link">表面粗糙度</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">符号与标注</h3><ul class="nav-list">
+            <li><a href="welding.html" class="nav-link">焊接符号</a></li>
+            <li><a href="threads.html" class="nav-link">螺纹画法与标注</a></li>
+            <li><a href="gears.html" class="nav-link">齿轮画法</a></li>
+            <li><a href="springs.html" class="nav-link">弹簧画法</a></li>
+            <li><a href="bearings.html" class="nav-link">滚动轴承画法</a></li>
+            <li><a href="surface-treatment.html" class="nav-link active">表面处理与镀涂</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">材料与热处理</h3><ul class="nav-list">
+            <li><a href="../materials/metals.html" class="nav-link">常用金属材料</a></li>
+            <li><a href="../materials/non-metals.html" class="nav-link">非金属材料</a></li>
+            <li><a href="../materials/heat-treatment.html" class="nav-link">热处理工艺</a></li>
+            <li><a href="../materials/designation.html" class="nav-link">材料牌号表示方法</a></li></ul></div>
+        </nav>
+        <main class="content">
+            <div class="page-header"><h1>表面处理与镀涂</h1><p class="subtitle">Surface Treatment & Coating</p></div>
+            
+<section class="content-section"><h2>表面处理目的</h2><p>表面处理用于提升零件耐腐蚀性、耐磨性、疲劳性能和外观质量。图样中应明确处理类型、膜层厚度、覆盖范围和检验要求。</p></section>
+<section class="content-section"><h2>常见处理工艺</h2><table><thead><tr><th>工艺</th><th>典型厚度</th><th>特点与应用</th></tr></thead><tbody><tr><td>电镀锌</td><td>5~25 μm</td><td>防锈经济，紧固件常用</td></tr><tr><td>化学镀镍</td><td>10~50 μm</td><td>均匀性好，复杂内腔适用</td></tr><tr><td>发黑</td><td>1~2 μm</td><td>成本低，需配防锈油</td></tr><tr><td>阳极氧化</td><td>5~25 μm</td><td>铝合金防护与装饰</td></tr><tr><td>喷粉/喷漆</td><td>40~120 μm</td><td>颜色丰富，耐候性好</td></tr></tbody></table></section>
+<section class="content-section"><h2>图样标注建议</h2><ul><li>明确处理代号与标准：如 Zn8/彩钝、ENP 25μm。</li><li>注明局部处理区域：可用引出线和阴影辅助说明。</li><li>关键配合面可注明“镀前加工”或“镀后磨削”。</li><li>有盐雾要求时需标注中性盐雾小时数（NSS 96h/240h等）。</li></ul></section>
+
+        </main>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+    <script src="../assets/js/main.js"></script>
+</body></html>
