@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国家标准 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="../components/passive.html" class="nav-item">被动元件</a>
+          <a href="../components/active.html" class="nav-item">主动元件</a>
+          <a href="../components/resistors.html" class="nav-item">电阻</a>
+          <a href="../components/capacitors.html" class="nav-item">电容</a>
+          <a href="../components/inductors.html" class="nav-item">电感</a>
+          <a href="../components/diodes.html" class="nav-item">二极管</a>
+          <a href="../components/transistors.html" class="nav-item">晶体管</a>
+          <a href="../components/ics.html" class="nav-item">集成电路</a>
+          <a href="../components/connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="international.html" class="nav-item">国际标准</a>
+          <a href="national.html" class="nav-item active">国家标准</a>
+          <a href="industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">国家标准</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">国家标准</h1>
+        <p class="page-subtitle">National Standards - 中国国家标准体系</p>
+
+        <div class="section">
+          <h2 class="section-title">GB标准体系</h2>
+          <p>中国国家标准由国家标准化管理委员会(SAC)管理，分为GB(强制性)和GB/T(推荐性)两种。</p>
+          
+          <h3 class="section-subtitle">GB标准分类</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>标准类型</th>
+                <th>含义</th>
+                <th>示例</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GB</td>
+                <td>强制性国家标准</td>
+                <td>GB 4943 安全标准</td>
+              </tr>
+              <tr>
+                <td>GB/T</td>
+                <td>推荐性国家标准</td>
+                <td>GB/T 2828 抽样标准</td>
+              </tr>
+              <tr>
+                <td>GB/Z</td>
+                <td>国家标准指导性文件</td>
+                <td>技术指导文件</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">电子元器件GB标准</h2>
+          
+          <h3 class="section-subtitle">无源元件</h3>
+          <ul class="content-list">
+            <li><strong>GB/T 10193</strong>：电子设备用压敏电阻器</li>
+            <li><strong>GB/T 10194</strong>：电子设备用压敏电阻器测试方法</li>
+            <li><strong>GB/T 2470</strong>：电子设备用固定电阻器</li>
+            <li><strong>GB/T 2691</strong>：电阻器的标志代码</li>
+            <li><strong>GB/T 7213</strong>：电子设备用固定电容器</li>
+          </ul>
+
+          <h3 class="section-subtitle">半导体器件</h3>
+          <ul class="content-list">
+            <li><strong>GB/T 4587</strong>：半导体器件 分立器件</li>
+            <li><strong>GB/T 6571</strong>：半导体器件 集成电路</li>
+            <li><strong>GB/T 4023</strong>：半导体器件分立器件测试方法</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">GJB军工标准</h2>
+          <p>GJB是中国军用标准，由国防科工委归口管理，适用于军工产品。</p>
+          
+          <h3 class="section-subtitle">主要GJB标准</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>标准号</th>
+                <th>名称</th>
+                <th>领域</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GJB 548</td>
+                <td>微电子器件试验方法和程序</td>
+                <td>可靠性</td>
+              </tr>
+              <tr>
+                <td>GJB 1217</td>
+                <td>电子元器件可靠性试验</td>
+                <td>可靠性</td>
+              </tr>
+              <tr>
+                <td>GJB 360</td>
+                <td>电子及电气元件试验方法</td>
+                <td>环境</td>
+              </tr>
+              <tr>
+                <td>GJB 151</td>
+                <td>军用设备和分系统电磁发射和敏感度要求</td>
+                <td>EMC</td>
+              </tr>
+              <tr>
+                <td>GJB 300</td>
+                <td>军用电子测试设备通用规范</td>
+                <td>测试</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">行业标准代号</h2>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>代号</th>
+                <th>行业</th>
+                <th>代号</th>
+                <th>行业</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>SJ</td><td>电子</td><td>HB</td><td>航空</td></tr>
+              <tr><td>JB</td><td>机械</td><td>YB</td><td>有色金属</td></tr>
+              <tr><td>DL</td><td>电力</td><td>SJ/T</td><td>电子工业</td></tr>
+              <tr><td>YD</td><td>通信</td><td>CJ</td><td>城镇建设</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

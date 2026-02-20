@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>封装类型 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="../components/passive.html" class="nav-item">被动元件</a>
+          <a href="../components/active.html" class="nav-item">主动元件</a>
+          <a href="../components/resistors.html" class="nav-item">电阻</a>
+          <a href="../components/capacitors.html" class="nav-item">电容</a>
+          <a href="../components/inductors.html" class="nav-item">电感</a>
+          <a href="../components/diodes.html" class="nav-item">二极管</a>
+          <a href="../components/transistors.html" class="nav-item">晶体管</a>
+          <a href="../components/ics.html" class="nav-item">集成电路</a>
+          <a href="../components/connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="principles.html" class="nav-item">电学原理</a>
+          <a href="symbols.html" class="nav-item">电路符号</a>
+          <a href="parameters.html" class="nav-item">参数解读</a>
+          <a href="packages.html" class="nav-item active">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">封装类型</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">封装类型</h1>
+        <p class="page-subtitle">Package Types - 电子元器件的物理封装形式</p>
+
+        <div class="section">
+          <h2 class="section-title">封装概述</h2>
+          <p>电子元器件的封装不仅起到保护芯片的作用，还决定了元器件的尺寸、安装方式和电气性能。封装技术随着电子产品小型化而不断发展。</p>
+          <div class="alert alert-info">
+            <strong>封装发展趋势：</strong>从通孔到贴片，从2D到2.5D/3D，封装技术不断推动电子产品的微型化。
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">贴片封装(SMD)</h2>
+          
+          <h3 class="section-subtitle">片式电阻/电容封装</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>封装名称</th>
+                <th>英制尺寸</th>
+                <th>公制尺寸</th>
+                <th>典型功率</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>0201</td><td>0.02"×0.01"</td><td>0.6×0.3mm</td><td>1/20W</td></tr>
+              <tr><td>0402</td><td>0.04"×0.02"</td><td>1.0×0.5mm</td><td>1/16W</td></tr>
+              <tr><td>0603</td><td>0.06"×0.03"</td><td>1.6×0.8mm</td><td>1/10W</td></tr>
+              <tr><td>0805</td><td>0.08"×0.05"</td><td>2.0×1.25mm</td><td>1/8W</td></tr>
+              <tr><td>1206</td><td>0.12"×0.06"</td><td>3.2×1.6mm</td><td>1/4W</td></tr>
+              <tr><td>1210</td><td>0.12"×0.10"</td><td>3.2×2.5mm</td><td>1/2W</td></tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">IC封装</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>封装类型</th>
+                <th>特点</th>
+                <th>引脚间距</th>
+                <th>应用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SOP/TSOP</td>
+                <td>小外形封装</td>
+                <td>1.27mm/0.65mm</td>
+                <td>存储芯片、ASIC</td>
+              </tr>
+              <tr>
+                <td>QFP</td>
+                <td>方形扁平封装</td>
+                <td>0.4-0.8mm</td>
+                <td>微控制器、ASIC</td>
+              </tr>
+              <tr>
+                <td>LQFP</td>
+                <td>薄型QFP</td>
+                <td>0.4-0.7mm</td>
+                <td>便携设备</td>
+              </tr>
+              <tr>
+                <td>TQFP</td>
+                <td>薄型正方扁平</td>
+                <td>0.4-0.8mm</td>
+                <td>DSP、处理器</td>
+              </tr>
+              <tr>
+                <td>BGA</td>
+                <td>球栅阵列</td>
+                <td>0.3-1.0mm</td>
+                <td>CPU、GPU、高密度IC</td>
+              </tr>
+              <tr>
+                <td>QFN</td>
+                <td>方形无引线</td>
+                <td>0.4-0.65mm</td>
+                <td>射频、电源IC</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">通孔封装(THT)</h2>
+          
+          <h3 class="section-subtitle">常见通孔封装</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>封装类型</th>
+                <th>特点</th>
+                <th>引脚间距</th>
+                <th>应用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DIP</td>
+                <td>双列直插</td>
+                <td>2.54mm</td>
+                <td>早期IC、实验板</td>
+              </tr>
+              <tr>
+                <td>PDIP</td>
+                <td>塑料DIP</td>
+                <td>2.54mm</td>
+                <td>通用IC</td>
+              </tr>
+              <tr>
+                <td>CDIP</td>
+                <td>陶瓷DIP</td>
+                <td>2.54mm</td>
+                <td>军工、航天</td>
+              </tr>
+              <tr>
+                <td>TO-220</td>
+                <td>三极管封装</td>
+                <td>2.54mm</td>
+                <td>功率晶体管、稳压器</td>
+              </tr>
+              <tr>
+                <td>TO-3</td>
+                <td>金属封装</td>
+                <td>-</td>
+                <td>大功率器件</td>
+              </tr>
+              <tr>
+                <td>SIP</td>
+                <td>单列直插</td>
+                <td>2.54mm</td>
+                <td>电阻网络</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">集成电路专用封装</h2>
+          
+          <h3 class="section-subtitle">微处理器/SoC封装</h3>
+          <ul class="content-list">
+            <li><strong>PGA</strong>：引脚网格阵列，插针式，用于CPU早期产品</li>
+            <li><strong>LGA</strong>：平面网格阵列，触点式，用于现代CPU</li>
+            <li><strong>mBGA</strong>微型BGA，高密度封装</li>
+            <li><strong>Flip Chip BGA</strong>：倒装芯片BGA，电气性能更好</li>
+          </ul>
+
+          <h3 class="section-subtitle">射频封装</h3>
+          <ul class="content-list">
+            <li><strong>QFN</strong>：方形无引线，寄生参数小</li>
+            <li><strong>LGA</strong>：适用于射频模块</li>
+            <li><strong>Flip Chip</strong>：倒装封装，高频特性好</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">分立器件封装</h2>
+          
+          <h3 class="section-subtitle">晶体管封装</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>封装</th>
+                <th>特点</th>
+                <th>功率等级</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>SOT-23</td><td>3引脚小型</td><td><1W</td></tr>
+              <tr><td>SOT-89</td><td>3引脚功率型</td><td>1-2W</td></tr>
+              <tr><td>SOT-223</td><td>4引脚功率型</td><td>2-5W</td></tr>
+              <tr><td>TO-220</td><td>经典功率封装</td><td>5-50W</td></tr>
+              <tr><td>TO-247</td><td>高压功率</td><td>50-200W</td></tr>
+              <tr><td>TO-3</td><td>大功率金属</td><td>>100W</td></tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">二极管封装</h3>
+          <ul class="content-list">
+            <li><strong>DO-35</strong>：玻璃封装，常用小功率二极管</li>
+            <li><strong>DO-41</strong>：塑料封装，功率稍大</li>
+            <li><strong>DO-201</td><td>整流二极管</li>
+            <li><strong>R-1</strong>：微型整流二极管</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">封装选型考虑</h2>
+          <ul class="content-list">
+            <li><strong>电气性能</strong>：寄生电感、电阻、电容对电路的影响</li>
+            <li><strong>热性能</strong>：散热能力与功耗匹配</li>
+            <li><strong>机械强度</strong>：抗振动、抗冲击能力</li>
+            <li><strong>装配工艺</strong>：SMT还是THT，焊接要求</li>
+            <li><strong>成本</strong>：封装价格与PCB成本</li>
+            <li><strong>维修性</strong>：是否便于更换</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>仿真工具 - PCB设计知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="../design/fundamentals.html" class="nav-link">设计基础</a>
+          <a href="../design/layout.html" class="nav-link">布局设计</a>
+          <a href="../design/routing.html" class="nav-link">布线规则</a>
+          <a href="../design/impedance.html" class="nav-link">阻抗控制</a>
+          <a href="../design/drc.html" class="nav-link">设计规则检查</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../process/fabrication.html" class="nav-link">PCB制造</a>
+          <a href="../process/surface.html" class="nav-link">表面处理</a>
+          <a href="../process/assembly.html" class="nav-link">组装工艺</a>
+          <a href="../process/testing.html" class="nav-link">测试方法</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="../standards/ipc.html" class="nav-link">IPC标准</a>
+          <a href="../standards/gb.html" class="nav-link">国家标准</a>
+          <a href="../standards/design-rules.html" class="nav-link">设计规则</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="software.html" class="nav-link">设计软件</a>
+          <a href="cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="simulation.html" class="nav-link">仿真工具</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="../materials/substrates.html" class="nav-link">基材类型</a>
+          <a href="../materials/copper.html" class="nav-link">铜箔类型</a>
+          <a href="../materials/laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="breadcrumb">
+            <a href="../index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="simulation.html">仿真工具</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">仿真工具</h1>
+          <p class="page-description">PCB信号完整性、电源完整性和热仿真工具。</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">信号完整性仿真</h2>
+          <div class="content-block">
+            <h3>SI仿真内容</h3>
+            <p>信号完整性(Signal Integrity)仿真分析：</p>
+            <ul>
+              <li><strong>反射分析</strong>：阻抗不匹配导致的反射</li>
+              <li><strong>串扰分析</strong>：相邻信号线间的干扰</li>
+              <li><strong>眼图分析</strong>：高速信号质量评估</li>
+              <li><strong>时序分析</strong>：信号延迟和抖动</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>仿真工具</h3>
+            <ul>
+              <li><strong>ADS</strong> - Keysight高级设计系统</li>
+              <li><strong>HyperLynx</strong> - Mentor图形化SI工具</li>
+              <li><strong>Sigwave</strong> - 高速信号仿真</li>
+              <li><strong>CST</strong> - 电磁仿真</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">电源完整性仿真</h2>
+          <div class="content-block">
+            <h3>PI仿真内容</h3>
+            <p>电源完整性(Power Integrity)仿真分析：</p>
+            <ul>
+              <li><strong>IR压降</strong>：电源网络直流压降</li>
+              <li><strong>噪声分析</strong>：电源纹波和噪声</li>
+              <li><strong>谐振分析</strong>：电源平面谐振</li>
+              <li><strong>去耦分析</strong>：电容去耦效果</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>PI仿真流程</h3>
+            <ol>
+              <li>提取电源网络模型</li>
+              <li>设置仿真参数</li>
+              <li>运行仿真分析</li>
+              <li>优化去耦电容</li>
+              <li>验证优化效果</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">热仿真</h2>
+          <div class="content-block">
+            <h3>热分析内容</h3>
+            <p>PCB热仿真帮助优化散热设计：</p>
+            <ul>
+              <li>元件温度分布</li>
+              <li>热传导路径</li>
+              <li>散热效果评估</li>
+              <li>优化散热方案</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>热仿真工具</h3>
+            <ul>
+              <li><strong>ANSYS Icepack</strong> - 电子热分析</li>
+              <li><strong>Flotherm</strong> - 热仿真软件</li>
+              <li><strong>SolidWorks Flow Simulation</strong> - 流体热分析</li>
+              <li><strong>Altium Designer</strong> - 内置热分析</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">EMI/EMC仿真</h2>
+          <div class="content-block">
+            <h3>EMC仿真内容</h3>
+            <p>电磁兼容仿真分析：</p>
+            <ul>
+              <li>辐射发射</li>
+              <li>传导发射</li>
+              <li>抗扰度分析</li>
+              <li>屏蔽效果评估</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>EMC仿真工具</h3>
+            <ul>
+              <li><strong>CST Studio Suite</strong> - 完整EM仿真</li>
+              <li><strong>ANSYS HFSS</strong> - 高频电磁</li>
+              <li><strong>FEKO</strong> - 电磁仿真</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">仿真工具选择</h2>
+          <div class="content-block">
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>应用</th><th>推荐工具</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>SI仿真</td><td>ADS、HyperLynx</td></tr>
+                  <tr><td>PI仿真</td><td>PowerSI、HyperLynx</td></tr>
+                  <tr><td>热仿真</td><td>Icepack、Flotherm</td></tr>
+                  <tr><td>EMC仿真</td><td>CST、HFSS</td></tr>
+                  <tr><td>综合仿真</td><td>ADS、ANSYS</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

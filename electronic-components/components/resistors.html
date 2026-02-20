@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电阻器 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="passive.html" class="nav-item">被动元件</a>
+          <a href="active.html" class="nav-item">主动元件</a>
+          <a href="resistors.html" class="nav-item active">电阻</a>
+          <a href="capacitors.html" class="nav-item">电容</a>
+          <a href="inductors.html" class="nav-item">电感</a>
+          <a href="diodes.html" class="nav-item">二极管</a>
+          <a href="transistors.html" class="nav-item">晶体管</a>
+          <a href="ics.html" class="nav-item">集成电路</a>
+          <a href="connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="passive.html">被动元件</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">电阻器</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">电阻器</h1>
+        <p class="page-subtitle">Resistor - 限制电流、分配电压的基本电子元件</p>
+
+        <div class="section">
+          <h2 class="section-title">什么是电阻器？</h2>
+          <p>电阻器（Resistor）是电子电路中最基本、最常用的被动元件之一。其主要功能是限制电流流动、分配电压，在电路中起到限流、分压、偏置、负载匹配等作用。</p>
+          <p>电阻器遵循欧姆定律：<code>V = IR</code>，即电压等于电流与电阻的乘积。</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">电阻器的分类</h2>
+          
+          <h3 class="section-subtitle">按固定性分类</h3>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">固定电阻</h3>
+              <p class="card-description">阻值固定不可调，包括碳膜电阻、金属膜电阻、线绕电阻、金属氧化膜电阻等。</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">可变电阻</h3>
+              <p class="card-description">阻值可手动调节，包括电位器、微调电位器、可变电阻器等。</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">敏感电阻</h3>
+              <p class="card-description">阻值随外界物理量变化，包括热敏电阻、光敏电阻、压敏电阻、湿敏电阻等。</p>
+            </div>
+          </div>
+
+          <h3 class="section-subtitle">按材料分类</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>类型</th>
+                <th>特点</th>
+                <th>精度</th>
+                <th>典型应用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>碳膜电阻</td>
+                <td>成本低，稳定性一般</td>
+                <td>±5%~±20%</td>
+                <td>一般电子产品</td>
+              </tr>
+              <tr>
+                <td>金属膜电阻</td>
+                <td>精度高，稳定性好，噪声低</td>
+                <td>±0.1%~±2%</td>
+                <td>精密电路、仪表</td>
+              </tr>
+              <tr>
+                <td>线绕电阻</td>
+                <td>功率大，精度高</td>
+                <td>±0.1%~±5%</td>
+                <td>电源、大功率电路</td>
+              </tr>
+              <tr>
+                <td>金属氧化膜电阻</td>
+                <td>耐高温，稳定性好</td>
+                <td>±1%~±5%</td>
+                <td>高压、高温环境</td>
+              </tr>
+              <tr>
+                <td>厚膜/薄膜电阻</td>
+                <td>适合SMT，高频特性好</td>
+                <td>±0.1%~±1%</td>
+                <td>贴片电路</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主要参数</h2>
+          <ul class="content-list">
+            <li><strong>标称阻值</strong>：电阻的额定阻值，通常采用E系列标准</li>
+            <li><strong>允许偏差</strong>：实际阻值与标称阻值的允许偏差范围</li>
+            <li><strong>额定功率</strong>：在额定温度下可连续工作而不损坏的最大功率</li>
+            <li><strong>温度系数(TCR)</strong>：阻值随温度变化的程度，单位ppm/°C</li>
+            <li><strong>耐压</strong>：电阻可承受的最大工作电压</li>
+            <li><strong>噪声</strong>：电阻工作时产生的热噪声和电流噪声</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">色环标识</h2>
+          <p>通过电阻器上的色环可以读取其阻值和精度：</p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>颜色</th>
+                <th>第一位</th>
+                <th>第二位</th>
+                <th>倍乘</th>
+                <th>误差</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>黑</td><td>0</td><td>0</td><td>10⁰</td><td>-</td></tr>
+              <tr><td>棕</td><td>1</td><td>1</td><td>10¹</td><td>±1%</td></tr>
+              <tr><td>红</td><td>2</td><td>2</td><td>10²</td><td>±2%</td></tr>
+              <tr><td>橙</td><td>3</td><td>3</td><td>10³</td><td>±3%</td></tr>
+              <tr><td>黄</td><td>4</td><td>4</td><td>10⁴</td><td>±4%</td></tr>
+              <tr><td>绿</td><td>5</td><td>5</td><td>10⁵</td><td>±0.5%</td></tr>
+              <tr><td>蓝</td><td>6</td><td>6</td><td>10⁶</td><td>±0.25%</td></tr>
+              <tr><td>紫</td><td>7</td><td>7</td><td>10⁷</td><td>±0.1%</td></tr>
+              <tr><td>灰</td><td>8</td><td>8</td><td>10⁸</td><td>±0.05%</td></tr>
+              <tr><td>白</td><td>9</td><td>9</td><td>10⁹</td><td>-</td></tr>
+              <tr><td>金</td><td>-</td><td>-</td><td>10⁻¹</td><td>±5%</td></tr>
+              <tr><td>银</td><td>-</td><td>-</td><td>10⁻²</td><td>±10%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">敏感电阻</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">热敏电阻(NTC/PTC)</h3>
+              <p class="card-description">NTC负温度系数电阻随温度升高阻值下降；PTC正温度系数电阻随温度升高阻值上升。用于温度补偿和过流保护。</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">光敏电阻(LDR)</h3>
+              <p class="card-description">光照强度增加时阻值减小。用于光控开关、光强测量等。</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">压敏电阻(VDR)</h3>
+              <p class="card-description">电压超过阈值时阻值急剧下降。用于过压保护和浪涌抑制。</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">湿敏电阻</h3>
+              <p class="card-description">随湿度变化阻值。用于湿度传感器。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">选型要点</h2>
+          <ul class="content-list">
+            <li>根据电路需求确定阻值和功率</li>
+            <li>精密电路选择金属膜电阻，一般电路可用碳膜电阻</li>
+            <li>大功率场合选择线绕电阻</li>
+            <li>高频电路注意寄生电感和分布电容</li>
+            <li>温度敏感电路选择低TCR电阻</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

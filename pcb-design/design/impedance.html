@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阻抗控制 - PCB设计知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="fundamentals.html" class="nav-link">设计基础</a>
+          <a href="layout.html" class="nav-link">布局设计</a>
+          <a href="routing.html" class="nav-link">布线规则</a>
+          <a href="impedance.html" class="nav-link">阻抗控制</a>
+          <a href="drc.html" class="nav-link">设计规则检查</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../process/fabrication.html" class="nav-link">PCB制造</a>
+          <a href="../process/surface.html" class="nav-link">表面处理</a>
+          <a href="../process/assembly.html" class="nav-link">组装工艺</a>
+          <a href="../process/testing.html" class="nav-link">测试方法</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="../standards/ipc.html" class="nav-link">IPC标准</a>
+          <a href="../standards/gb.html" class="nav-link">国家标准</a>
+          <a href="../standards/design-rules.html" class="nav-link">设计规则</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="../tools/software.html" class="nav-link">设计软件</a>
+          <a href="../tools/cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="../tools/simulation.html" class="nav-link">仿真工具</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="../materials/substrates.html" class="nav-link">基材类型</a>
+          <a href="../materials/copper.html" class="nav-link">铜箔类型</a>
+          <a href="../materials/laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="breadcrumb">
+            <a href="../index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="impedance.html">阻抗控制</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">阻抗控制</h1>
+          <p class="page-description">掌握PCB阻抗控制技术，包括单端阻抗、差分阻抗的计算与设计，以及信号完整性分析。</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">传输线理论基础</h2>
+          <div class="content-block">
+            <h3>为什么需要阻抗控制</h3>
+            <p>当信号频率超过50MHz时，走线不再只是简单的导线，而是表现为传输线特性。阻抗不匹配会导致：</p>
+            <ul>
+              <li><strong>信号反射</strong>：信号在阻抗突变处产生反射</li>
+              <li><strong>振铃现象</strong>：多次反射导致信号过冲和下冲</li>
+              <li><strong>信号失真</strong>：高频分量衰减导致波形畸变</li>
+              <li><strong>EMI问题</strong>：高速边沿产生电磁辐射</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>传输线特性阻抗</h3>
+            <p>特性阻抗(Z0)是传输线的固有特性，与长度无关，由传输线的几何结构和材料决定：</p>
+            <pre><code>Z0 = √(L/C)
+
+其中：
+L = 单位长度电感 (nH/inch)
+C = 单位长度电容 (pF/inch)</code></pre>
+            <div class="info-box info">
+              <div class="info-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                典型阻抗值
+              </div>
+              <p>常见的特性阻抗值有50Ω、75Ω、90Ω、100Ω等。USB、HDMI等高速接口都有标准的阻抗要求。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">微带线阻抗计算</h2>
+          <div class="content-block">
+            <h3>微带线结构</h3>
+            <p>微带线是PCB表层最常见的走线形式，由导体带和相邻的地平面组成：</p>
+            <ul>
+              <li><strong>W</strong>：走线宽度</li>
+              <li><strong>T</strong>：走线铜厚</li>
+              <li><strong>H</strong>：走线到参考平面的距离</li>
+              <li><strong>Er</strong>：介质材料的相对介电常数</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>微带线阻抗计算公式</h3>
+            <p>对于窄微带线(W/H < 1)：</p>
+            <pre><code>Z0 = (60/√Er) × ln(8H/W + W/4H)</code></pre>
+            <p>对于宽微带线(W/H > 1)：</p>
+            <pre><code>Z0 = (120π) / [√Er × (W/H + 1.393 + 0.667 × ln(W/H + 1.444))]</code></pre>
+          </div>
+
+          <div class="content-block">
+            <h3>影响微带线阻抗的因素</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>参数</th><th>增大时阻抗变化</th><th>原因</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>线宽W</td><td>减小</td><td>电容增大</td></tr>
+                  <tr><td>介质厚度H</td><td>增大</td><td>电容减小</td></tr>
+                  <tr><td>介电常数Er</td><td>减小</td><td>电容增大</td></tr>
+                  <tr><td>铜厚T</td><td>减小</td><td>电容增大</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">差分阻抗</h2>
+          <div class="content-block">
+            <h3>差分阻抗定义</h3>
+            <p>差分阻抗是差分信号对的特性阻抗。对于紧耦合的差分对：</p>
+            <pre><code>Zdiff = 2 × Z0 × (1 - k)
+
+其中：
+Z0 = 单线特性阻抗
+k = 耦合系数 (通常0.2-0.5)</code></pre>
+            <p>简化计算可使用：</p>
+            <pre><code>Zdiff ≈ 2 × Z0</code></pre>
+          </div>
+
+          <div class="content-block">
+            <h3>常见接口的差分阻抗要求</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>接口标准</th><th>差分阻抗</th><th>单端阻抗</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>USB 2.0</td><td>90Ω ± 10%</td><td>45Ω</td></tr>
+                  <tr><td>USB 3.0</td><td>90Ω ± 10%</td><td>45Ω</td></tr>
+                  <tr><td>HDMI 1.4</td><td>100Ω ± 15%</td><td>50Ω</td></tr>
+                  <tr><td>DisplayPort</td><td>100Ω ± 15%</td><td>50Ω</td></tr>
+                  <tr><td>Ethernet</td><td>100Ω ± 10%</td><td>50Ω</td></tr>
+                  <tr><td>LVDS</td><td>100Ω ± 10%</td><td>50Ω</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">阻抗控制设计</h2>
+          <div class="content-block">
+            <h3>层叠结构设计</h3>
+            <p>阻抗控制需要精确的层叠结构设计：</p>
+            <ol>
+              <li>确定PCB总厚度</li>
+              <li>选择合适的介质材料</li>
+              <li>计算各层的介质厚度</li>
+              <li>确定铜厚</li>
+              <li>验证阻抗计算结果</li>
+            </ol>
+          </div>
+
+          <div class="content-block">
+            <h3>阻抗公差控制</h3>
+            <p>实际制造中的阻抗偏差控制：</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>应用场景</th><th>阻抗公差</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>普通数字信号</td><td>± 20%</td></tr>
+                  <tr><td>高速信号</td><td>± 10%</td></tr>
+                  <tr><td>严格阻抗控制</td><td>± 5%</td></tr>
+                  <tr><td>射频应用</td><td>± 2%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="content-block">
+            <h3>阻抗计算工具</h3>
+            <p>业界常用的阻抗计算工具：</p>
+            <ul>
+              <li><strong>Si9000</strong>：最流行的商用阻抗计算软件</li>
+              <li><strong>Polar</strong>：专业的阻抗和DFM分析工具</li>
+              <li><strong>ADS</strong>：Keysight的先进设计系统</li>
+              <li><strong>PCB设计软件</strong>：Altium、Cadence内置阻抗计算</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">信号完整性分析</h2>
+          <div class="content-block">
+            <h3>SI分析内容</h3>
+            <p>信号完整性(Signal Integrity)分析包括：</p>
+            <ul>
+              <li><strong>反射分析</strong>：检查阻抗不匹配点</li>
+              <li><strong>串扰分析</strong>：评估相邻信号间的干扰</li>
+              <li><strong>时序分析</strong>：验证信号时序关系</li>
+              <li><strong>眼图分析</strong>：评估高速信号质量</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>电源完整性分析</h3>
+            <p>电源完整性(Power Integrity)关注：</p>
+            <ul>
+              <li><strong>IR压降</strong>：电源分配网络的直流压降</li>
+              <li><strong>噪声分析</strong>：电源纹波和噪声</li>
+              <li><strong>谐振分析</strong>：电源平面谐振问题</li>
+              <li><strong>去耦分析</strong>：去耦电容有效性</li>
+            </ul>
+            <div class="info-box warning">
+              <div class="info-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                PI问题症状
+              </div>
+              <p>电源完整性问题可能导致IC工作异常、复位、时钟抖动等问题。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

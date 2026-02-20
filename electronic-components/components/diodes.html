@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>二极管 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="passive.html" class="nav-item">被动元件</a>
+          <a href="active.html" class="nav-item">主动元件</a>
+          <a href="resistors.html" class="nav-item">电阻</a>
+          <a href="capacitors.html" class="nav-item">电容</a>
+          <a href="inductors.html" class="nav-item">电感</a>
+          <a href="diodes.html" class="nav-item active">二极管</a>
+          <a href="transistors.html" class="nav-item">晶体管</a>
+          <a href="ics.html" class="nav-item">集成电路</a>
+          <a href="connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="active.html">主动元件</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">二极管</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">二极管</h1>
+        <p class="page-subtitle">Diode - 具有单向导电特性的半导体器件</p>
+
+        <div class="section">
+          <h2 class="section-title">什么是二极管？</h2>
+          <p>二极管（Diode）是一种具有单向导电特性的半导体器件，由PN结构成。当P区接正、N区接负时（正向偏置），电流可以通过；当反向偏置时，电流几乎不通过。</p>
+          <div class="alert alert-info">
+            <strong>PN结：</strong>由P型半导体和N型半导体结合形成，是二极管的核心结构。
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">二极管的分类</h2>
+          
+          <h3 class="section-subtitle">按用途分类</h3>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">整流二极管</h3>
+              <p class="card-description">用于将交流电转换为直流电，具有较高的正向电流和耐压能力</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">稳压二极管(齐纳管)</h3>
+              <p class="card-description">工作在反向击穿区，提供稳定的参考电压</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">发光二极管(LED)</h3>
+              <p class="card-description">通电时发出可见光或红外光，广泛用于指示和照明</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">肖特基二极管</h3>
+              <p class="card-description">金属-半导体结，正向压降低，开关速度快</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">快恢复二极管</h3>
+              <p class="card-description">恢复时间短，用于高频整流和开关电路</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">TVS二极管</h3>
+              <p class="card-description">瞬态电压抑制，用于ESD保护和浪涌防护</p>
+            </div>
+          </div>
+
+          <h3 class="section-subtitle">按材料分类</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>材料</th>
+                <th>正向压降</th>
+                <th>反向耐压</th>
+                <th>特点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>硅(Si)</td>
+                <td>0.6~1V</td>
+                <td>高</td>
+                <td>最常用</td>
+              </tr>
+              <tr>
+                <td>锗(Ge)</td>
+                <td>0.2~0.4V</td>
+                <td>低</td>
+                <td>正向压降低，较少用</td>
+              </tr>
+              <tr>
+                <td>砷化镓(GaAs)</td>
+                <td>1~1.5V</td>
+                <td>中</td>
+                <td>高频、光电</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主要参数</h2>
+          <ul class="content-list">
+            <li><strong>正向电流(IF)</strong>：最大正向平均电流</li>
+            <li><strong>正向压降(VF)</strong>：正向导通时的电压降</li>
+            <li><strong>反向耐压(VR)</strong>：最大允许反向电压</li>
+            <li><strong>反向漏电流(IR)</strong>：反向偏置时的漏电流</li>
+            <li><strong>恢复时间(trr)</strong>：开关二极管从导通到截止的时间</li>
+            <li><strong>稳压值(VZ)</strong>：稳压管的稳定电压</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">常见应用电路</h2>
+          <ul class="content-list">
+            <li><strong>整流电路</strong>：桥式整流、全波整流将AC转为DC</li>
+            <li><strong>稳压电路</strong>：稳压管提供参考电压</li>
+            <li><strong>保护电路</strong>：二极管并联在线圈两端抑制反电动势</li>
+            <li><strong>限幅电路</strong>：限制信号幅度</li>
+            <li><strong>开关电路</strong>：高速开关控制</li>
+            <li><strong>LED驱动</strong>：指示灯和照明</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">特殊二极管</h2>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>类型</th>
+                <th>符号</th>
+                <th>主要应用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>变容二极管</td>
+                <td>电容随电压变化</td>
+                <td>调谐电路、压控振荡器</td>
+              </tr>
+              <tr>
+                <td>隧道二极管</td>
+                <td>负阻特性</td>
+                <td>高频振荡、微波电路</td>
+              </tr>
+              <tr>
+                <td>PIN二极管</td>
+                <td>I层高阻特性</td>
+                <td>射频开关、衰减器</td>
+              </tr>
+              <tr>
+                <td>光电二极管</td>
+                <td>光生电流</td>
+                <td>光检测、光纤通信</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">选型要点</h2>
+          <ul class="content-list">
+            <li>根据电路需求选择正向电流和反向耐压</li>
+            <li>高频电路选择快恢复或肖特基二极管</li>
+            <li>稳压电路选择精度高的稳压管</li>
+            <li>注意正向压降对效率的影响</li>
+            <li>功率电路注意散热</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

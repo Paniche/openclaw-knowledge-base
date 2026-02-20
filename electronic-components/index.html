@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电子元器件知识库 - 电子工程必备参考指南</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+          </svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            首页
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="components/passive.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            被动元件
+          </a>
+          <a href="components/active.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+            主动元件
+          </a>
+          <a href="components/resistors.html" class="nav-item">电阻</a>
+          <a href="components/capacitors.html" class="nav-item">电容</a>
+          <a href="components/inductors.html" class="nav-item">电感</a>
+          <a href="components/diodes.html" class="nav-item">二极管</a>
+          <a href="components/transistors.html" class="nav-item">晶体管</a>
+          <a href="components/ics.html" class="nav-item">集成电路</a>
+          <a href="components/connectors.html" class="nav-item">连接器</a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="basics/principles.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+            电学原理
+          </a>
+          <a href="basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="manufacturing/process.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+            制造流程
+          </a>
+          <a href="manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="standards/international.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            国际标准
+          </a>
+          <a href="standards/national.html" class="nav-item">国家标准</a>
+          <a href="standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="quality/grades.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+            质量等级
+          </a>
+          <a href="quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+
+      <button class="theme-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+        深色模式
+      </button>
+    </aside>
+
+    <div class="sidebar-overlay"></div>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav class="breadcrumb">
+          <span class="breadcrumb-current">首页</span>
+        </nav>
+      </header>
+
+      <div class="content-wrapper">
+        <h1 class="page-title">电子元器件知识库</h1>
+        <p class="page-subtitle">全面的电子元器件参考指南，涵盖分类、原理、标准及质量等级</p>
+
+        <div class="section">
+          <h2 class="section-title">欢迎使用</h2>
+          <p>本知识库旨在为电子工程师、电气工程学生和电子爱好者提供全面、准确的电子元器件参考资料。内容包括元器件分类、基本原理、制造工艺、执行标准和质量保证体系。</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">快速导航</h2>
+          <div class="card-grid">
+            <div class="card">
+              <div class="category-icon blue">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="card-title">被动元件</h3>
+              <p class="card-description">电阻、电容、电感等无需外部电源驱动的元件</p>
+              <a href="components/passive.html" class="card-link">了解更多 →</a>
+            </div>
+
+            <div class="card">
+              <div class="category-icon green">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+              </div>
+              <h3 class="card-title">主动元件</h3>
+              <p class="card-description">晶体管、集成电路等需要外部电源驱动的元件</p>
+              <a href="components/active.html" class="card-link">了解更多 →</a>
+            </div>
+
+            <div class="card">
+              <div class="category-icon purple">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 class="card-title">基础知识</h3>
+              <p class="card-description">电学原理、电路符号、参数解读和封装类型</p>
+              <a href="basics/principles.html" class="card-link">了解更多 →</a>
+            </div>
+
+            <div class="card">
+              <div class="category-icon orange">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+              <h3 class="card-title">制造工艺</h3>
+              <p class="card-description">从原材料到成品的完整制造流程</p>
+              <a href="manufacturing/process.html" class="card-link">了解更多 →</a>
+            </div>
+
+            <div class="card">
+              <div class="category-icon blue">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="card-title">执行标准</h3>
+              <p class="card-description">国际、国家和行业标准规范</p>
+              <a href="standards/international.html" class="card-link">了解更多 →</a>
+            </div>
+
+            <div class="card">
+              <div class="category-icon green">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <h3 class="card-title">质量等级</h3>
+              <p class="card-description">从消费级到宇航级的质量等级体系</p>
+              <a href="quality/grades.html" class="card-link">了解更多 →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">常见元器件</h2>
+          <div class="card-grid">
+            <a href="components/resistors.html" class="card" style="display:block">
+              <h3 class="card-title">电阻器</h3>
+              <p class="card-description">限制电流、分配电压的被动元件</p>
+            </a>
+            <a href="components/capacitors.html" class="card" style="display:block">
+              <h3 class="card-title">电容器</h3>
+              <p class="card-description">储存电荷的被动元件</p>
+            </a>
+            <a href="components/inductors.html" class="card" style="display:block">
+              <h3 class="card-title">电感器</h3>
+              <p class="card-description">储存磁场能量的被动元件</p>
+            </a>
+            <a href="components/diodes.html" class="card" style="display:block">
+              <h3 class="card-title">二极管</h3>
+              <p class="card-description">单向导电的半导体器件</p>
+            </a>
+            <a href="components/transistors.html" class="card" style="display:block">
+              <h3 class="card-title">晶体管</h3>
+              <p class="card-description">放大和开关功能的半导体器件</p>
+            </a>
+            <a href="components/ics.html" class="card" style="display:block">
+              <h3 class="card-title">集成电路</h3>
+              <p class="card-description">将多个电子元件集成在芯片上</p>
+            </a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <p>电子元器件知识库 - 持续更新中</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <button class="back-to-top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

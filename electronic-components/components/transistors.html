@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晶体管 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="passive.html" class="nav-item">被动元件</a>
+          <a href="active.html" class="nav-item">主动元件</a>
+          <a href="resistors.html" class="nav-item">电阻</a>
+          <a href="capacitors.html" class="nav-item">电容</a>
+          <a href="inductors.html" class="nav-item">电感</a>
+          <a href="diodes.html" class="nav-item">二极管</a>
+          <a href="transistors.html" class="nav-item active">晶体管</a>
+          <a href="ics.html" class="nav-item">集成电路</a>
+          <a href="connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="active.html">主动元件</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">晶体管</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">晶体管</h1>
+        <p class="page-subtitle">Transistor - 具有放大和开关功能的半导体器件</p>
+
+        <div class="section">
+          <h2 class="section-title">什么是晶体管？</h2>
+          <p>晶体管（Transistor）是现代电子工业最核心的半导体器件，具有放大电信号和作为电子开关的功能。它是集成电路的基本构建块，支撑着整个现代电子技术的发展。</p>
+          <div class="alert alert-info">
+            <strong>历史意义：</strong>晶体管的发明标志着电子工业从真空管时代进入半导体时代，使电子设备小型化、低功耗化成为可能。
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">晶体管的分类</h2>
+          
+          <h3 class="section-subtitle">双极晶体管(BJT)</h3>
+          <p>利用电子和空穴两种载流子导电的晶体管，分为NPN和PNP两种类型。</p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>类型</th>
+                <th>结构</th>
+                <th>控制方式</th>
+                <th>特点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NPN</td>
+                <td>P区夹在两个N区之间</td>
+                <td>电流控制</td>
+                <td>常见类型，电子为多数载流子</td>
+              </tr>
+              <tr>
+                <td>PNP</td>
+                <td>N区夹在两个P区之间</td>
+                <td>电流控制</td>
+                <td>空穴为多数载流子</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">场效应晶体管(FET)</h3>
+          <p>利用电场效应控制导电沟道的晶体管，分为MOSFET、JFET等。</p>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">MOSFET</h3>
+              <p class="card-description">金属-氧化物-半导体场效应管，电压控制型，输入阻抗极高，分为N沟道和P沟道</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">JFET</h3>
+              <p class="card-description">结型场效应管，利用PN结耗尽区控制沟道</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">IGBT</h3>
+              <p class="card-description">绝缘栅双极晶体管，结合BJT和MOSFET优点，用于高压大电流场合</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">BJT主要参数</h2>
+          <ul class="content-list">
+            <li><strong>集电极-发射极电压(VCEO)</strong>：集电极和发射极之间的最大耐压</li>
+            <li><strong>集电极电流(IC)</strong>：最大允许集电极电流</li>
+            <li><strong>直流电流放大系数(hFE)</strong>：集电极电流与基极电流的比值</li>
+            <li><strong>特征频率(fT)</strong>：放大系数下降到1时的频率，表示高频特性</li>
+            <li><strong>饱和压降(VCEsat)</strong>：饱和导通时集电极-发射极之间的压降</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">MOSFET主要参数</h2>
+          <ul class="content-list">
+            <li><strong>漏极-源极电压(VDS)</strong>：漏极和源极之间的最大耐压</li>
+            <li><strong>漏极电流(ID)</strong>：最大允许漏极电流</li>
+            <li><strong>栅极-源极阈值电压(VGSth)</strong>：开始导通的栅极电压</li>
+            <li><strong>RDS(on)</strong>：导通时的漏-源电阻，越小越好</li>
+            <li><strong>栅极电荷(Qg)</strong>：开关速度相关参数</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主要应用</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">放大电路</h3>
+              <p class="card-description">音频放大、射频放大、信号调理</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">开关电路</h3>
+              <p class="card-description">数字逻辑、继电器驱动、电机控制</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">电源管理</h3>
+              <p class="card-description">DC-DC转换器、稳压器、开关电源</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">模拟电路</h3>
+              <p class="card-description">运算放大器输入级、电流镜、偏置电路</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">BJT vs MOSFET</h2>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>特性</th>
+                <th>BJT</th>
+                <th>MOSFET</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>控制方式</td>
+                <td>电流控制</td>
+                <td>电压控制</td>
+              </tr>
+              <tr>
+                <td>输入阻抗</td>
+                <td>中</td>
+                <td>极高</td>
+              </tr>
+              <tr>
+                <td>驱动功耗</td>
+                <td>较大</td>
+                <td>极小</td>
+              </tr>
+              <tr>
+                <td>开关速度</td>
+                <td>中等</td>
+                <td>快</td>
+              </tr>
+              <tr>
+                <td>导通损耗</td>
+                <td>Vce饱和压降</td>
+                <td>Rds(on)×Id</td>
+              </tr>
+              <tr>
+                <td>适用场合</td>
+                <td>低电压小电流放大</td>
+                <td>高压大电流开关</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">选型要点</h2>
+          <ul class="content-list">
+            <li>根据电压电流需求选择合适的规格</li>
+            <li>高频应用关注fT或开关速度参数</li>
+            <li>功率应用注意散热设计</li>
+            <li>BJT注意hFE的分布和温度特性</li>
+            <li>MOSFET注意Rds(on)和栅极电荷</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

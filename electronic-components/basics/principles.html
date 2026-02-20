@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基本电学原理 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="../components/passive.html" class="nav-item">被动元件</a>
+          <a href="../components/active.html" class="nav-item">主动元件</a>
+          <a href="../components/resistors.html" class="nav-item">电阻</a>
+          <a href="../components/capacitors.html" class="nav-item">电容</a>
+          <a href="../components/inductors.html" class="nav-item">电感</a>
+          <a href="../components/diodes.html" class="nav-item">二极管</a>
+          <a href="../components/transistors.html" class="nav-item">晶体管</a>
+          <a href="../components/ics.html" class="nav-item">集成电路</a>
+          <a href="../components/connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="principles.html" class="nav-item active">电学原理</a>
+          <a href="symbols.html" class="nav-item">电路符号</a>
+          <a href="parameters.html" class="nav-item">参数解读</a>
+          <a href="packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">基本电学原理</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">基本电学原理</h1>
+        <p class="page-subtitle">Fundamental Electrical Principles - 电子学基础理论</p>
+
+        <div class="section">
+          <h2 class="section-title">欧姆定律</h2>
+          <p>欧姆定律是电学中最基本的定律，描述了电压、电流和电阻之间的关系。</p>
+          <div class="code-block">
+            <pre>V = I × R
+
+其中：
+V = 电压 (伏特, V)
+I = 电流 (安培, A)
+R = 电阻 (欧姆, Ω)</pre>
+          </div>
+          <p>欧姆定律的变形形式：</p>
+          <ul class="content-list">
+            <li><code>I = V / R</code> - 电流等于电压除以电阻</li>
+            <li><code>R = V / I</code> - 电阻等于电压除以电流</li>
+          </ul>
+          <div class="alert alert-info">
+            <strong>适用条件：</strong>欧姆定律适用于线性电阻，即电阻值不随电压或电流变化的元件。
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">基尔霍夫定律</h2>
+          
+          <h3 class="section-subtitle">基尔霍夫电流定律(KCL)</h3>
+          <p>在任意时刻，流入节点的电流之和等于流出节点的电流之和。</p>
+          <div class="code-block">
+            <pre>∑I_in = ∑I_out
+
+例如：I1 + I2 = I3 + I4</pre>
+          </div>
+
+          <h3 class="section-subtitle">基尔霍夫电压定律(KVL)</h3>
+          <p>在任意闭合回路中，电压降之和等于电压升之和。</p>
+          <div class="code-block">
+            <pre>∑V_drop = ∑V_rise
+
+例如：V1 + V2 + V3 = V_source</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">功率和能量</h2>
+          <p>电功率是单位时间内所做的电功。</p>
+          <div class="code-block">
+            <pre>P = V × I = I² × R = V² / R
+
+其中：
+P = 功率 (瓦特, W)
+V = 电压 (伏特, V)
+I = 电流 (安培, A)
+R = 电阻 (欧姆, Ω)</pre>
+          </div>
+          <p>电能计算：</p>
+          <div class="code-block">
+            <pre>W = P × t = V × I × t
+
+其中：
+W = 电能 (焦耳, J)
+P = 功率 (瓦特, W)
+t = 时间 (秒, s)
+
+常用单位换算：
+1 kWh = 3.6 × 10^6 J</pre>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">电阻串并联</h2>
+          
+          <h3 class="section-subtitle">串联电阻</h3>
+          <div class="code-block">
+            <pre>R_total = R1 + R2 + R3 + ... + Rn</pre>
+          </div>
+          <ul class="content-list">
+            <li>总电阻等于各电阻之和</li>
+            <li>电流处处相等</li>
+            <li>电压按电阻值分配</li>
+          </ul>
+
+          <h3 class="section-subtitle">并联电阻</h3>
+          <div class="code-block">
+            <pre>1/R_total = 1/R1 + 1/R2 + 1/R3 + ... + 1/Rn
+
+或等效为：
+R_total = R1 × R2 / (R1 + R2)  (仅适用于两个电阻)</pre>
+          </div>
+          <ul class="content-list">
+            <li>总电阻小于最小的单个电阻</li>
+            <li>电压处处相等</li>
+            <li>电流按电阻值分配</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">电容特性</h2>
+          <p>电容器储存电荷的能力用电容值表示。</p>
+          <div class="code-block">
+            <pre>C = Q / V
+
+其中：
+C = 电容 (法拉, F)
+Q = 电荷量 (库仑, C)
+V = 电压 (伏特, V)
+
+常用单位：
+1 F = 10^6 μF = 10^9 nF = 10^12 pF</pre>
+          </div>
+          <ul class="content-list">
+            <li><strong>容抗</strong>：<code>Xc = 1 / (2πfC)</code> - 电容对交流电的阻碍作用</li>
+            <li><strong>储能</strong>：<code>W = ½CV²</code> - 电容器储存的能量</li>
+            <li><strong>隔直流通交流</strong> - 电容允许交流通过，阻断直流</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">电感特性</h2>
+          <p>电感器储存磁场能量的能力用电感量表示。</p>
+          <div class="code-block">
+            <pre>V = L × (dI/dt)
+
+其中：
+L = 电感 (亨利, H)
+V = 电压 (伏特, V)
+dI/dt = 电流变化率 (A/s)
+
+常用单位：
+1 H = 10^3 mH = 10^6 μH</pre>
+          </div>
+          <ul class="content-list">
+            <li><strong>感抗</strong>：<code>Xl = 2πfL</code> - 电感对交流电的阻碍作用</li>
+            <li><strong>储能</strong>：<code>W = ½LI²</code> - 电感储存的能量</li>
+            <li><strong>阻交流通直流</strong> - 电感阻碍交流通过，允许直流通过</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">RC和RL时间常数</h2>
+          
+          <h3 class="section-subtitle">RC时间常数</h3>
+          <div class="code-block">
+            <pre>τ = R × C
+
+其中：
+τ = 时间常数 (秒, s)
+R = 电阻 (欧姆, Ω)
+C = 电容 (法拉, F)
+
+充电/放电过程：
+- 5τ后达到最终值的99.3%
+- 3τ后达到最终值的95%</pre>
+          </div>
+
+          <h3 class="section-subtitle">RL时间常数</h3>
+          <div class="code-block">
+            <pre>τ = L / R
+
+其中：
+τ = 时间常数 (秒, s)
+L = 电感 (亨利, H)
+R = 电阻 (欧姆, Ω)</pre>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

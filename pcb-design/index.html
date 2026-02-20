@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCB设计知识库 - 完整的PCB设计与制造指南</title>
+  <meta name="description" content="PCB设计知识库，包含PCB设计基础、制造工艺、设计规范、设计工具和材料选择的完整指南。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="design/fundamentals.html" class="nav-link">设计基础</a>
+          <a href="design/layout.html" class="nav-link">布局设计</a>
+          <a href="design/routing.html" class="nav-link">布线规则</a>
+          <a href="design/impedance.html" class="nav-link">阻抗控制</a>
+          <a href="design/drc.html" class="nav-link">设计规则检查</a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="process/fabrication.html" class="nav-link">PCB制造</a>
+          <a href="process/surface.html" class="nav-link">表面处理</a>
+          <a href="process/assembly.html" class="nav-link">组装工艺</a>
+          <a href="process/testing.html" class="nav-link">测试方法</a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="standards/ipc.html" class="nav-link">IPC标准</a>
+          <a href="standards/gb.html" class="nav-link">国家标准</a>
+          <a href="standards/design-rules.html" class="nav-link">设计规则</a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="tools/software.html" class="nav-link">设计软件</a>
+          <a href="tools/cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="tools/simulation.html" class="nav-link">仿真工具</a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="materials/substrates.html" class="nav-link">基材类型</a>
+          <a href="materials/copper.html" class="nav-link">铜箔类型</a>
+          <a href="materials/laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+          <nav class="breadcrumb">
+            <span class="breadcrumb-separator">/</span>
+            <span>首页</span>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">PCB设计知识库</h1>
+          <p class="page-description">完整的PCB设计与制造知识指南，从设计基础到制造工艺，从设计规范到工具材料，为PCB工程师提供全面的学习参考。</p>
+        </div>
+
+        <div class="card-grid stagger-children">
+          <a href="design/fundamentals.html" class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="card-title">PCB设计基础</h3>
+            <p class="card-description">PCB层叠结构、设计流程、布局布线原则等核心概念</p>
+            <span class="card-link">了解更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </a>
+
+          <a href="process/fabrication.html" class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="card-title">制造工艺</h3>
+            <p class="card-description">PCB制造流程、表面处理工艺、组装与测试方法</p>
+            <span class="card-link">了解更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </a>
+
+          <a href="standards/ipc.html" class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3 class="card-title">设计规范</h3>
+            <p class="card-description">IPC标准体系、国家标准、通用设计规则详解</p>
+            <span class="card-link">了解更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </a>
+
+          <a href="tools/software.html" class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3 class="card-title">设计工具</h3>
+            <p class="card-description">主流PCB设计软件、CAD操作指南、仿真工具</p>
+            <span class="card-link">了解更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </a>
+
+          <a href="materials/substrates.html" class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3 class="card-title">材料</h3>
+            <p class="card-description">基材类型、铜箔选择、覆铜板关键参数详解</p>
+            <span class="card-link">了解更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </a>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">快速导航</h2>
+          <div class="content-block">
+            <h3>设计流程概览</h3>
+            <p>PCB设计是一个系统性的工程过程，需要遵循严谨的流程以确保产品质量。从需求分析到最终交付，主要包括以下几个阶段：</p>
+            <ol>
+              <li><strong>需求分析</strong>：确定PCB的层数、尺寸、层叠结构、电气性能要求</li>
+              <li><strong>原理图设计</strong>：绘制电路原理图，创建网表，进行电气规则检查</li>
+              <li><strong>封装库准备</strong>：创建或确认所有元件的封装</li>
+              <li><strong>布局设计</strong>：元件摆放，考虑热管理、EMC、信号完整性等因素</li>
+              <li><strong>布线设计</strong>：完成信号线、电源线、地线的布线工作</li>
+              <li><strong>设计验证</strong>：DRC检查、DFM分析、SI/PI仿真</li>
+              <li><strong>输出文件</strong>：生成Gerber文件、装配图、钻孔文件等</li>
+            </ol>
+            <div class="info-box info">
+              <div class="info-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                提示
+              </div>
+              <p>建议在设计初期就与制造商沟通，了解其生产能力与设计规范，避免后期返工。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">热门主题</h2>
+          <div class="card-grid">
+            <div class="content-block">
+              <h4>阻抗控制</h4>
+              <p>高速电路设计中，阻抗控制是确保信号完整性的关键。了解单端阻抗与差分阻抗的计算与控制方法。</p>
+            </div>
+            <div class="content-block">
+              <h4>高速布线</h4>
+              <p>掌握高速信号的布线规则，包括布线层选择、长度匹配、间距控制等关键技术。</p>
+            </div>
+            <div class="content-block">
+              <h4>DFM可制造性设计</h4>
+              <p>从制造角度优化设计，了解PCB制造与SMT组装的工艺限制与最佳实践。</p>
+            </div>
+            <div class="content-block">
+              <h4>PCB材料选择</h4>
+              <p>根据应用场景选择合适的基材，包括FR-4、高频材料、金属基板等。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

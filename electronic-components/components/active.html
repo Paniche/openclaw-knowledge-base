@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>主动元件 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="passive.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            被动元件
+          </a>
+          <a href="active.html" class="nav-item active">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+            主动元件
+          </a>
+          <a href="resistors.html" class="nav-item">电阻</a>
+          <a href="capacitors.html" class="nav-item">电容</a>
+          <a href="inductors.html" class="nav-item">电感</a>
+          <a href="diodes.html" class="nav-item">二极管</a>
+          <a href="transistors.html" class="nav-item">晶体管</a>
+          <a href="ics.html" class="nav-item">集成电路</a>
+          <a href="connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">主动元件</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">主动元件</h1>
+        <p class="page-subtitle">Active Components - 需要外部电源驱动的电子元件</p>
+
+        <div class="section">
+          <h2 class="section-title">什么是主动元件？</h2>
+          <p>主动元件（Active Components）是指那些需要外部电源驱动才能工作，并且能够对电信号进行放大、开关、调制等处理的电子元件。与被动元件不同，主动元件可以产生能量增益。</p>
+          <div class="alert alert-info">
+            <strong>核心特点：</strong>主动元件需要供电才能工作，具有信号放大和处理能力，是现代电子电路的核心组成部分。
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主要主动元件类型</h2>
+          
+          <h3 class="section-subtitle">二极管 (Diode)</h3>
+          <p>具有单向导电特性的半导体器件。</p>
+          <ul class="content-list">
+            <li><strong>整流二极管</strong>：用于交流转直流</li>
+            <li><strong>稳压二极管</strong>：用于电压基准</li>
+            <li><strong>发光二极管(LED)</strong>：用于指示和照明</li>
+            <li><strong>肖特基二极管</strong>：低正向压降，高速开关</li>
+            <li><strong>齐纳二极管</strong>：用于过压保护</li>
+          </ul>
+          <a href="diodes.html" class="card-link">详细了解二极管 →</a>
+
+          <h3 class="section-subtitle">晶体管 (Transistor)</h3>
+          <p>具有放大和开关功能的半导体器件，是现代电子工业的基础。</p>
+          <ul class="content-list">
+            <li><strong>BJT双极晶体管</strong>：电流控制型，电流放大</li>
+            <li><strong>MOSFET</strong>：电压控制型，高输入阻抗</li>
+            <li><strong>IGBT</strong>：高压应用，结合BJT和MOSFET优点</li>
+            <li><strong>JFET</strong>：结型场效应管</li>
+          </ul>
+          <a href="transistors.html" class="card-link">详细了解晶体管 →</a>
+
+          <h3 class="section-subtitle">集成电路 (IC)</h3>
+          <p>将大量晶体管、电阻、电容等元件集成在单一芯片上。</p>
+          <ul class="content-list">
+            <li><strong>模拟IC</strong>：运算放大器、比较器、稳压器</li>
+            <li><strong>数字IC</strong>：逻辑门、触发器、微处理器</li>
+            <li><strong>混合信号IC</strong>：ADC、DAC、数模混合</li>
+            <li><strong>专用IC(ASIC)</strong>：特定应用集成电路</li>
+          </ul>
+          <a href="ics.html" class="card-link">详细了解集成电路 →</a>
+
+          <h3 class="section-subtitle">连接器 (Connector)</h3>
+          <p>用于电路板之间或系统之间的电气连接。</p>
+          <ul class="content-list">
+            <li><strong>板对板连接器</strong>：PCB之间连接</li>
+            <li><strong>线对板连接器</strong>：线缆与PCB连接</li>
+            <li><strong>线对线连接器</strong>：线缆之间连接</li>
+            <li><strong>输入输出连接器</strong>：外部接口</li>
+          </ul>
+          <a href="connectors.html" class="card-link">详细了解连接器 →</a>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主动元件与被动元件的比较</h2>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>特性</th>
+                <th>被动元件</th>
+                <th>主动元件</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>电源需求</td>
+                <td>不需要</td>
+                <td>需要</td>
+              </tr>
+              <tr>
+                <td>信号处理</td>
+                <td>被动响应</td>
+                <td>主动放大/开关</td>
+              </tr>
+              <tr>
+                <td>能量特性</td>
+                <td>耗能或储能</td>
+                <td>能产生能量增益</td>
+              </tr>
+              <tr>
+                <td>复杂性</td>
+                <td>结构简单</td>
+                <td>结构复杂</td>
+              </tr>
+              <tr>
+                <td>典型元件</td>
+                <td>R、L、C</td>
+                <td>晶体管、IC、二极管</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">应用领域</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">数字电路</h3>
+              <p class="card-description">微处理器、存储器、逻辑门等构成计算机和数字系统</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">模拟电路</h3>
+              <p class="card-description">运算放大器、信号调理、电源管理等</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">功率电子</h3>
+              <p class="card-description">电机驱动、电源转换、能量管理等</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">通信系统</h3>
+              <p class="card-description">射频放大器、调制解调器、光模块等</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">选型要点</h2>
+          <ul class="content-list">
+            <li><strong>电气参数</strong>：工作电压、电流、功率、频率特性</li>
+            <li><strong>封装形式</strong>：根据PCB布局和安装方式选择</li>
+            <li><strong>温度范围</strong>：确保在预期工作温度范围内正常工作</li>
+            <li><strong>可靠性等级</strong>：根据应用场景选择消费级、工业级或车规级</li>
+            <li><strong>供应链</strong>：考虑供应商和替代料情况</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

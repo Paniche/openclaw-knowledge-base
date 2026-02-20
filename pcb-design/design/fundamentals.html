@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCB设计基础 - PCB设计知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="fundamentals.html" class="nav-link">设计基础</a>
+          <a href="layout.html" class="nav-link">布局设计</a>
+          <a href="routing.html" class="nav-link">布线规则</a>
+          <a href="impedance.html" class="nav-link">阻抗控制</a>
+          <a href="drc.html" class="nav-link">设计规则检查</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../process/fabrication.html" class="nav-link">PCB制造</a>
+          <a href="../process/surface.html" class="nav-link">表面处理</a>
+          <a href="../process/assembly.html" class="nav-link">组装工艺</a>
+          <a href="../process/testing.html" class="nav-link">测试方法</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="../standards/ipc.html" class="nav-link">IPC标准</a>
+          <a href="../standards/gb.html" class="nav-link">国家标准</a>
+          <a href="../standards/design-rules.html" class="nav-link">设计规则</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="../tools/software.html" class="nav-link">设计软件</a>
+          <a href="../tools/cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="../tools/simulation.html" class="nav-link">仿真工具</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="../materials/substrates.html" class="nav-link">基材类型</a>
+          <a href="../materials/copper.html" class="nav-link">铜箔类型</a>
+          <a href="../materials/laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="breadcrumb">
+            <a href="../index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>PCB设计基础</span>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">PCB设计基础</h1>
+          <p class="page-description">了解PCB的基本概念、层叠结构、设计流程，为PCB设计打下坚实基础。</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">什么是PCB</h2>
+          <div class="content-block">
+            <h3>PCB的定义</h3>
+            <p>印制电路板（Printed Circuit Board，简称PCB）是电子工业的重要基础部件。它以绝缘基材为载体，采用印制技术将导电图形印制在基材上，用于支撑和互连电子元器件。</p>
+            <p>PCB从单面板发展到双面板、多层板，不断满足电子产品小型化、高密度、高可靠性的要求。</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">PCB层叠结构</h2>
+          <div class="content-block">
+            <h3>层叠结构的重要性</h3>
+            <p>层叠结构是PCB设计的核心，它决定了板材的厚度、阻抗特性、信号完整性、EMI/EMC性能以及制造成本。合理的层叠结构设计是高速PCB设计的基础。</p>
+            
+            <h4>常见层叠结构类型</h4>
+            <ul>
+              <li><strong>单面板</strong>：只有一面有导电图形的PCB，成本最低，用于简单电子产品</li>
+              <li><strong>双面板</strong>：两面都有导电图形，通过金属化孔连接，用于一般电子产品</li>
+              <li><strong>多层板</strong>：4层及以上，用于复杂电子产品，需要严格的层叠设计</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>四层板层叠结构</h3>
+            <p>四层板是最常用的多层板结构，以下是常见的层叠方案：</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>层序</th><th>名称</th><th>作用</th><th>常见铜厚</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>L1</td><td>信号层</td><td>表层走线</td><td>1oz</td></tr>
+                  <tr><td>L2</td><td>地平面</td><td>完整地平面</td><td>1oz</td></tr>
+                  <tr><td>L3</td><td>电源平面</td><td>电源分配</td><td>1oz</td></tr>
+                  <tr><td>L4</td><td>信号层</td><td>底层走线</td><td>1oz</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="info-box info">
+              <div class="info-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                设计建议
+              </div>
+              <p>对于四层板，推荐采用TOP-GND-PWR-BOT的层叠顺序，这种结构可以提供良好的信号完整性，同时便于电源分配。</p>
+            </div>
+          </div>
+
+          <div class="content-block">
+            <h3>六层板层叠结构</h3>
+            <p>六层板提供更多的布线空间和更好的EMI抑制能力：</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>层序</th><th>名称</th><th>类型</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>L1</td><td>Signal</td><td>信号层</td><td>高速信号</td></tr>
+                  <tr><td>L2</td><td>Ground</td><td>平面层</td><td>完整地</td></tr>
+                  <tr><td>L3</td><td>Signal</td><td>信号层</td><td>中等速度信号</td></tr>
+                  <tr><td>L4</td><td>Signal</td><td>信号层</td><td>中等速度信号</td></tr>
+                  <tr><td>L5</td><td>Power</td><td>平面层</td><td>电源平面</td></tr>
+                  <tr><td>L6</td><td>Signal</td><td>信号层</td><td>低速信号</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">PCB设计流程</h2>
+          <div class="content-block">
+            <h3>设计流程概述</h3>
+            <p>PCB设计是一个系统化的工程过程，需要遵循严谨的流程以确保产品质量。以下是典型的PCB设计流程：</p>
+            <ol>
+              <li><strong>需求分析</strong>：明确PCB的电气性能、机械尺寸、环境要求等</li>
+              <li><strong>方案设计</strong>：确定层数、板尺寸、层叠结构、主要器件选型</li>
+              <li><strong>原理图设计</strong>：绘制完整的原理图，进行电气规则检查</li>
+              <li><strong>封装库准备</strong>：创建或确认所有元件的封装</li>
+              <li><strong>布局设计</strong>：元件摆放，考虑各种设计因素</li>
+              <li><strong>布线设计</strong>：完成所有信号的连接</li>
+              <li><strong>设计验证</strong>：DRC、DFM、仿真等</li>
+              <li><strong>输出生成</strong>：生成制造文件</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">PCB板材基础</h2>
+          <div class="content-block">
+            <h3>FR-4材料</h3>
+            <p>FR-4是PCB最常用的基材，具有良好的电气性能、机械强度和成本优势。它是由环氧树脂和玻璃纤维布层压而成的复合材料。</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>参数</th><th>典型值</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Tg (玻璃化转变温度)</td><td>130-140°C</td><td>普通FR-4</td></tr>
+                  <tr><td>Tg</td><td>150-170°C</td><td>中TG FR-4</td></tr>
+                  <tr><td>Tg</td><td>>170°C</td><td>高TG FR-4</td></tr>
+                  <tr><td>介电常数 (Dk)</td><td>4.2-4.5</td><td>@1MHz</td></tr>
+                  <tr><td>介质损耗 (Df)</td><td>0.02</td><td>@1MHz</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">常用术语</h2>
+          <div class="content-block">
+            <h3>基本术语</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>术语</th><th>英文</th><th>解释</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>焊盘</td><td>Pad</td><td>用于焊接元件引脚的铜箔区域</td></tr>
+                  <tr><td>过孔</td><td>Via</td><td>连接不同层铜线的金属化孔</td></tr>
+                  <tr><td>走线</td><td>Trace</td><td>铜箔上的导电线路</td></tr>
+                  <tr><td>铺铜</td><td>Copper Pour</td><td>大面积铜箔区域</td></tr>
+                  <tr><td>阻焊</td><td>Solder Mask</td><td>覆盖铜线的保护涂层</td></tr>
+                  <tr><td>丝印</td><td>Silkscreen</td><td>元件标识和符号</td></tr>
+                  <tr><td>金手指</td><td>Edge Connector</td><td>PCB边缘的镀金接触点</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

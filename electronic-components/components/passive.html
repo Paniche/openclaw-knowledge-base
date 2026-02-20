@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>被动元件 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+          </svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="passive.html" class="nav-item active">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            被动元件
+          </a>
+          <a href="active.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+            主动元件
+          </a>
+          <a href="resistors.html" class="nav-item">电阻</a>
+          <a href="capacitors.html" class="nav-item">电容</a>
+          <a href="inductors.html" class="nav-item">电感</a>
+          <a href="diodes.html" class="nav-item">二极管</a>
+          <a href="transistors.html" class="nav-item">晶体管</a>
+          <a href="ics.html" class="nav-item">集成电路</a>
+          <a href="connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+        深色模式
+      </button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">被动元件</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">被动元件</h1>
+        <p class="page-subtitle">Passive Components - 无需外部电源驱动的电子元件</p>
+
+        <div class="section">
+          <h2 class="section-title">什么是被动元件？</h2>
+          <p>被动元件（Passive Components）是指那些工作时不需要外部电源驱动，只能响应输入信号而不能放大或产生信号的电子元件。它们只能消耗、储存或释放能量，而不能产生能量增益。</p>
+          
+          <div class="alert alert-info">
+            <strong>核心特点：</strong>被动元件不产生能量放大，只能按照物理定律（欧姆定律、楞次定律等）对电信号进行响应。
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主要被动元件类型</h2>
+          
+          <h3 class="section-subtitle">电阻器 (Resistor)</h3>
+          <p>限制电流流动、分配电压的元件。是最基本的被动元件之一。</p>
+          <ul class="content-list">
+            <li><strong>固定电阻</strong>：阻值固定，如碳膜电阻、金属膜电阻、线绕电阻</li>
+            <li><strong>可变电阻</strong>：阻值可调，如电位器、可变电阻器</li>
+            <li><strong>敏感电阻</strong>：阻值随环境变化，如热敏电阻、光敏电阻、压敏电阻</li>
+          </ul>
+          <a href="resistors.html" class="card-link">详细了解电阻 →</a>
+
+          <h3 class="section-subtitle">电容器 (Capacitor)</h3>
+          <p>储存电荷的元件，由两个导体之间夹绝缘介质构成。</p>
+          <ul class="content-list">
+            <li><strong>陶瓷电容</strong>：高频特性好，体积小</li>
+            <li><strong>电解电容</strong>：容量大，用于电源滤波</li>
+            <li><strong>薄膜电容</strong>：稳定性好，精度高</li>
+            <li><strong>钽电容</strong>：低ESR，高频特性好</li>
+          </ul>
+          <a href="capacitors.html" class="card-link">详细了解电容 →</a>
+
+          <h3 class="section-subtitle">电感器 (Inductor)</h3>
+          <p>储存磁场能量的元件，由线圈绕制而成。</p>
+          <ul class="content-list">
+            <li><strong>固定电感</strong>：线圈绕制在磁芯上</li>
+            <li><strong>可变电感</strong>：电感量可调</li>
+            <li><strong>变压器</strong>：利用电磁感应变换电压</li>
+            <li><strong>扼流圈</strong>：用于电源滤波</li>
+          </ul>
+          <a href="inductors.html" class="card-link">详细了解电感 →</a>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">被动元件的特性比较</h2>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>元件类型</th>
+                <th>主要功能</th>
+                <th>单位</th>
+                <th>能量特性</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>电阻器</td>
+                <td>限流、分压</td>
+                <td>欧姆 (Ω)</td>
+                <td>耗能</td>
+              </tr>
+              <tr>
+                <td>电容器</td>
+                <td>储能、滤波、耦合</td>
+                <td>法拉 (F)</td>
+                <td>储存电能</td>
+              </tr>
+              <tr>
+                <td>电感器</td>
+                <td>储能、滤波、阻抗匹配</td>
+                <td>亨利 (H)</td>
+                <td>储存磁能</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">应用领域</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">电源电路</h3>
+              <p class="card-description">电容用于滤波，电感用于储能，电阻用于电流检测和分压</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">信号处理</h3>
+              <p class="card-description"> RC滤波、RL滤波、LC谐振电路用于信号调理</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">模拟电路</h3>
+              <p class="card-description">运算放大器电路中的反馈网络、积分电路、微分电路</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">数字电路</h3>
+              <p class="card-description">上拉/下拉电阻、去耦电容用于提高电路稳定性</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">选型要点</h2>
+          <ul class="content-list">
+            <li><strong>参数精度</strong>：根据应用需求选择适当精度等级</li>
+            <li><strong>温度系数</strong>：关注元件参数随温度变化的程度</li>
+            <li><strong>额定功率</strong>：确保元件在正常工作时的功耗不超过额定功率</li>
+            <li><strong>频率特性</strong>：高频应用需特别关注寄生参数</li>
+            <li><strong>可靠性</strong>：根据应用环境选择相应可靠性等级</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

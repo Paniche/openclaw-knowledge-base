@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电感器 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="passive.html" class="nav-item">被动元件</a>
+          <a href="active.html" class="nav-item">主动元件</a>
+          <a href="resistors.html" class="nav-item">电阻</a>
+          <a href="capacitors.html" class="nav-item">电容</a>
+          <a href="inductors.html" class="nav-item active">电感</a>
+          <a href="diodes.html" class="nav-item">二极管</a>
+          <a href="transistors.html" class="nav-item">晶体管</a>
+          <a href="ics.html" class="nav-item">集成电路</a>
+          <a href="connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a></a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="passive.html">被动元件</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">电感器</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">电感器</h1>
+        <p class="page-subtitle">Inductor - 储存磁场能量的被动元件</p>
+
+        <div class="section">
+          <h2 class="section-title">什么是电感器？</h2>
+          <p>电感器（Inductor）是一种储存磁场能量的被动元件，通常由线圈绕制在磁芯上构成。当电流通过线圈时，会产生磁场，储存能量。</p>
+          <p>电感的基本公式：<code>V = L × (dI/dt)</code>，其中L为电感量（亨利），V为电压，dI/dt为电流变化率。</p>
+          <div class="alert alert-info">
+            <strong>楞次定律：</strong>电感器会阻碍电流的变化，电流增加时产生反向电动势，电流减小时产生正向电动势。
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">电感器的分类</h2>
+          
+          <h3 class="section-subtitle">按磁芯材料分类</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>类型</th>
+                <th>特点</th>
+                <th>应用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>空心电感</td>
+                <td>Q值高，无磁芯饱和问题</td>
+                <td>高频电路、射频</td>
+              </tr>
+              <tr>
+                <td>铁芯电感</td>
+                <td>电感量大，饱和特性</td>
+                <td>电源滤波、低频</td>
+              </tr>
+              <tr>
+                <td>铁氧体电感</td>
+                <td>高频特性好，损耗低</td>
+                <td>开关电源、高频</td>
+              </tr>
+              <tr>
+                <td>磁环电感</td>
+                <td>屏蔽性好，共模抑制</td>
+                <td>EMI滤波、共模电感</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">按用途分类</h3>
+          <ul class="content-list">
+            <li><strong>固定电感</strong>：电感量固定，包括色环电感、贴片电感、功率电感</li>
+            <li><strong>可变电感</strong>：电感量可调，用于调谐电路</li>
+            <li><strong>变压器</strong>：利用电磁感应变换电压和电流</li>
+            <li><strong>扼流圈</strong>：限制交流电流，用于电源滤波</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主要参数</h2>
+          <ul class="content-list">
+            <li><strong>电感量(L)</strong>：储存磁场能量的能力，单位亨利(H)、毫亨(mH)、微亨(μH)</li>
+            <li><strong>允许偏差</strong>：实际电感量与标称值的偏差</li>
+            <li><strong>额定电流</strong>：可连续通过的最大电流</li>
+            <li><strong>直流电阻(DCR)</strong>：线圈本身的电阻，损耗来源</li>
+            <li><strong>品质因数(Q)</strong>：电感的储能能力与损耗的比值，Q越高损耗越低</li>
+            <li><strong>自谐振频率(SRF)</strong>：电感本身电容效应导致的谐振频率，高于此频率电感失效</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主要应用</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">滤波</h3>
+              <p class="card-description">与电容组成LC滤波器，用于电源滤波和信号滤波</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">能量存储</h3>
+              <p class="card-description">开关电源中储存能量，如Boost、Buck拓扑</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">谐振</h3>
+              <p class="card-description">与电容组成LC谐振电路，用于振荡器、调谐电路</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">阻抗匹配</h3>
+              <p class="card-description">改变电路阻抗，用于射频匹配网络</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">变压器</h3>
+              <p class="card-description">电压变换、隔离、阻抗变换</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">EMI抑制</h3>
+              <p class="card-description">共模电感抑制电磁干扰</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">变压器</h2>
+          <p>变压器是电感的一种特殊形式，利用电磁感应原理实现电压、电流和阻抗的变换。</p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>类型</th>
+                <th>特点</th>
+                <th>典型应用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>电源变压器</td>
+                <td>工频（50/60Hz）变换</td>
+                <td>传统电源适配器</td>
+              </tr>
+              <tr>
+                <td>开关电源变压器</td>
+                <td>高频（20kHz-500kHz）变换</td>
+                <td>开关电源</td>
+              </tr>
+              <tr>
+                <td>音频变压器</td>
+                <td>音频信号耦合、阻抗匹配</td>
+                <td>音频放大器</td>
+              </tr>
+              <tr>
+                <td>脉冲变压器</td>
+                <td>高频脉冲信号传输</td>
+                <td>数字电路、隔离驱动</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">选型要点</h2>
+          <ul class="content-list">
+            <li>根据工作频率选择合适的电感类型</li>
+            <li>注意额定电流，防止磁芯饱和</li>
+            <li>高频电路关注自谐振频率</li>
+            <li>功率电路关注直流电阻和温升</li>
+            <li>精密电路选择低温度系数电感</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

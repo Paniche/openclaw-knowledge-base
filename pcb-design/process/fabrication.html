@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCB制造 - PCB设计知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="../design/fundamentals.html" class="nav-link">设计基础</a>
+          <a href="../design/layout.html" class="nav-link">布局设计</a>
+          <a href="../design/routing.html" class="nav-link">布线规则</a>
+          <a href="../design/impedance.html" class="nav-link">阻抗控制</a>
+          <a href="../design/drc.html" class="nav-link">设计规则检查</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="fabrication.html" class="nav-link">PCB制造</a>
+          <a href="surface.html" class="nav-link">表面处理</a>
+          <a href="assembly.html" class="nav-link">组装工艺</a>
+          <a href="testing.html" class="nav-link">测试方法</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="../standards/ipc.html" class="nav-link">IPC标准</a>
+          <a href="../standards/gb.html" class="nav-link">国家标准</a>
+          <a href="../standards/design-rules.html" class="nav-link">设计规则</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="../tools/software.html" class="nav-link">设计软件</a>
+          <a href="../tools/cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="../tools/simulation.html" class="nav-link">仿真工具</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="../materials/substrates.html" class="nav-link">基材类型</a>
+          <a href="../materials/copper.html" class="nav-link">铜箔类型</a>
+          <a href="../materials/laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="breadcrumb">
+            <a href="../index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="fabrication.html">PCB制造</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">PCB制造工艺</h1>
+          <p class="page-description">深入了解PCB制造完整流程，从内层制作到最终成品的各个关键工序。</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">PCB制造流程概述</h2>
+          <div class="content-block">
+            <h3>制造工艺流程</h3>
+            <p>PCB制造是一个复杂的多步骤过程，主要包括：</p>
+            <ol>
+              <li><strong>内层制作</strong>：内层线路图形转移</li>
+              <li><strong>层压</strong>：多层板层合</li>
+              <li><strong>钻孔</strong>：过孔和通孔加工</li>
+              <li><strong>电镀</strong>：孔金属化和线路电镀</li>
+              <li><strong>蚀刻</strong>：去除多余铜箔</li>
+              <li><strong>阻焊</strong>：涂覆保护层</li>
+              <li><strong>丝印</strong>：印刷标识文字</li>
+              <li><strong>表面处理</strong>：焊盘表面处理</li>
+              <li><strong>成型</strong>：切割成成品尺寸</li>
+              <li><strong>测试</strong>：电气性能测试</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">内层制作</h2>
+          <div class="content-block">
+            <h3>内层制作流程</h3>
+            <ol>
+              <li><strong>开料</strong>：将大板切割成工作尺寸</li>
+              <li><strong>钻孔定位孔</strong>：用于层压对位</li>
+              <li><strong>前处理</strong>：清洁铜面，增加粗糙度</li>
+              <li><strong>贴膜</strong>：在铜面上贴感光干膜</li>
+              <li><strong>曝光</strong>：使用菲林进行UV曝光</li>
+              <li><strong>显影</strong>：去除未曝光的干膜</li>
+              <li><strong>蚀刻</strong>：用氯化铜蚀刻液腐蚀多余铜</li>
+              <li><strong>退膜</strong>：去除保护干膜</li>
+              <li><strong>AOI检查</strong>：自动光学检测</li>
+            </ol>
+          </div>
+
+          <div class="content-block">
+            <h3>关键工艺参数</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>参数</th><th>典型值</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>干膜厚度</td><td>25-38μm</td><td>感光干膜</td></tr>
+                  <tr><td>曝光能量</td><td>150-250mJ</td><td>UV曝光</td></tr>
+                  <tr><td>显影温度</td><td>30-35°C</td><td>碳酸钠溶液</td></tr>
+                  <tr><td>蚀刻温度</td><td>50-55°C</td><td>氯化铜蚀刻</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">层压工艺</h2>
+          <div class="content-block">
+            <h3>层压原理</h3>
+            <p>层压是将多个内层板和半固化片(Prepreg)叠在一起，在高温高压下粘合成多层板的过程。半固化片在加热后软化并流动，填充层间空隙，然后固化将各层粘合。</p>
+          </div>
+
+          <div class="content-block">
+            <h3>层压工艺参数</h3>
+            <ul>
+              <li><strong>温度</strong>：180-200°C</li>
+              <li><strong>压力</strong>：15-25kg/cm²</li>
+              <li><strong>时间</strong>：60-90分钟</li>
+              <li><strong>升温速率</strong>：2-3°C/min</li>
+            </ul>
+            <div class="info-box info">
+              <div class="info-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                压合结构
+              </div>
+              <p>层压前需要精确计算半固化片数量和顺序，确保最终板厚符合要求。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">钻孔工艺</h2>
+          <div class="content-block">
+            <h3>钻孔类型</h3>
+            <ul>
+              <li><strong>PTH孔</strong>：金属化孔，需要电镀连接各层</li>
+              <li><strong>NPTH孔</strong>：非金属化孔，用于定位和安装</li>
+              <li><strong>埋孔</strong>：内层之间的过孔</li>
+              <li><strong>盲孔</strong>：表层与内层的连接孔</li>
+              <li><strong>激光孔</strong>：微小孔径，通常用于HDI板</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>钻孔参数</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>孔径类型</th><th>最小孔径</th><th>公差</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>机械钻孔</td><td>0.15mm</td><td>±0.05mm</td></tr>
+                  <tr><td>激光钻孔</td><td>0.05mm</td><td>±0.02mm</td></tr>
+                  <tr><td>锣槽</td><td>1.0mm</td><td>±0.1mm</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">电镀工艺</h2>
+          <div class="content-block">
+            <h3>孔金属化</h3>
+            <p>孔金属化(PTH)是使绝缘孔壁沉积金属层的过程，是多层板连通的关键：</p>
+            <ol>
+              <li><strong>去毛刺</strong>：去除钻孔产生的毛刺</li>
+              <li><strong>除油</strong>：清洁孔壁油污</li>
+              <li><strong>微蚀</strong>：粗化孔壁表面</li>
+              <li><strong>钯活化</strong>：沉积钯催化剂</li>
+              <li><strong>化学铜</li>：沉积薄铜层</li>
+              <li><strong>电镀铜</td>：加厚铜层到要求厚度</li>
+            </ol>
+          </div>
+
+          <div class="content-block">
+            <h3>电镀铜厚度</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>板类型</th><th>最小铜厚</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>一般PCB</td><td>20μm</td></tr>
+                  <tr><td>IPC Class 2</td><td>20μm</td></tr>
+                  <tr><td>IPC Class 3</td><td>25μm</td></tr>
+                  <tr><td>高功率板</td><td>35μm+</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">蚀刻与阻焊</h2>
+          <div class="content-block">
+            <h3>蚀刻工艺</h3>
+            <p>蚀刻是利用化学药液去除非线路区域的铜箔。常用蚀刻液有氯化铜、硫酸铜和碱性氯化铜。蚀刻质量直接影响线路精度。</p>
+          </div>
+
+          <div class="content-block">
+            <h3>阻焊工艺</h3>
+            <p>阻焊(Solder Mask)用于保护铜线路，防止短路和氧化：</p>
+            <ol>
+              <li><strong>前处理</strong>：清洁板面</li>
+              <li><strong>丝印</strong>：涂覆感光阻焊油墨</li>
+              <li><strong>预烤</strong>：初步干燥</li>
+              <li><strong>曝光</strong>：UV光固化</li>
+              <li><strong>显影</strong>：去除未固化油墨</li>
+              <li><strong>后固化</strong>：完全固化</li>
+            </ol>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

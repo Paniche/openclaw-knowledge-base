@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试方法 - PCB设计知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="../design/fundamentals.html" class="nav-link">设计基础</a>
+          <a href="../design/layout.html" class="nav-link">布局设计</a>
+          <a href="../design/routing.html" class="nav-link">布线规则</a>
+          <a href="../design/impedance.html" class="nav-link">阻抗控制</a>
+          <a href="../design/drc.html" class="nav-link">设计规则检查</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="fabrication.html" class="nav-link">PCB制造</a>
+          <a href="surface.html" class="nav-link">表面处理</a>
+          <a href="assembly.html" class="nav-link">组装工艺</a>
+          <a href="testing.html" class="nav-link">测试方法</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="../standards/ipc.html" class="nav-link">IPC标准</a>
+          <a href="../standards/gb.html" class="nav-link">国家标准</a>
+          <a href="../standards/design-rules.html" class="nav-link">设计规则</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="../tools/software.html" class="nav-link">设计软件</a>
+          <a href="../tools/cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="../tools/simulation.html" class="nav-link">仿真工具</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="../materials/substrates.html" class="nav-link">基材类型</a>
+          <a href="../materials/copper.html" class="nav-link">铜箔类型</a>
+          <a href="../materials/laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="breadcrumb">
+            <a href="../index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="testing.html">测试方法</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">PCB测试方法</h1>
+          <p class="page-description">了解PCB和PCBA的各种测试方法，包括外观检测、电气测试和功能测试。</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">AOI自动光学检测</h2>
+          <div class="content-block">
+            <h3>AOI原理</h3>
+            <p>AOI(Automated Optical Inspection)利用高分辨率工业相机对PCB进行拍照，通过图像处理算法与标准图像比对，自动识别缺陷。</p>
+          </div>
+
+          <div class="content-block">
+            <h3>AOI检测内容</h3>
+            <ul>
+              <li><strong>焊点检测</strong>：桥连、虚焊、少锡、多锡</li>
+              <li><strong>元件检测</strong>：缺件、错件、偏移、立碑</li>
+              <li><strong>丝印检测</strong>：内容错误、缺失</li>
+              <li><strong>PCB外观</strong>：划伤、污染、异物</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>AOI优缺点</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>优点</th><th>缺点</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>检测速度快</td><td>无法检测BGA底部</td></tr>
+                  <tr><td>可检测隐藏缺陷</td><td>对假点敏感</td></tr>
+                  <tr><td>数据可追溯</td><td>需要标准模板</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">X-Ray检测</h2>
+          <div class="content-block">
+            <h3>X-Ray原理</h3>
+            <p>X-Ray利用X射线穿透物体后成像的原理，可以检测肉眼看不到的内部结构，特别适合检测BGA、CSP等底部焊点器件。</p>
+          </div>
+
+          <div class="content-block">
+            <h3>X-Ray应用</h3>
+            <ul>
+              <li>BGA焊点完整性检测</li>
+              <li>QFN/LGA底部焊点检测</li>
+              <li>空洞率检测</li>
+              <li>焊料润湿情况</li>
+              <li>内部线路缺陷</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>3D X-Ray</h3>
+            <p>3D X-Ray可以重建焊点的三维结构，更准确地评估焊点质量：</p>
+            <ul>
+              <li>层析成像技术</li>
+              <li>精确测量焊点厚度</li>
+              <li>检测微小裂纹</li>
+              <li>提高缺陷检出率</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">ICT在线测试</h2>
+          <div class="content-block">
+            <h3>ICT原理</h3>
+            <p>ICT(In-Circuit Test)通过测试探针接触PCB上的测试点，测量电阻、电容、电感等参数，验证电路功能是否正常。</p>
+          </div>
+
+          <div class="content-block">
+            <h3>ICT测试内容</h3>
+            <ul>
+              <li>开路/短路测试</li>
+              <li>电阻测量</li>
+              <li>电容测量</li>
+              <li>电感测量</li>
+              <li>二极管/三极管测试</li>
+              <li>IC功能测试(Flash编程)</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>测试夹具</h3>
+            <p>ICT需要专用测试夹具( Fixture)：</p>
+            <ul>
+              <li>真空夹具或机械夹具</li>
+              <li>弹簧探针</li>
+              <li>高密度测试点设计</li>
+              <li>测试点间距最小0.65mm</li>
+            </ul>
+            <div class="info-box info">
+              <div class="info-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                设计建议
+              </div>
+              <p>PCB设计时应预留足够的测试点，便于调试和测试。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">FCT功能测试</h2>
+          <div class="content-block">
+            <h3>FCT原理</h3>
+            <p>FCT(Functional Circuit Test)给PCBA上电，通过编程控制运行测试程序，验证产品功能是否符合设计要求。</p>
+          </div>
+
+          <div class="content-block">
+            <h3>FCT测试内容</h3>
+            <ul>
+              <li>电源供电检测</li>
+              <li>CPU/存储器测试</li>
+              <li>通信接口测试</li>
+              <li>输入输出测试</li>
+              <li>显示/按键测试</li>
+              <li>软件烧录测试</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>测试系统</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>类型</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>功能测试架</td><td>专用夹具+测试软件</td></tr>
+                  <tr><td>治具测试</td><td>通用平台+适配器</td></tr>
+                  <tr><td>自动测试</td><td>ATE系统</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">飞针测试</h2>
+          <div class="content-block">
+            <h3>飞针测试原理</h3>
+            <p>飞针测试(Flying Probe Test)使用移动的探针进行测试，无需专用夹具，适合小批量多品种生产：</p>
+            <ul>
+              <li>快速换线</li>
+              <li>无需夹具成本</li>
+              <li>适合样品和小批量</li>
+              <li>测试速度较慢</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>适用场景</h3>
+            <ul>
+              <li>样品验证</li>
+              <li>小批量生产</li>
+              <li>高复杂度PCB</li>
+              <li>高密度设计</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

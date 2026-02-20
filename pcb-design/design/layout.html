@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>布局设计 - PCB设计知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="fundamentals.html" class="nav-link">设计基础</a>
+          <a href="layout.html" class="nav-link">布局设计</a>
+          <a href="routing.html" class="nav-link">布线规则</a>
+          <a href="impedance.html" class="nav-link">阻抗控制</a>
+          <a href="drc.html" class="nav-link">设计规则检查</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../process/fabrication.html" class="nav-link">PCB制造</a>
+          <a href="../process/surface.html" class="nav-link">表面处理</a>
+          <a href="../process/assembly.html" class="nav-link">组装工艺</a>
+          <a href="../process/testing.html" class="nav-link">测试方法</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="../standards/ipc.html" class="nav-link">IPC标准</a>
+          <a href="../standards/gb.html" class="nav-link">国家标准</a>
+          <a href="../standards/design-rules.html" class="nav-link">设计规则</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="../tools/software.html" class="nav-link">设计软件</a>
+          <a href="../tools/cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="../tools/simulation.html" class="nav-link">仿真工具</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="../materials/substrates.html" class="nav-link">基材类型</a>
+          <a href="../materials/copper.html" class="nav-link">铜箔类型</a>
+          <a href="../materials/laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="breadcrumb">
+            <a href="../index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="layout.html">布局设计</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">布局设计</h1>
+          <p class="page-description">掌握PCB布局设计的核心原则，包括元件摆放、热管理、EMC考虑等关键技术。</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">布局设计原则</h2>
+          <div class="content-block">
+            <h3>布局的重要性</h3>
+            <p>布局是PCB设计中至关重要的环节，它直接影响电路的性能、可靠性、可制造性和成本。良好的布局可以减少布线难度、提高信号完整性、降低EMI问题。</p>
+            <div class="info-box info">
+              <div class="info-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                黄金法则
+              </div>
+              <p>布局决定布线的难度。在布局阶段应充分考虑布线通道、信号流向、关键信号的保护等因素。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">元件摆放规则</h2>
+          <div class="content-block">
+            <h3>功能分区</h3>
+            <p>按照电路功能进行分区布局是基本原则：</p>
+            <ul>
+              <li><strong>电源区</strong>：放置在PCB边缘，便于散热和输入输出</li>
+              <li><strong>模拟区</strong>：远离数字信号和高速信号区域</li>
+              <li><strong>数字区</strong>：集中放置，减少信号走线长度</li>
+              <li><strong>高频区</strong>：靠近板边，减小天线效应</li>
+              <li><strong>接口区</strong>：放置在PCB边缘，连接器便于插拔</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>信号流向</h3>
+            <p>遵循信号流向原则：从输入到输出，从左到右，从上到下。避免信号绕回和交叉。</p>
+            <ol>
+              <li>电源输入 → 滤波电路 → 电源管理 → 各功能模块</li>
+              <li>输入接口 → 预处理 → 主处理 → 输出接口</li>
+              <li>时钟电路 → 处理器 → 各外设</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">热管理设计</h2>
+          <div class="content-block">
+            <h3>热设计原则</h3>
+            <p>电子元件的热设计对产品可靠性至关重要。超过额定温度10°C，元件寿命将减少一半。</p>
+            
+            <h4>热设计措施</h4>
+            <ul>
+              <li><strong>自然散热</strong>：利用空气对流散热，加大元件间距</li>
+              <li><strong>热垫片</strong>：功率器件底部放置热垫片，将热量传导到地平面</li>
+              <li><strong>散热孔</strong>：多层板内层设置散热铜箔</li>
+              <li><strong>金属基板</strong>：高功率应用使用金属基板</li>
+              <li><strong>风扇散热</strong>：强制风冷</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>热敏感元件放置</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>元件类型</th><th>放置位置</th><th>注意事项</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>稳压器</td><td>靠近输入端</td><td>远离热源</td></tr>
+                  <tr><td>晶振</td><td>靠近CPU</td><td>远离热源</td></tr>
+                  <tr><td>电容</td><td>靠近元件管脚</td><td>电解电容远离热源</td></tr>
+                  <tr><td>BGA芯片</td><td>PCB中心</td><td>保证散热通道</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">EMC设计考虑</h2>
+          <div class="content-block">
+            <h3>EMC布局原则</h3>
+            <p>电磁兼容性(EMC)设计从布局阶段就应该考虑：</p>
+            <ul>
+              <li><strong>分区隔离</strong>：模拟电路与数字电路分开，高速区域单独分区</li>
+              <li><strong>地平面完整</strong>：保持地平面完整，避免分割</li>
+              <li><strong>去耦电容</strong>：每个IC电源引脚放置去耦电容</li>
+              <li><strong>屏蔽区域</strong>：敏感电路周围添加接地保护环</li>
+              <li><strong>接口滤波</strong>：接口电路靠近连接器放置</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>晶振布局</h3>
+            <p>晶振是PCB中最关键的辐射源，其布局需要特别注意：</p>
+            <ol>
+              <li>晶振下方不能走线，保持完整地平面</li>
+              <li>晶振靠近负载芯片，减小走线长度</li>
+              <li>晶振周围用地保护环包围</li>
+              <li>晶振的负载电容应靠近晶振放置</li>
+            </ol>
+            <div class="info-box warning">
+              <div class="info-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                注意事项
+              </div>
+              <p>晶振下方避免铺铜过多，以减少寄生电容影响频率稳定性。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">可制造性设计</h2>
+          <div class="content-block">
+            <h3>元件间距要求</h3>
+            <p>合理的元件间距是SMT贴装和焊接质量的保证：</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>元件类型</th><th>最小间距</th><th>推荐间距</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>片式元件之间</td><td>0.3mm</td><td>0.5mm</td></tr>
+                  <tr><td>SOP/QFP之间</td><td>0.5mm</td><td>1.0mm</td></tr>
+                  <tr><td>BGA周围</td><td>2.0mm</td><td>3.0mm</td></tr>
+                  <tr><td>连接器周围</td><td>2.0mm</td><td>3.0mm</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="content-block">
+            <h3>方向一致性</h3>
+            <p>极性元件方向应保持一致，便于贴片和检查：</p>
+            <ul>
+              <li>所有极性电容方向一致</li>
+              <li>二极管方向一致</li>
+              <li>IC有极性标记统一方向</li>
+              <li>避免使用多向元件</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">布局检查清单</h2>
+          <div class="content-block">
+            <h3>布局完成后的检查项目</h3>
+            <ol>
+              <li>功能分区是否合理，信号流向是否清晰</li>
+              <li>热设计是否满足要求，热点是否得到有效散热</li>
+              <li>EMC分区是否正确，敏感电路是否得到保护</li>
+              <li>元件间距是否满足SMT要求</li>
+              <li>极性元件方向是否一致</li>
+              <li>连接器位置是否便于插拔和测试</li>
+              <li>关键信号走线是否最短路径</li>
+              <li>是否预留了测试点</li>
+            </ol>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

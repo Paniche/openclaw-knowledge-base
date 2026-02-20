@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电路符号 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="../components/passive.html" class="nav-item">被动元件</a>
+          <a href="../components/active.html" class="nav-item">主动元件</a>
+          <a href="../components/resistors.html" class="nav-item">电阻</a>
+          <a href="../components/capacitors.html" class="nav-item">电容</a>
+          <a href="../components/inductors.html" class="nav-item">电感</a>
+          <a href="../components/diodes.html" class="nav-item">二极管</a>
+          <a href="../components/transistors.html" class="nav-item">晶体管</a>
+          <a href="../components/ics.html" class="nav-item">集成电路</a>
+          <a href="../components/connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="principles.html" class="nav-item">电学原理</a>
+          <a href="symbols.html" class="nav-item active">电路符号</a>
+          <a href="parameters.html" class="nav-item">参数解读</a>
+          <a href="packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">电路符号</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">电路符号</h1>
+        <p class="page-subtitle">Circuit Symbols - 电子元器件的图形化表示</p>
+
+        <div class="section">
+          <h2 class="section-title">被动元件符号</h2>
+          
+          <h3 class="section-subtitle">电阻器</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>符号</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>固定电阻</td>
+                <td>────□────</td>
+                <td>最常用的电阻符号</td>
+              </tr>
+              <tr>
+                <td>可变电阻</td>
+                <td>────□──→──</td>
+                <td>阻值可调</td>
+              </tr>
+              <tr>
+                <td>电位器</td>
+                <td>────□──→──</td>
+                <td>三个端子，可调分压</td>
+              </tr>
+              <tr>
+                <td>热敏电阻</td>
+                <td>────t°───</td>
+                <td>NTC/PTC热敏电阻</td>
+              </tr>
+              <tr>
+                <td>光敏电阻</td>
+                <td>────hv───</td>
+                <td>光敏电阻</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">电容器</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>符号</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>无极性电容</td>
+                <td>───|───</td>
+                <td>陶瓷、电容、薄膜电容</td>
+              </tr>
+              <tr>
+                <td>电解电容</td>
+                <td>───|─|──</td>
+                <td>有极性，长脚为正</td>
+              </tr>
+              <tr>
+                <td>可变电容</td>
+                <td>───|─←──</td>
+                <td>电容可调</td>
+              </tr>
+              <tr>
+                <td>微调电容</td>
+                <td>───|─T──</td>
+                <td>半可变电容</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">电感器</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>符号</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>空心电感</td>
+                <td>〜〜〜〜〜</td>
+                <td>线圈绕在空心骨架上</td>
+              </tr>
+              <tr>
+                <td>磁芯电感</td>
+                <td>〜〜mmm〜〜</td>
+                <td>线圈绕在磁芯上</td>
+              </tr>
+              <tr>
+                <td>铁芯电感</td>
+                <td>〜〜III〜〜</td>
+                <td>线圈绕在铁芯上</td>
+              </tr>
+              <tr>
+                <td>可变电感</td>
+                <td>〜〜←〜〜</td>
+                <td>电感量可调</td>
+              </tr>
+              <tr>
+                <td>变压器</td>
+                <td>8≡≡8</td>
+                <td>两个线圈耦合</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">半导体器件符号</h2>
+          
+          <h3 class="section-subtitle">二极管</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>符号</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>普通二极管</td>
+                <td>───▶───</td>
+                <td>箭头指向阴极</td>
+              </tr>
+              <tr>
+                <td>稳压二极管</td>
+                <td>───▷▷───</td>
+                <td>阴极有两个圈</td>
+              </tr>
+              <tr>
+                <td>发光二极管</td>
+                <td>───▶───</td>
+                <td>LED，与普通二极管相同</td>
+              </tr>
+              <tr>
+                <td>肖特基二极管</td>
+                <td>───S▶───</td>
+                <td>带S标记</td>
+              </tr>
+              <tr>
+                <td>光电二极管</td>
+                <td>───◁───</td>
+                <td>带光线进入标记</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">晶体管</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>符号</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NPN晶体管</td>
+                <td>C──▶|──B</td>
+                <td>集电极-发射极有箭头</td>
+              </tr>
+              <tr>
+                <td>PNP晶体管</td>
+                <td>C◁|──B</td>
+                <td>箭头指向基极</td>
+              </tr>
+              <tr>
+                <td>N沟道JFET</td>
+                <td>D──|──G</td>
+                <td>结型场效应管</td>
+              </tr>
+              <tr>
+                <td>P沟道JFET</td>
+                <td>D◁|──G</td>
+                <td>箭头方向相反</td>
+              </tr>
+              <tr>
+                <td>N沟道MOSFET</td>
+                <td>D──M──G</td>
+                <td>竖线表示沟道</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">集成电路符号</h2>
+          
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>符号</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>运算放大器</td>
+                <td>三角形</td>
+                <td>反相/同相输入，输出</td>
+              </tr>
+              <tr>
+                <td>比较器</td>
+                <td>三角形</td>
+                <td>与运放符号相同</td>
+              </tr>
+              <tr>
+                <td>门电路</td>
+                <td>专用符号</td>
+                <td>与、或、非等</td>
+              </tr>
+              <tr>
+                <td>触发器</td>
+                <td>专用符号</td>
+                <td>D触发器、JK触发器</td>
+              </tr>
+              <tr>
+                <td>计数器</td>
+                <td>专用符号</td>
+                <td>数字集成电路</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">其他常用符号</h2>
+          
+          <h3 class="section-subtitle">电源和接地</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>符号</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>正电源</td>
+                <td>VCC、+5V</td>
+                <td>正极供电</td>
+              </tr>
+              <tr>
+                <td>负电源</td>
+                <td>VEE、-5V</td>
+                <td>负极供电</td>
+              </tr>
+              <tr>
+                <td>地</td>
+                <td>⊥ 或 GND</td>
+                <td>参考地</td>
+              </tr>
+              <tr>
+                <td>电池</td>
+                <td>-| |-</td>
+                <td>长线为正极</td>
+              </tr>
+              <tr>
+                <td>交流电源</td>
+                <td>~ 或 AC</td>
+                <td>交流电</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">开关和继电器</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>名称</th>
+                <th>符号</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>单刀单掷</td>
+                <td>○─</td>
+                <td>最简单的开关</td>
+              </tr>
+              <tr>
+                <td>单刀双掷</td>
+                <td>○─┬─</td>
+                <td>可切换两路</td>
+              </tr>
+              <tr>
+                <td>按钮开关</td>
+                <td>□──</td>
+                <td>常开/常闭</td>
+              </tr>
+              <tr>
+                <td>继电器</td>
+                <td>□──</td>
+                <td>线圈+触点</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

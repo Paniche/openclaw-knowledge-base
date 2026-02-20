@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>材料科学 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="../components/passive.html" class="nav-item">被动元件</a>
+          <a href="../components/active.html" class="nav-item">主动元件</a>
+          <a href="../components/resistors.html" class="nav-item">电阻</a>
+          <a href="../components/capacitors.html" class="nav-item">电容</a>
+          <a href="../components/inductors.html" class="nav-item">电感</a>
+          <a href="../components/diodes.html" class="nav-item">二极管</a>
+          <a href="../components/transistors.html" class="nav-item">晶体管</a>
+          <a href="../components/ics.html" class="nav-item">集成电路</a>
+          <a href="../components/connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="process.html" class="nav-item">制造流程</a>
+          <a href="materials.html" class="nav-item active">材料科学</a>
+          <a href="testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">材料科学</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">材料科学</h1>
+        <p class="page-subtitle">Materials Science - 电子元器件相关材料</p>
+
+        <div class="section">
+          <h2 class="section-title">半导体材料</h2>
+          
+          <h3 class="section-subtitle">硅(Si)</h3>
+          <p>最广泛使用的半导体材料，占据90%以上的半导体器件市场。</p>
+          <ul class="content-list">
+            <li><strong>优点</strong>：储量大、成本低、工艺成熟、氧化性好</li>
+            <li><strong>应用</strong>：集成电路、晶体管、二极管、太阳能电池</li>
+            <li><strong>特性</strong>：带隙1.12eV，电子迁移率1350cm²/V·s</li>
+          </ul>
+
+          <h3 class="section-subtitle">化合物半导体</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>材料</th>
+                <th>带隙(eV)</th>
+                <th>特点</th>
+                <th>应用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>砷化镓(GaAs)</td><td>1.42</td><td>高频特性好</td><td>射频器件、LED</td></tr>
+              <tr><td>磷化铟(InP)</td><td>1.35</td><td>高速</td><td>光通信、高速电路</td></tr>
+              <tr><td>氮化镓(GaN)</td><td>3.4</td><td>宽禁带、高功率</td><td>功率器件、LED</td></tr>
+              <tr><td>碳化硅(SiC)</td><td>3.3</td><td>超宽禁带</td><td>功率器件、高温应用</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">被动元件材料</h2>
+          
+          <h3 class="section-subtitle">电阻材料</h3>
+          <ul class="content-list">
+            <li><strong>碳膜</strong>：碳氢化合物热分解沉积</li>
+            <li><strong>金属膜</strong>：镍铬、钽等金属合金</li>
+            <li><strong>金属氧化物</strong>：氧化锡等</li>
+            <li><strong>基板材料</strong>：陶瓷(Al2O3)、氧化铝</li>
+          </ul>
+
+          <h3 class="section-subtitle">电容材料</h3>
+          <ul class="content-list">
+            <li><strong>陶瓷介质</strong>：钛酸钡、氧化钛等</li>
+            <li><strong>电解质</strong>：电解液、固体电解质</li>
+            <li><strong>电极材料</strong>：铝、铜、银、镍</li>
+            <li><strong>薄膜介质</strong>：聚酯、聚丙烯、聚苯硫醚</li>
+          </ul>
+
+          <h3 class="section-subtitle">电感材料</h3>
+          <ul class="content-list">
+            <li><strong>磁芯材料</strong>：铁氧体、硅钢片、非晶合金</li>
+            <li><strong>线圈材料</strong>：铜线、铝线</li>
+            <li><strong>骨架材料</strong>：塑料、陶瓷</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">封装材料</h2>
+          
+          <h3 class="section-subtitle">塑封材料</h3>
+          <ul class="content-list">
+            <li><strong>环氧树脂</strong>：最常用的塑封材料，成本低、工艺成熟</li>
+            <li><strong>塑封料</strong>：环氧树脂+填料+固化剂+脱模剂</li>
+          </ul>
+
+          <h3 class="section-subtitle">陶瓷封装</h3>
+          <ul class="content-list">
+            <li><strong>氧化铝(Al2O3)</strong>：最常用，良好的电绝缘性和热导率</li>
+            <li><strong>氮化铝(AlN)</strong>：高热导率，用于功率器件</li>
+            <li><strong>氧化铍(BeO)</strong>：极高热导率，但有毒性</li>
+          </ul>
+
+          <h3 class="section-subtitle">基板材料</h3>
+          <ul class="content-list">
+            <li><strong>FR-4</strong>：玻纤布+环氧树脂，最常用PCB基材</li>
+            <li><strong>CEM系列</strong>：复合材料</li>
+            <li><strong>高频基板</strong>： Rogers、Teflon基材</li>
+            <li><strong>金属基板</strong>：铝基板、铜基板，散热好</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">导体材料</h2>
+          
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>材料</th>
+                <th>电阻率(μΩ·cm)</th>
+                <th>特点</th>
+                <th>应用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>银(Ag)</td><td>1.59</td><td>最低电阻率，成本高</td><td>高端导线</td></tr>
+              <tr><td>铜(Cu)</td><td>1.68</td><td>低电阻，工艺性好</td><td>最常用导线</td></tr>
+              <tr><td>金(Au)</td><td>2.35</td><td>耐腐蚀，不氧化</td><td>引线键合、触点</td></tr>
+              <tr><td>铝(Al)</td><td>2.65</td><td>轻便，成本低</td><td>电力传输、电容电极</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">新型材料</h2>
+          
+          <h3 class="section-subtitle">宽禁带半导体</h3>
+          <div class="alert alert-info">
+            <strong>氮化镓(GaN)和碳化硅(SiC)</strong>：宽禁带半导体材料，具有更高的击穿电场、热导率和工作温度，适用于高功率、高频率、高温应用，是下一代功率器件的核心材料。
+          </div>
+
+          <h3 class="section-subtitle">二维材料</h3>
+          <ul class="content-list">
+            <li><strong>石墨烯</strong>：单层碳原子蜂窝状结构，极高电子迁移率</li>
+            <li><strong>过渡金属硫化物</strong>：MoS2、WS2等，用于柔性电子</li>
+          </ul>
+
+          <h3 class="section-subtitle">有机半导体</h3>
+          <ul class="content-list">
+            <li><strong>有机薄膜晶体管(OTFT)</strong>：可用于柔性显示</li>
+            <li><strong>有机太阳能电池</strong>：成本低，可穿戴应用</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

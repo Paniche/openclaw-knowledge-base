@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>集成电路 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="passive.html" class="nav-item">被动元件</a>
+          <a href="active.html" class="nav-item">主动元件</a>
+          <a href="resistors.html" class="nav-item">电阻</a>
+          <a href="capacitors.html" class="nav-item">电容</a>
+          <a href="inductors.html" class="nav-item">电感</a>
+          <a href="diodes.html" class="nav-item">二极管</a>
+          <a href="transistors.html" class="nav-item">晶体管</a>
+          <a href="ics.html" class="nav-item active">集成电路</a>
+          <a href="connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="active.html">主动元件</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">集成电路</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">集成电路</h1>
+        <p class="page-subtitle">Integrated Circuit (IC) - 将多个电子元件集成在单一芯片上</p>
+
+        <div class="section">
+          <h2 class="section-title">什么是集成电路？</h2>
+          <p>集成电路（Integrated Circuit，简称IC）是将大量晶体管、电阻、电容等有源和无源元件集成在单一半导体芯片上的电子器件。集成电路的出现极大地推动了电子技术的发展，使电子设备小型化、集成化、低成本化成为可能。</p>
+          <div class="alert alert-info">
+            <strong>摩尔定律：</strong>集成电路上的晶体管数量大约每18-24个月翻一番，这一定律指引了半导体行业50多年的发展。
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">集成电路的分类</h2>
+          
+          <h3 class="section-subtitle">按信号类型分类</h3>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">模拟IC</h3>
+              <p class="card-description">处理连续变化的模拟信号，包括运算放大器、比较器、稳压器、模拟乘法器等</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">数字IC</h3>
+              <p class="card-description">处理离散的数字信号，包括逻辑门、触发器、计数器、存储器、微处理器等</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">混合信号IC</h3>
+              <p class="card-description">同时包含模拟和数字电路，如ADC、DAC、模数混合集成芯片</p>
+            </div>
+          </div>
+
+          <h3 class="section-subtitle">按集成度分类</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>类型</th>
+                <th>集成规模</th>
+                <th>示例</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SSI</td>
+                <td>小规模(1-100个门)</td>
+                <td>逻辑门、触发器</td>
+              </tr>
+              <tr>
+                <td>MSI</td>
+                <td>中规模(100-1000个门)</td>
+                <td>计数器、译码器</td>
+              </tr>
+              <tr>
+                <td>LSI</td>
+                <td>大规模(1000-100000个门)</td>
+                <td>存储器、微处理器</td>
+              </tr>
+              <tr>
+                <td>VLSI</td>
+                <td>超大规模(>100000个门)</td>
+                <td>CPU、GPU、手机SoC</td>
+              </tr>
+              <tr>
+                <td>ULSI</td>
+                <td>巨大规模(>100万晶体管)</td>
+                <td>现代高性能处理器</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">常见集成电路类型</h2>
+          
+          <h3 class="section-subtitle">模拟IC</h3>
+          <ul class="content-list">
+            <li><strong>运算放大器(Op-Amp)</strong>：高增益差分放大器，广泛用于信号调理</li>
+            <li><strong>比较器</strong>：比较两个信号大小，输出数字电平</li>
+            <li><strong>稳压器</strong>：提供稳定的输出电压，如LM7805、LM317</li>
+            <li><strong>功率放大器</strong>：音频放大、驱动放大</li>
+            <li><strong>滤波器</strong>：有源滤波器、开关电容滤波器</li>
+          </ul>
+
+          <h3 class="section-subtitle">数字IC</h3>
+          <ul class="content-list">
+            <li><strong>逻辑门</strong>：与门、或门、非门、与非门、或非门等</li>
+            <li><strong>触发器</strong>：D触发器、JK触发器、RS触发器</li>
+            <li><strong>计数器</strong>：异步计数器、同步计数器</li>
+            <li><strong>存储器</strong>：SRAM、DRAM、Flash、EEPROM</li>
+            <li><strong>微处理器</strong>：CPU、MCU、DSP</li>
+          </ul>
+
+          <h3 class="section-subtitle">混合信号IC</h3>
+          <ul class="content-list">
+            <li><strong>ADC</strong>：模数转换器，将模拟信号转为数字信号</li>
+            <li><strong>DAC</strong>：数模转换器，将数字信号转为模拟信号</li>
+            <li><strong>SoC</strong>：系统级芯片，集成完整系统功能</li>
+            <li><strong>接口IC</strong>：USB、PCIe、Ethernet控制器</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主要参数</h2>
+          <ul class="content-list">
+            <li><strong>工作电压</strong>：IC正常工作所需的电压范围</li>
+            <li><strong>工作温度</strong>：保证正常工作的温度范围</li>
+            <li><strong>功耗</strong>：静态功耗和动态功耗</li>
+            <li><strong>输入/输出特性</strong>：逻辑电平、驱动能力</li>
+            <li><strong>时序参数</strong>：建立时间、保持时间、传播延迟</li>
+            <li><strong>封装</strong>：DIP、SOP、QFP、BGA等</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">选型要点</h2>
+          <ul class="content-list">
+            <li>明确功能需求，选择合适的IC类型</li>
+            <li>确认工作电压和电流范围</li>
+            <li>检查工作温度是否满足应用需求</li>
+            <li>考虑封装形式和PCB布局</li>
+            <li>评估功耗和散热需求</li>
+            <li>考虑供应商和替代料情况</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

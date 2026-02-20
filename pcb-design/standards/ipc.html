@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPC标准 - PCB设计知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="../design/fundamentals.html" class="nav-link">设计基础</a>
+          <a href="../design/layout.html" class="nav-link">布局设计</a>
+          <a href="../design/routing.html" class="nav-link">布线规则</a>
+          <a href="../design/impedance.html" class="nav-link">阻抗控制</a>
+          <a href="../design/drc.html" class="nav-link">设计规则检查</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../process/fabrication.html" class="nav-link">PCB制造</a>
+          <a href="../process/surface.html" class="nav-link">表面处理</a>
+          <a href="../process/assembly.html" class="nav-link">组装工艺</a>
+          <a href="../process/testing.html" class="nav-link">测试方法</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="ipc.html" class="nav-link">IPC标准</a>
+          <a href="gb.html" class="nav-link">国家标准</a>
+          <a href="design-rules.html" class="nav-link">设计规则</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="../tools/software.html" class="nav-link">设计软件</a>
+          <a href="../tools/cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="../tools/simulation.html" class="nav-link">仿真工具</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="../materials/substrates.html" class="nav-link">基材类型</a>
+          <a href="../materials/copper.html" class="nav-link">铜箔类型</a>
+          <a href="../materials/laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="breadcrumb">
+            <a href="../index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="ipc.html">IPC标准</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">IPC标准体系</h1>
+          <p class="page-description">了解IPC标准体系及PCB行业最重要的IPC标准文档。</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">IPC标准概述</h2>
+          <div class="content-block">
+            <h3>关于IPC</h3>
+            <p>IPC(Association Connecting Electronics Industries)是一个全球性的电子行业协会，制定电子行业的设计、制造、组装和测试标准。IPC标准被全球电子行业广泛采用，是PCB和PCBA质量的重要参考。</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">PCB设计核心标准</h2>
+          <div class="content-block">
+            <h3>IPC-2221</h3>
+            <p>IPC-2221是PCB设计的基础标准，称为"Generic Standard on Printed Board Design"。它涵盖了PCB设计的通用要求：</p>
+            <ul>
+              <li>层叠结构设计</li>
+              <li>电气设计要求</li>
+              <li>机械设计要求</li>
+              <li>材料选择</li>
+              <li>测试方法</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>IPC-2222</h3>
+            <p>IPC-2222是"Sectional Standard on Rigid Organic Printed Boards"，针对刚性PCB的详细设计标准。</p>
+          </div>
+
+          <div class="content-block">
+            <h3>IPC-2223</h3>
+            <p>IPC-2223是"Sectional Standard on Flexible Printed Boards"，针对柔性PCB的设计标准。</p>
+          </div>
+
+          <div class="content-block">
+            <h3>IPC-2226</h3>
+            <p>IPC-2226是"Sectional Standard on High Density Interconnect (HDI) Printed Boards"，针对HDI高密度互连板的设计标准。</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">PCB性能标准</h2>
+          <div class="content-block">
+            <h3>IPC-6012</h3>
+            <p>IPC-6012是"Qualification and Performance Specification for Rigid Printed Boards"，刚性PCB的 qualification and performance规范：</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>等级</th><th>应用领域</th><th>要求</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Class 1</td><td>通用电子产品</td><td>基本功能</td></tr>
+                  <tr><td>Class 2</td><td>专用服务电子产品</td><td>持续工作</td></tr>
+                  <tr><td>Class 3</td><td>高性能电子产品</td><td>严格环境</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="content-block">
+            <h3>IPC-6013</h3>
+            <p>IPC-6013是柔性PCB的性能规范。</p>
+          </div>
+
+          <div class="content-block">
+            <h3>IPC-6018</h3>
+            <p>IPC-6018是高频(微波)PCB的性能规范。</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">组装标准</h2>
+          <div class="content-block">
+            <h3>IPC-A-610</h3>
+            <p>IPC-A-610是"Acceptability of Electronic Assemblies"，电子组件的可接受性标准，是最广泛使用的PCBA验收标准：</p>
+            <ul>
+              <li>焊点质量标准</li>
+              <li>元件装配要求</li>
+              <li>无铅焊接要求</li>
+              <li>3级产品要求</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>IPC-J-STD-001</h3>
+            <p>IPC-J-STD-001是"Requirements for Soldered Electrical and Electronic Assemblies"，焊接电气和电子组件的要求，是焊接工艺的规范标准。</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">设计文件标准</h2>
+          <div class="content-block">
+            <h3>IPC-D-325</h3>
+            <p>IPC-D-325是"Documentation Requirements for Printed Boards"，PCB设计文件的要求。</p>
+          </div>
+
+          <div class="content-block">
+            <h3>IPC-2581</h3>
+            <p>IPC-2581是"Generic Requirements for Printed Board Assembly Products Manufacturing Description Data"，PCB装配制造描述数据的通用要求，用于数字化制造。</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">其他重要标准</h2>
+          <div class="content-block">
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>标准号</th><th>名称</th><th>应用</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>IPC-7351</td><td>PCB封装设计</td><td>焊盘图形标准</td></tr>
+                  <tr><td>IPC-7711/7721</td><td>返修与修改</td><td>返工标准</td></tr>
+                  <tr><td>IPC-4101</td><td>基材规范</td><td>材料规格</td></tr>
+                  <tr><td>IPC-4552</td><td>ENIG规范</td><td>表面处理</td></tr>
+                  <tr><td>IPC-4553</td><td>沉银规范</td><td>表面处理</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

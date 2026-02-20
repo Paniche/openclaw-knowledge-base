@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基材类型 - PCB设计知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="../design/fundamentals.html" class="nav-link">设计基础</a>
+          <a href="../design/layout.html" class="nav-link">布局设计</a>
+          <a href="../design/routing.html" class="nav-link">布线规则</a>
+          <a href="../design/impedance.html" class="nav-link">阻抗控制</a>
+          <a href="../design/drc.html" class="nav-link">设计规则检查</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../process/fabrication.html" class="nav-link">PCB制造</a>
+          <a href="../process/surface.html" class="nav-link">表面处理</a>
+          <a href="../process/assembly.html" class="nav-link">组装工艺</a>
+          <a href="../process/testing.html" class="nav-link">测试方法</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="../standards/ipc.html" class="nav-link">IPC标准</a>
+          <a href="../standards/gb.html" class="nav-link">国家标准</a>
+          <a href="../standards/design-rules.html" class="nav-link">设计规则</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="../tools/software.html" class="nav-link">设计软件</a>
+          <a href="../tools/cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="../tools/simulation.html" class="nav-link">仿真工具</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="substrates.html" class="nav-link">基材类型</a>
+          <a href="copper.html" class="nav-link">铜箔类型</a>
+          <a href="laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="breadcrumb">
+            <a href="../index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="substrates.html">基材类型</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">PCB基材类型</h1>
+          <p class="page-description">了解不同类型的PCB基材及其特性与应用。</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">FR-4材料</h2>
+          <div class="content-block">
+            <h3>FR-4概述</h3>
+            <p>FR-4是PCB最广泛使用的基材，由环氧树脂和玻璃纤维布层压而成：</p>
+            <ul>
+              <li>良好的电气性能</li>
+              <li>优异的机械强度</li>
+              <li>成本经济</li>
+              <li>易于加工</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>FR-4类型</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>类型</th><th>Tg值</th><th>应用</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>普通FR-4</td><td>130-140°C</td><td>一般电子产品</td></tr>
+                  <tr><td>中TG FR-4</td><td>150-170°C</td><td>工业控制</td></tr>
+                  <tr><td>高TG FR-4</td><td>>170°C</td><td>汽车电子</td></tr>
+                  <tr><td>无卤FR-4</td><td>130-150°C</td><td>环保产品</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">高频材料</h2>
+          <div class="content-block">
+            <h3>高频材料特点</h3>
+            <p>高频电路需要低介电常数(Dk)和低介质损耗(Df)的材料：</p>
+            <ul>
+              <li> Rogers RT/duroid</li>
+              <li> Rogers RO4000系列</li>
+              <li> Arlon AD系列</li>
+              <li> Taconic RF系列</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>高频材料参数</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>材料</th><th>Dk</th><th>Df</th><th>应用</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>FR-4</td><td>4.2-4.5</td><td>0.02</td><td>通用</td></tr>
+                  <tr><td>RO4003C</td><td>3.38</td><td>0.0027</td><td>微波</td></tr>
+                  <tr><td>RT/duroid 5880</td><td>2.2</td><td>0.0009</td><td>高频</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">金属基板</h2>
+          <div class="content-block">
+            <h3>铝基板</h3>
+            <p>铝基板具有良好的散热性能：</p>
+            <ul>
+              <li>金属铝基材</li>
+              <li>优异的散热能力</li>
+              <li>用于LED照明</li>
+              <li>电源模块应用</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>铜基板</h3>
+            <p>铜基板散热性能优于铝基板：</p>
+            <ul>
+              <li>更高的散热能力</li>
+              <li>用于大功率产品</li>
+              <li>成本较高</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">柔性材料</h2>
+          <div class="content-block">
+            <h3>聚酰亚胺</h3>
+            <p>聚酰亚胺(PI)是柔性PCB的主要基材：</p>
+            <ul>
+              <li>耐高温</li>
+              <li>柔软可弯曲</li>
+              <li>用于可穿戴设备</li>
+              <li>连接板间柔性互联</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>PET材料</h3>
+            <p>聚酯(PET)柔性材料：</p>
+            <ul>
+              <li>成本较低</li>
+              <li>用于简单柔性电路</li>
+              <li>耐温性能较低</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">材料选择</h2>
+          <div class="content-block">
+            <h3>选择依据</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>应用</th><th>推荐材料</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>通用电子</td><td>FR-4</td></tr>
+                  <tr><td>高频电路</td><td>Rogers</td></tr>
+                  <tr><td>LED照明</td><td>铝基板</td></tr>
+                  <tr><td>柔性互联</td><td>聚酰亚胺</td></tr>
+                  <tr><td>汽车电子</td><td>高TG FR-4</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

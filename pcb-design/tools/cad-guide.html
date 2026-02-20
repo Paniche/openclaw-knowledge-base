@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAD操作指南 - PCB设计知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="../design/fundamentals.html" class="nav-link">设计基础</a>
+          <a href="../design/layout.html" class="nav-link">布局设计</a>
+          <a href="../design/routing.html" class="nav-link">布线规则</a>
+          <a href="../design/impedance.html" class="nav-link">阻抗控制</a>
+          <a href="../design/drc.html" class="nav-link">设计规则检查</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../process/fabrication.html" class="nav-link">PCB制造</a>
+          <a href="../process/surface.html" class="nav-link">表面处理</a>
+          <a href="../process/assembly.html" class="nav-link">组装工艺</a>
+          <a href="../process/testing.html" class="nav-link">测试方法</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="../standards/ipc.html" class="nav-link">IPC标准</a>
+          <a href="../standards/gb.html" class="nav-link">国家标准</a>
+          <a href="../standards/design-rules.html" class="nav-link">设计规则</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="software.html" class="nav-link">设计软件</a>
+          <a href="cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="simulation.html" class="nav-link">仿真工具</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="../materials/substrates.html" class="nav-link">基材类型</a>
+          <a href="../materials/copper.html" class="nav-link">铜箔类型</a>
+          <a href="../materials/laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="breadcrumb">
+            <a href="../index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="cad-guide.html">CAD操作指南</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">CAD操作指南</h1>
+          <p class="page-description">PCB设计软件的基本操作流程和关键设置。</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">设计流程</h2>
+          <div class="content-block">
+            <h3>PCB设计基本流程</h3>
+            <ol>
+              <li><strong>新建工程</strong>：创建PCB工程文件</li>
+              <li><strong>原理图设计</strong>：绘制电路原理图</li>
+              <li><strong>网表导入</strong>：从原理图导入网表到PCB</li>
+              <li><strong>封装匹配</strong>：确认元件封装正确</li>
+              <li><strong>布局设计</strong>：元件摆放</li>
+              <li><strong>布线设计</strong>：完成信号连接</li>
+              <li><strong>DRC检查</strong>：验证设计规则</li>
+              <li><strong>输出文件</strong>：生成制造文件</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">工程设置</h2>
+          <div class="content-block">
+            <h3>层叠结构设置</h3>
+            <p>设置PCB的层数、厚度、介电常数等参数：</p>
+            <ul>
+              <li>确定层数(单面板/双面板/多层板)</li>
+              <li>设置各层铜厚</li>
+              <li>设置介质材料参数</li>
+              <li>定义阻抗控制层叠</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>设计规则设置</h3>
+            <p>配置设计规则以确保可制造性：</p>
+            <ul>
+              <li>最小线宽/线距</li>
+              <li>最小过孔/焊盘</li>
+              <li>阻焊间隙</li>
+              <li>丝印间距</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">元件操作</h2>
+          <div class="content-block">
+            <h3>封装库管理</h3>
+            <p>建立和维护元件封装库：</p>
+            <ul>
+              <li>创建新封装</li>
+              <li>修改现有封装</li>
+              <li>从数据库导入</li>
+              <li>封装检查验证</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>元件摆放</h3>
+            <p>元件布局的快捷操作：</p>
+            <ul>
+              <li>移动(Rotate)旋转元件</li>
+              <li>对齐(Align)元件排列</li>
+              <li>分布(Distribute)均匀分布</li>
+              <li>组合(Group)元件编组</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">布线操作</h2>
+          <div class="content-block">
+            <h3>走线技巧</h3>
+            <ul>
+              <li>使用45度角走线</li>
+              <li>保持走线平滑</li>
+              <li>避免走线直角转弯</li>
+              <li>合理使用泪滴</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>高级布线</h3>
+            <ul>
+              <li>交互式走线</li>
+              <li>总线布线</li>
+              <li>差分对布线</li>
+              <li>自动布线</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">输出文件</h2>
+          <div class="content-block">
+            <h3>Gerber输出</h3>
+            <p>生成制造用的Gerber文件：</p>
+            <ul>
+              <li>顶层/底层铜层</li>
+              <li>阻焊层(顶层/底层)</li>
+              <li>丝印层(顶层/底层)</li>
+              <li>钢网层(顶层/底层)</li>
+              <li>钻孔文件</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>输出设置</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>参数</th><th>推荐设置</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Gerber格式</td><td>RS-274X</td></tr>
+                  <tr><td>单位</td><td>mm</td></tr>
+                  <tr><td>精度</td><td>4:4 或 3:3</td></tr>
+                  <tr><td>坐标</td><td>Absolute</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

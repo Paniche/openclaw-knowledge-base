@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电容器 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="passive.html" class="nav-item">被动元件</a>
+          <a href="active.html" class="nav-item">主动元件</a>
+          <a href="resistors.html" class="nav-item">电阻</a>
+          <a href="capacitors.html" class="nav-item active">电容</a>
+          <a href="inductors.html" class="nav-item">电感</a>
+          <a href="diodes.html" class="nav-item">二极管</a>
+          <a href="transistors.html" class="nav-item">晶体管</a>
+          <a href="ics.html" class="nav-item">集成电路</a>
+          <a href="connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="passive.html">被动元件</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">电容器</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">电容器</h1>
+        <p class="page-subtitle">Capacitor - 储存电荷的被动元件</p>
+
+        <div class="section">
+          <h2 class="section-title">什么是电容器？</h2>
+          <p>电容器（Capacitor）是一种储存电荷的被动元件，由两个导体之间夹绝缘介质（电介质）构成。当电容器两端施加电压时，会在两个导体上积累相反的电荷，从而储存能量。</p>
+          <p>电容的基本公式：<code>C = Q/V</code>，其中C为电容值（法拉），Q为电荷量（库仑），V为电压（伏特）。</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">电容器的分类</h2>
+          
+          <h3 class="section-subtitle">按介质材料分类</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>类型</th>
+                <th>特点</th>
+                <th>容量范围</th>
+                <th>典型应用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>陶瓷电容</td>
+                <td>高频特性好，体积小，稳定性好</td>
+                <td>1pF ~ 10μF</td>
+                <td>高频滤波、耦合、旁路</td>
+              </tr>
+              <tr>
+                <td>电解电容</td>
+                <td>容量大，成本低，有极性</td>
+                <td>1μF ~ 10000μF</td>
+                <td>电源滤波、储能</td>
+              </tr>
+              <tr>
+                <td>薄膜电容</td>
+                <td>稳定性好，精度高，损耗低</td>
+                <td>1nF ~ 100μF</td>
+                <td>精密滤波、耦合、振荡</td>
+              </tr>
+              <tr>
+                <td>钽电容</td>
+                <td>低ESR，高频特性好，寿命长</td>
+                <td>1μF ~ 1000μF</td>
+                <td>精密电源滤波、开关电源</td>
+              </tr>
+              <tr>
+                <td>纸介电容</td>
+                <td>成本低，容量大</td>
+                <td>1000pF ~ 10μF</td>
+                <td>早期应用，现在较少</td>
+              </tr>
+              <tr>
+                <td>云母电容</td>
+                <td>稳定性极高，精度高</td>
+                <td>1pF ~ 0.1μF</td>
+                <td>高频精密电路</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">按极性分类</h3>
+          <ul class="content-list">
+            <li><strong>无极性电容</strong>：陶瓷电容、薄膜电容、云母电容等，可任意接入电路</li>
+            <li><strong>有极性电容</strong>：电解电容、钽电容等，必须按正确极性接入，否则会损坏</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主要参数</h2>
+          <ul class="content-list">
+            <li><strong>标称容量</strong>：电容的额定电容量，单位包括F、mF、μF、nF、pF</li>
+            <li><strong>允许偏差</strong>：实际容量与标称容量的允许偏差，通常±5%、±10%、±20%</li>
+            <li><strong>耐压</strong>：电容可承受的最大工作电压，选型时需要大于电路工作电压</li>
+            <li><strong>ESR</strong>：等效串联电阻，理想电容为零，实际越大损耗越大</li>
+            <li><strong>ESL</strong>：等效串联电感，高频特性受影响</li>
+            <li><strong>漏电流</strong>：介质绝缘不完美导致的微小电流</li>
+            <li><strong>温度系数</strong>：容量随温度变化的程度</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">主要应用</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h3 class="card-title">滤波</h3>
+              <p class="card-description">电源滤波电路中，电容用于平滑输出电压，降低纹波</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">耦合</h3>
+              <p class="card-description">阻隔直流分量，通过交流信号，用于放大器级间连接</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">旁路</h3>
+              <p class="card-description">为交流信号提供低阻抗通路，滤除噪声</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">谐振</h3>
+              <p class="card-description">与电感配合构成谐振电路，用于振荡器、滤波器</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">储能</h3>
+              <p class="card-description">储存能量，在需要时快速释放，如闪光灯电路</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">定时</h3>
+              <p class="card-description">与电阻配合构成RC时间常数电路，用于定时器、延迟电路</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">选型要点</h2>
+          <ul class="content-list">
+            <li><strong>容量和耐压</strong>：根据电路需求选择合适的容量和工作电压</li>
+            <li><strong>极性</strong>：有极性电容注意正负极，不能接反</li>
+            <li><strong>频率特性</strong>：高频电路选择低ESR、低ESL的陶瓷或薄膜电容</li>
+            <li><strong>温度特性</strong>：温度敏感电路选择温度系数小的电容</li>
+            <li><strong>寿命</strong>：电解电容有寿命限制，注意工作温度和纹波电流</li>
+          </ul>
+          <div class="alert alert-warning">
+            <strong>注意：</strong>电解电容有极性，接反会导致发热甚至爆炸！
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

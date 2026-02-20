@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制图工具与仪器 - 机械制图知识库</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="site-title">机械制图知识库</h1>
+            <p class="site-subtitle">Mechanical Drawing Knowledge Base</p>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+    </header>
+    <div class="main-container">
+        <nav class="sidebar" id="sidebar">
+            <div class="nav-section"><h3 class="nav-title">首页</h3><ul class="nav-list"><li><a href="../index.html" class="nav-link">欢迎页面</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">机械制图基础</h3><ul class="nav-list"><li><a href="introduction.html" class="nav-link">制图概述</a></li><li><a href="drawing-tools.html" class="nav-link active">制图工具与仪器</a></li><li><a href="sheet-layout.html" class="nav-link">图纸幅面与格式</a></li><li><a href="lines.html" class="nav-link">图线类型</a></li><li><a href="scales.html" class="nav-link">比例</a></li><li><a href="fonts.html" class="nav-link">字体</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">制图标准</h3><ul class="nav-list"><li><a href="../standards/iso.html" class="nav-link">国际标准 ISO</a></li><li><a href="../standards/gb.html" class="nav-link">中国国家标准 GB</a></li><li><a href="../standards/asme.html" class="nav-link">美国标准 ASME</a></li><li><a href="../standards/din.html" class="nav-link">德国标准 DIN</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">投影法</h3><ul class="nav-list"><li><a href="../projection/orthographic.html" class="nav-link">正投影法</a></li><li><a href="../projection/views.html" class="nav-link">视图</a></li><li><a href="../projection/sections.html" class="nav-link">剖视图</a></li><li><a href="../projection/cuts.html" class="nav-link">断面图</a></li><li><a href="../projection/axonometric.html" class="nav-link">轴测图</a></li><li><a href="../projection/perspective.html" class="nav-link">透视图</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">尺寸标注</h3><ul class="nav-list"><li><a href="../dimensioning/principles.html" class="nav-link">标注基本原则</a></li><li><a href="../dimensioning/linear.html" class="nav-link">线性尺寸标注</a></li><li><a href="../dimensioning/angular.html" class="nav-link">角度尺寸标注</a></li><li><a href="../dimensioning/radii-diameters.html" class="nav-link">半径与直径标注</a></li><li><a href="../dimensioning/special.html" class="nav-link">特殊尺寸标注</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">公差与配合</h3><ul class="nav-list"><li><a href="../tolerances/fundamentals.html" class="nav-link">基本概念</a></li><li><a href="../tolerances/fits.html" class="nav-link">配合类型</a></li><li><a href="../tolerances/tolerance-grades.html" class="nav-link">公差等级</a></li><li><a href="../tolerances/deviation.html" class="nav-link">基本偏差</a></li><li><a href="../tolerances/geometric.html" class="nav-link">几何公差</a></li><li><a href="../tolerances/surface.html" class="nav-link">表面粗糙度</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">符号与标注</h3><ul class="nav-list"><li><a href="../symbols/welding.html" class="nav-link">焊接符号</a></li><li><a href="../symbols/threads.html" class="nav-link">螺纹画法与标注</a></li><li><a href="../symbols/gears.html" class="nav-link">齿轮画法</a></li><li><a href="../symbols/springs.html" class="nav-link">弹簧画法</a></li><li><a href="../symbols/bearings.html" class="nav-link">滚动轴承画法</a></li><li><a href="../symbols/surface-treatment.html" class="nav-link">表面处理与镀涂</a></li></ul></div>
+            <div class="nav-section"><h3 class="nav-title">材料与热处理</h3><ul class="nav-list"><li><a href="../materials/metals.html" class="nav-link">常用金属材料</a></li><li><a href="../materials/non-metals.html" class="nav-link">非金属材料</a></li><li><a href="../materials/heat-treatment.html" class="nav-link">热处理工艺</a></li><li><a href="../materials/designation.html" class="nav-link">材料牌号表示方法</a></li></ul></div>
+        </nav>
+        <main class="content">
+            <div class="page-header">
+                <h1>制图工具与仪器</h1>
+                <p class="subtitle">Drawing Instruments and Tools</p>
+            </div>
+            <section class="content-section">
+                <h2>绘图板</h2>
+                <p>绘图板（图板）是用来铺放和固定图纸的木板。常用规格有0号（900×1200mm）、1号（600×900mm）、2号（450×600mm）等。优质图板应选用不易变形的木材，表面平整光滑，四边平直。</p>
+            </section>
+            <section class="content-section">
+                <h2>丁字尺</h2>
+                <p>丁字尺由尺头和尺身组成，主要用于画水平线。使用时尺头必须紧靠图板左侧边缘，从左向右画水平线。丁字尺应垂直存放，防止尺身弯曲变形。</p>
+            </section>
+            <section class="content-section">
+                <h2>三角板</h2>
+                <p>一副三角板包括30°-60°-90°和45°-45°-90°各一块。与丁字尺配合可画垂直线和15°倍数的倾斜线。两块三角板配合可画任意角度的平行线。</p>
+            </section>
+            <section class="content-section">
+                <h2>圆规</h2>
+                <p>圆规用于画圆和圆弧。结构包括固定腿（带针尖）、活动腿（可换铅笔芯或墨水笔尖）、调距装置和延伸杆。使用要点：</p>
+                <ul>
+                    <li>针尖与铅笔芯尖应平齐</li>
+                    <li>画圆时顺时针旋转</li>
+                    <li>加大圆时使用延伸杆</li>
+                    <li>保持两腿与纸面垂直</li>
+                </ul>
+            </section>
+            <section class="content-section">
+                <h2>分规</h2>
+                <p>分规用于等分线段、量取尺寸和圆规的辅助工具。使用时两针尖应对齐，旋转时保持两腿开合角度不变。</p>
+            </section>
+            <section class="content-section">
+                <h2>比例尺</h2>
+                <p>比例尺用于直接在图上量取不同比例的尺寸。常见三棱比例尺有1:100、1:200、1:250、1:300、1:400、1:500等多种比例。</p>
+            </section>
+            <section class="content-section">
+                <h2>绘图铅笔</h2>
+                <p>绘图铅笔根据铅芯硬度分为H～6H（硬）、HB（中）、B～6B（软）等级别。绘图时建议：</p>
+                <ul>
+                    <li>画细线用H或HB</li>
+                    <li>画粗实线用HB或B</li>
+                    <li>写字用HB或H</li>
+                    <li>画底稿用2H</li>
+                </ul>
+            </section>
+            <section class="content-section">
+                <h2>其他工具</h2>
+                <div class="definition-list">
+                    <div class="definition-item">
+                        <span class="definition-term">橡皮</span>
+                        <span class="definition-desc">用于擦除错误线条，软质橡皮用于铅笔绘图，硬质橡皮用于擦墨线</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">削笔刀</span>
+                        <span class="definition-desc">用于削铅笔，保持铅芯尖锐</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">橡皮擦</span>
+                        <span class="definition-desc">用于固定图纸，防止图纸移动</span>
+                    </div>
+                    <div class="definition-item">
+                        <span class="definition-term">模板</span>
+                        <span class="definition-desc">椭圆模板、曲线板等用于绘制特定曲线</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

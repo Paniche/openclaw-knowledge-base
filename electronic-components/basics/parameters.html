@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>参数解读 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="../components/passive.html" class="nav-item">被动元件</a>
+          <a href="../components/active.html" class="nav-item">主动元件</a>
+          <a href="../components/resistors.html" class="nav-item">电阻</a>
+          <a href="../components/capacitors.html" class="nav-item">电容</a>
+          <a href="../components/inductors.html" class="nav-item">电感</a>
+          <a href="../components/diodes.html" class="nav-item">二极管</a>
+          <a href="../components/transistors.html" class="nav-item">晶体管</a>
+          <a href="../components/ics.html" class="nav-item">集成电路</a>
+          <a href="../components/connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="principles.html" class="nav-item">电学原理</a>
+          <a href="symbols.html" class="nav-item">电路符号</a>
+          <a href="parameters.html" class="nav-item active">参数解读</a>
+          <a href="packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../manufacturing/process.html" class="nav-item">制造流程</a>
+          <a href="../manufacturing/materials.html" class="nav-item">材料科学</a>
+          <a href="../manufacturing/testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">参数解读</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">参数解读</h1>
+        <p class="page-subtitle">Component Parameters - 电子元器件关键参数详解</p>
+
+        <div class="section">
+          <h2 class="section-title">电阻器参数</h2>
+          
+          <h3 class="section-subtitle">标称阻值</h3>
+          <p>电阻的额定阻值，通常采用E系列标准化数值。</p>
+          <ul class="content-list">
+            <li><strong>E6系列</strong>：10, 15, 22, 33, 47, 68 (允差±20%)</li>
+            <li><strong>E12系列</strong>：10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82 (允差±10%)</li>
+            <li><strong>E24系列</strong>：1.0-9.1之间的24个数值 (允差±5%)</li>
+            <li><strong>E96系列</strong>：96个数值 (允差±1%)</li>
+          </ul>
+
+          <h3 class="section-subtitle">额定功率</h3>
+          <p>电阻在额定温度下可连续工作的最大功率。常用功率等级：</p>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>功率</th>
+                <th>常见封装</th>
+                <th>应用</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1/16W</td><td>0201, 0402</td><td>手机等小型化设备</td></tr>
+              <tr><td>1/8W</td><td>0603</td><td>一般消费电子</td></tr>
+              <tr><td>1/4W</td><td>0805</td><td>通用电路</td></tr>
+              <tr><td>1/2W</td><td>1206</td><td>电源电路</td></tr>
+              <tr><td>1W+</td><td>1210及以上</td><td>功率电路</td></tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">温度系数(TCR)</h3>
+          <p>电阻值随温度变化的程度，单位ppm/°C (百万分之一每度)。</p>
+          <ul class="content-list">
+            <li><strong>碳膜电阻</strong>：200-1000 ppm/°C</li>
+            <li><strong>金属膜电阻</strong>：25-100 ppm/°C</li>
+            <li><strong>精密金属膜</strong>：5-25 ppm/°C</li>
+            <li><strong>线绕电阻</strong>：10-50 ppm/°C</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">电容器参数</h2>
+          
+          <h3 class="section-subtitle">电容值</h3>
+          <p>电容器储存电荷的能力，单位包括：</p>
+          <div class="code-block">
+            <pre>1 F (法拉) = 10^3 mF = 10^6 μF = 10^9 nF = 10^12 pF</pre>
+          </div>
+
+          <h3 class="section-subtitle">耐压</h3>
+          <p>电容器可承受的最大工作电压，选型时应选择高于实际工作电压的规格。</p>
+          <ul class="content-list">
+            <li>常见耐压等级：6.3V, 10V, 16V, 25V, 50V, 100V, 250V, 400V, 630V</li>
+            <li>一般选择耐压为工作电压的1.5-2倍</li>
+          </ul>
+
+          <h3 class="section-subtitle">ESR等效串联电阻</h3>
+          <p>电容器内部等效串联电阻，ESR越大，损耗越大，高频特性越差。</p>
+          <ul class="content-list">
+            <li><strong>陶瓷电容</strong>：ESR很低</li>
+            <li><strong>电解电容</strong>：ESR较高</li>
+            <li><strong>钽电容</strong>：ESR很低</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">电感器参数</h2>
+          
+          <h3 class="section-subtitle">电感量</h3>
+          <p>电感器储存磁场能量的能力。</p>
+          <div class="code-block">
+            <pre>1 H (亨利) = 10^3 mH = 10^6 μH</pre>
+          </div>
+
+          <h3 class="section-subtitle">额定电流</h3>
+          <p>电感器可连续通过的最大电流，超过可能导致磁芯饱和。</p>
+
+          <h3 class="section-subtitle">直流电阻(DCR)</h3>
+          <p>线圈本身的电阻，DCR越大，损耗越大。</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">半导体器件参数</h2>
+          
+          <h3 class="section-subtitle">二极管参数</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>参数</th>
+                <th>含义</th>
+                <th>典型值</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>IF</td><td>正向平均电流</td><td>100mA-10A</td></tr>
+              <tr><td>VF</td><td>正向压降</td><td>0.6V-1.2V</td></tr>
+              <tr><td>VR</td><td>反向耐压</td><td>50V-1000V</td></tr>
+              <tr><td>IR</td><td>反向漏电流</td><td>μA级别</td></tr>
+              <tr><td>trr</td><td>反向恢复时间</td><td>ns-μs</td></tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">晶体管参数</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>参数</th>
+                <th>含义</th>
+                <th>BJT/MOSFET</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>VCEO/VDS</td><td>耐压</td><td>集电极-发射极/漏-源</td></tr>
+              <tr><td>IC/ID</td><td>额定电流</td><td>集电极/漏极电流</td></tr>
+              <tr><td>hFE/RDS(on)</td><td>放大系数/导通电阻</td><td>BJT特有/MOSFET特有</td></tr>
+              <tr><td>fT</td><td>特征频率</td><td>高频特性</td></tr>
+              <tr><td>VCE(sat)/VGS(th)</td><td>饱和压降/阈值电压</td><td>开关特性</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">集成电路参数</h2>
+          
+          <h3 class="section-subtitle">工作参数</h3>
+          <ul class="content-list">
+            <li><strong>工作电压范围</strong>：正常工作的电压范围</li>
+            <li><strong>工作温度范围</strong>：保证性能的的温度范围</li>
+            <li><strong>功耗</strong>：静态功耗+动态功耗</li>
+          </ul>
+
+          <h3 class="section-subtitle">时序参数</h3>
+          <ul class="content-list">
+            <li><strong>建立时间(tSU)</strong>：数据相对于时钟的建立时间</li>
+            <li><strong>保持时间(tH)</strong>：数据相对于时钟的保持时间</li>
+            <li><strong>传播延迟(tPD)</strong>：输入到输出的延迟</li>
+            <li><strong>最高时钟频率(fMAX)</strong>：可工作的最高时钟</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">参数标识方法</h2>
+          
+          <h3 class="section-subtitle">贴片电阻标识</h3>
+          <ul class="content-list">
+            <li><strong>3位数字</strong>：前两位为有效数字，第三位为倍乘数 (如102 = 1kΩ)</li>
+            <li><strong>4位数字</strong>：前三位为有效数字，第四位为倍乘数 (如1002 = 10kΩ)</li>
+            <li><strong>E96代码</strong>：3位字母数字混合代码</li>
+          </ul>
+
+          <h3 class="section-subtitle">贴片电容标识</h3>
+          <ul class="content-list">
+            <li><strong>数值直接标识</strong>：pF为单位 (如102 = 1000pF)</li>
+            <li><strong>字母代码</strong>：EIA标准代码</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

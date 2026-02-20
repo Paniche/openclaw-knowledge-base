@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>布线规则 - PCB设计知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="sidebar-logo">
+          <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M4 8a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm4 0v16h16V8H8z"/>
+            <path d="M10 12h12v2H10v-2zm0 4h8v2h-8v-2zm0 4h10v2h-10v-2z"/>
+          </svg>
+          <span>PCB知识库</span>
+        </a>
+        <p class="sidebar-subtitle">PCB Design Knowledge Base</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">PCB设计基础</div>
+          <a href="fundamentals.html" class="nav-link">设计基础</a>
+          <a href="layout.html" class="nav-link">布局设计</a>
+          <a href="routing.html" class="nav-link">布线规则</a>
+          <a href="impedance.html" class="nav-link">阻抗控制</a>
+          <a href="drc.html" class="nav-link">设计规则检查</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="../process/fabrication.html" class="nav-link">PCB制造</a>
+          <a href="../process/surface.html" class="nav-link">表面处理</a>
+          <a href="../process/assembly.html" class="nav-link">组装工艺</a>
+          <a href="../process/testing.html" class="nav-link">测试方法</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计规范</div>
+          <a href="../standards/ipc.html" class="nav-link">IPC标准</a>
+          <a href="../standards/gb.html" class="nav-link">国家标准</a>
+          <a href="../standards/design-rules.html" class="nav-link">设计规则</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">设计工具</div>
+          <a href="../tools/software.html" class="nav-link">设计软件</a>
+          <a href="../tools/cad-guide.html" class="nav-link">CAD操作指南</a>
+          <a href="../tools/simulation.html" class="nav-link">仿真工具</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">材料</div>
+          <a href="../materials/substrates.html" class="nav-link">基材类型</a>
+          <a href="../materials/copper.html" class="nav-link">铜箔类型</a>
+          <a href="../materials/laminates.html" class="nav-link">覆铜板参数</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="header-left">
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="breadcrumb">
+            <a href="../index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="routing.html">布线规则</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="搜索... (Ctrl+K)">
+            <div class="search-results"></div>
+          </div>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <h1 class="page-title">布线规则</h1>
+          <p class="page-description">掌握PCB布线的基本原则、高速信号布线、电源地线设计以及差分对布线技术。</p>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">布线基本原则</h2>
+          <div class="content-block">
+            <h3>布线优先级</h3>
+            <p>PCB布线应按照以下优先级进行：</p>
+            <ol>
+              <li><strong>高速信号线</strong>：时钟、复位等关键信号优先布线</li>
+              <li><strong>敏感信号线</strong>：模拟信号、差分对</li>
+              <li><strong>电源地线</strong>：功率电源和完整地平面</li>
+              <li><strong>普通信号线</strong>：一般数字信号</li>
+            </ol>
+          </div>
+
+          <div class="content-block">
+            <h3>走线角度</h3>
+            <ul>
+              <li>避免使用45°以下的角度，使用45°或圆弧过渡</li>
+              <li>避免走线直角转弯，使用45°斜线或圆角</li>
+              <li>高速信号避免直角，使用圆角或45°角</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">高速信号布线</h2>
+          <div class="content-block">
+            <h3>高速信号布线要点</h3>
+            <p>高速信号布线需要特别注意信号完整性问题：</p>
+            <ul>
+              <li><strong>走线短直</strong>：减少走线长度，降低寄生电感</li>
+              <li><strong>阻抗连续</strong>：保持阻抗恒定，避免突变</li>
+              <li><strong>参考平面完整</strong>：确保相邻层有完整的地或电源平面</li>
+              <li><strong>远离干扰源</strong>：远离电源、时钟等干扰源</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>布线层选择</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>信号类型</th><th>推荐层</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>高速信号</td><td>L1/L6 (表层)</td><td>短走线，阻抗控制好</td></tr>
+                  <tr><td>中速信号</td><td>L3/L4</td><td>相邻完整地平面</td></tr>
+                  <tr><td>低速信号</td><td>任意层</td><td>布线灵活</td></tr>
+                  <tr><td>电源</td><td>内层</td><td>大面积铺铜</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="content-block">
+            <h3>时钟信号布线</h3>
+            <p>时钟是PCB中最重要的高速信号，需要特殊处理：</p>
+            <ol>
+              <li>时钟线走在相邻地平面之上，缩短回流路径</li>
+              <li>时钟线两侧添加地保护线</li>
+              <li>避免时钟线跨越分割平面</li>
+              <li>时钟线长度匹配误差控制在2.5mm以内</li>
+            </ol>
+            <div class="info-box warning">
+              <div class="info-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                重要原则
+              </div>
+              <p>时钟线绝对不能跨越PCB上的任何分割线，包括电源平面的分割。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">电源与地线设计</h2>
+          <div class="content-block">
+            <h3>电源布线原则</h3>
+            <ul>
+              <li>电源线应尽量短而宽，减少压降和寄生电感</li>
+              <li>大电流路径使用多个过孔并联，降低阻抗</li>
+              <li>电源输入端放置滤波电容</li>
+              <li>每个芯片电源引脚附近放置去耦电容</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>电源线宽计算</h3>
+            <p>电源线宽需根据载流能力计算：</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>铜厚</th><th>1mm线宽载流</th><th>计算公式</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1oz (35μm)</td><td>约1A/mm</td><td rowspan="3">W = I / (K × T)</td></tr>
+                  <tr><td>2oz (70μm)</td><td>约1.5A/mm</td></tr>
+                  <tr><td>3oz (105μm)</td><td>约2A/mm</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>注：K为常数(约0.048)，T为温升(10-20°C)</p>
+          </div>
+
+          <div class="content-block">
+            <h3>地平面设计</h3>
+            <p>地平面是PCB设计中最重要的部分：</p>
+            <ul>
+              <li>保持地平面完整，避免挖孔和开槽</li>
+              <li>高速信号相邻层必须是完整地平面</li>
+              <li>地平面应尽量大面积铺铜</li>
+              <li>多点连接地平面，降低接地阻抗</li>
+            </ul>
+            <div class="info-box success">
+              <div class="info-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                最佳实践
+              </div>
+              <p>多层板设计中，至少保留一层完整的地平面，这是高速PCB设计的基础。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">差分对布线</h2>
+          <div class="content-block">
+            <h3>差分信号优势</h3>
+            <p>差分信号具有抗干扰能力强、EMI辐射低的优势：</p>
+            <ul>
+              <li>共模噪声被抵消</li>
+              <li>信号幅度翻倍</li>
+              <li>EMI辐射降低</li>
+              <li>时序定位更精确</li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3>差分对布线规则</h3>
+            <ol>
+              <li><strong>等长匹配</strong>：两根线长度误差小于2.5mm</li>
+              <li><strong>等宽等距</strong>：保持线宽和间距恒定</li>
+              <li><strong>紧耦合</strong>：差分对间距通常为2倍线宽</li>
+              <li><strong>同层走线</strong>：差分对应在同一层</li>
+              <li><strong>避免过孔</strong>：尽量减少过孔数量</li>
+            </ol>
+          </div>
+
+          <div class="content-block">
+            <h3>常见差分对参数</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr><th>标准</th><th>阻抗</th><th>线宽</th><th>间距</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>USB 2.0</td><td>90Ω</td><td>0.25mm</td><td>0.25mm</td></tr>
+                  <tr><td>USB 3.0</td><td>90Ω</td><td>0.3mm</td><td>0.3mm</td></tr>
+                  <tr><td>HDMI</td><td>100Ω</td><td>0.2mm</td><td>0.2mm</td></tr>
+                  <tr><td>LVDS</td><td>100Ω</td><td>0.2mm</td><td>0.2mm</td></tr>
+                  <tr><td>Ethernet</td><td>100Ω</td><td>0.2mm</td><td>0.2mm</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">布线检查清单</h2>
+          <div class="content-block">
+            <ol>
+              <li>高速信号走线是否最短且直</li>
+              <li>阻抗控制线是否满足阻抗要求</li>
+              <li>时钟线是否两侧有保护地线</li>
+              <li>差分对是否等长等距</li>
+              <li>电源线宽是否满足电流需求</li>
+              <li>地平面是否完整，无分割</li>
+              <li>高速信号是否跨越平面分割</li>
+              <li>关键信号是否远离干扰源</li>
+            </ol>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>PCB Design Knowledge Base - 持续更新中</p>
+      </footer>
+    </main>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

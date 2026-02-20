@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>制造流程 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="../components/passive.html" class="nav-item">被动元件</a>
+          <a href="../components/active.html" class="nav-item">主动元件</a>
+          <a href="../components/resistors.html" class="nav-item">电阻</a>
+          <a href="../components/capacitors.html" class="nav-item">电容</a>
+          <a href="../components/inductors.html" class="nav-item">电感</a>
+          <a href="../components/diodes.html" class="nav-item">二极管</a>
+          <a href="../components/transistors.html" class="nav-item">晶体管</a>
+          <a href="../components/ics.html" class="nav-item">集成电路</a>
+          <a href="../components/connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="process.html" class="nav-item active">制造流程</a>
+          <a href="materials.html" class="nav-item">材料科学</a>
+          <a href="testing.html" class="nav-item">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">制造流程</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">制造流程</h1>
+        <p class="page-subtitle">Manufacturing Process - 从原材料到成品的完整制造过程</p>
+
+        <div class="section">
+          <h2 class="section-title">半导体制造流程</h2>
+          <p>半导体器件制造是现代制造业中最复杂、最精密的工艺之一，需要在超净环境中进行。</p>
+          
+          <h3 class="section-subtitle">主要制造步骤</h3>
+          <ol class="numbered-list">
+            <li><strong>硅片制备</strong>：从沙子里提取硅，提纯后拉制成单晶硅棒，切割成硅片</li>
+            <li><strong>氧化</strong>：在硅片表面生长二氧化硅绝缘层</li>
+            <li><strong>光刻</strong>：使用光刻机将电路图案转移到硅片上</li>
+            <li><strong>掺杂</strong>：通过扩散或离子注入改变硅的导电性</li>
+            <li><strong>沉积</strong>：在硅片上沉积金属薄膜或多晶硅</li>
+            <li><strong>刻蚀</strong>：按照图案刻蚀不需要的材料</li>
+            <li><strong>测试</strong>：对晶圆进行电学测试</li>
+            <li><strong>切割</strong>：将晶圆切割成单独的芯片</li>
+            <li><strong>封装</strong>：将芯片封装在保护外壳中</li>
+            <li><strong>最终测试</strong>：对封装后的器件进行功能测试</li>
+          </ol>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">被动元件制造流程</h2>
+          
+          <h3 class="section-subtitle">电阻器制造</h3>
+          <ul class="content-list">
+            <li><strong>碳膜电阻</strong>：在陶瓷基体上沉积碳膜，刻蚀成螺旋形状，焊接引线，涂覆保护漆</li>
+            <li><strong>金属膜电阻</strong>：在陶瓷基体上溅射金属合金膜，其他工序类似</li>
+            <li><strong>贴片电阻</strong>：在氧化铝基片上印刷电阻浆料，烧结成电阻膜</li>
+          </ul>
+
+          <h3 class="section-subtitle">电容器制造</h3>
+          <ul class="content-list">
+            <li><strong>陶瓷电容</strong>：在陶瓷生胚上印刷电极，叠层、压制、烧结</li>
+            <li><strong>电解电容</strong>：在铝箔上形成氧化铝介质层，卷绕、浸渍电解液、封装</li>
+            <li><strong>薄膜电容</strong>：在塑料薄膜上蒸镀金属电极，卷绕、压铸</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">PCB制造流程</h2>
+          
+          <h3 class="section-subtitle">PCB制造主要步骤</h3>
+          <ol class="numbered-list">
+            <li><strong>开料</strong>：根据设计尺寸切割覆铜板</li>
+            <li><strong>钻孔</strong>：按照要求在PCB上钻孔</li>
+            <li><strong>沉铜</strong>：在孔壁沉积铜层</li>
+            <li><strong>图形转移</strong>：将电路图案转移到PCB上</li>
+            <li><strong>电镀</strong>：镀铜加厚，镀锡保护</li>
+            <li><strong>蚀刻</strong>：蚀刻掉多余的铜</li>
+            <li><strong>丝印</strong>：印刷元件标识和丝印层</li>
+            <li><strong>成型</strong>：切割成最终尺寸</li>
+            <li><strong>测试</strong>：电气性能测试</li>
+          </ol>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">封装工艺</h2>
+          
+          <h3 class="section-subtitle">IC封装类型及工艺</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>封装类型</th>
+                <th>制造工艺</th>
+                <th>特点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DIP</td>
+                <td>引脚成型→芯片粘接→引线键合→塑封→切筋</td>
+                <td>成熟工艺，成本低</td>
+              </tr>
+              <tr>
+                <td>SOP</td>
+                <td>贴片封装，框架蚀刻→芯片贴装→键合→模压</td>
+                <td>自动化程度高</td>
+              </tr>
+              <tr>
+                <td>QFP</td>
+                <td>框架蚀刻→芯片贴装→引线键合→注塑→切筋→电镀</td>
+                <td>引脚数量多</td>
+              </tr>
+              <tr>
+                <td>BGA</td>
+                <td>基板制作→芯片贴装→倒装键合→底部填充→植球</td>
+                <td>高密度，高性能</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">表面贴装工艺(SMT)</h2>
+          
+          <h3 class="section-subtitle">SMT主要工序</h3>
+          <ol class="numbered-list">
+            <li><strong>PCB上料</strong>：将PCB板送入生产线</li>
+            <li><strong>锡膏印刷</strong>：在焊盘上印刷锡膏</li>
+            <li><strong>贴装</strong>：贴片机将元件贴装到PCB上</li>
+            <li><strong>回流焊接</strong>：通过回流焊炉固化</li>
+            <li><strong>AOI检测</strong>：自动光学检测</li>
+            <li><strong>X-Ray检测</strong>：检测焊点质量</li>
+            <li><strong>下料</strong>：完成品输出</li>
+          </ol>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

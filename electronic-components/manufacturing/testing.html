@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试与检验 - 电子元器件知识库</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+          <h1>电子元器件</h1>
+        </div>
+      </div>
+      <div class="search-box">
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input type="text" class="search-input" placeholder="搜索页面...">
+        </div>
+        <div class="search-results"></div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="../index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            首页
+          </a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">元器件分类</div>
+          <a href="../components/passive.html" class="nav-item">被动元件</a>
+          <a href="../components/active.html" class="nav-item">主动元件</a>
+          <a href="../components/resistors.html" class="nav-item">电阻</a>
+          <a href="../components/capacitors.html" class="nav-item">电容</a>
+          <a href="../components/inductors.html" class="nav-item">电感</a>
+          <a href="../components/diodes.html" class="nav-item">二极管</a>
+          <a href="../components/transistors.html" class="nav-item">晶体管</a>
+          <a href="../components/ics.html" class="nav-item">集成电路</a>
+          <a href="../components/connectors.html" class="nav-item">连接器</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">基础知识</div>
+          <a href="../basics/principles.html" class="nav-item">电学原理</a>
+          <a href="../basics/symbols.html" class="nav-item">电路符号</a>
+          <a href="../basics/parameters.html" class="nav-item">参数解读</a>
+          <a href="../basics/packages.html" class="nav-item">封装类型</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">制造工艺</div>
+          <a href="process.html" class="nav-item">制造流程</a>
+          <a href="materials.html" class="nav-item">材料科学</a>
+          <a href="testing.html" class="nav-item active">测试检验</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">执行标准</div>
+          <a href="../standards/international.html" class="nav-item">国际标准</a>
+          <a href="../standards/national.html" class="nav-item">国家标准</a>
+          <a href="../standards/industry.html" class="nav-item">行业标准</a>
+        </div>
+        <div class="nav-section">
+          <div class="nav-section-title">质量保证</div>
+          <a href="../quality/grades.html" class="nav-item">质量等级</a>
+          <a href="../quality/reliability.html" class="nav-item">可靠性分析</a>
+          <a href="../quality/certification.html" class="nav-item">认证体系</a>
+        </div>
+      </nav>
+      <button class="theme-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>深色模式</button>
+    </aside>
+    <div class="sidebar-overlay"></div>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <nav class="breadcrumb">
+          <a href="../index.html">首页</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">测试检验</span>
+        </nav>
+      </header>
+      <div class="content-wrapper">
+        <h1 class="page-title">测试与检验</h1>
+        <p class="page-subtitle">Testing and Inspection - 电子元器件的质量检验</p>
+
+        <div class="section">
+          <h2 class="section-title">测试分类</h2>
+          
+          <h3 class="section-subtitle">按测试阶段分类</h3>
+          <ul class="content-list">
+            <li><strong>晶圆测试(CP)</strong>：在芯片切割前进行功能测试</li>
+            <li><strong>最终测试(FT)</strong>：封装完成后进行功能测试</li>
+            <li><strong>老化测试(Burn-in)</strong>：加速老化，筛选早期失效</li>
+            <li><strong>入库检验</strong>：出厂前的最终检验</li>
+          </ul>
+
+          <h3 class="section-subtitle">按测试性质分类</h3>
+          <ul class="content-list">
+            <li><strong>功能测试</strong>：验证器件是否实现预期功能</li>
+            <li><strong>参数测试</strong>：测量电气参数是否在规格范围内</li>
+            <li><strong>可靠性测试</strong>：评估器件寿命和可靠性</li>
+            <li><strong>破坏性测试</strong>：极限条件测试，抽样进行</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">常见测试项目</h2>
+          
+          <h3 class="section-subtitle">电阻测试</h3>
+          <ul class="content-list">
+            <li>标称阻值测量</li>
+            <li>精度/允差测试</li>
+            <li>温度系数测试</li>
+            <li>功率测试</li>
+            <li>噪声测试</li>
+          </ul>
+
+          <h3 class="section-subtitle">电容测试</h3>
+          <ul class="content-list">
+            <li>容量测试</li>
+            <li>损耗因子(Df)测试</li>
+            <li>ESR测试</li>
+            <li>耐压测试</li>
+            <li>漏电流测试</li>
+          </ul>
+
+          <h3 class="section-subtitle">IC测试</h3>
+          <ul class="content-list">
+            <li>功能测试</li>
+            <li>DC参数测试(VIH、VIL、IOH、IOL等)</li>
+            <li>AC时序测试(tPHL、tPLH等)</li>
+            <li>功耗测试</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">检测技术</h2>
+          
+          <h3 class="section-subtitle">自动测试设备(ATE)</h3>
+          <p>用于大规模集成电路测试的自动化设备。</p>
+          <ul class="content-list">
+            <li><strong>测试系统</strong>：泰瑞达(Teradyne)、爱德万(Advantest)</li>
+            <li><strong>测试夹具</strong>：DUT Board、Load Board</li>
+            <li><strong>测试程序</strong>：针对不同器件编写的测试序列</li>
+          </ul>
+
+          <h3 class="section-subtitle">AOI自动光学检测</h3>
+          <ul class="content-list">
+            <li>用于PCB和封装外观检测</li>
+            <li>检测焊接缺陷、元件偏位、缺失元件</li>
+            <li>高分辨率相机+图像处理算法</li>
+          </ul>
+
+          <h3 class="section-subtitle">X-Ray检测</h3>
+          <ul class="content-list">
+            <li>检测BGA等隐藏焊点</li>
+            <li>检测内部缺陷</li>
+            <li>2D和3D X-Ray</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">可靠性测试</h2>
+          
+          <h3 class="section-subtitle">环境试验</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>测试项目</th>
+                <th>目的</th>
+                <th>标准</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>高温工作</td><td>评估高温下的工作能力</td><td>JEDEC、MIL-STD</td></tr>
+              <tr><td>低温工作</td><td>评估低温下的工作能力</td><td>JEDEC、MIL-STD</td></tr>
+              <tr><td>温度循环</td><td>评估热疲劳</td><td>MIL-STD-883</td></tr>
+              <tr><td>热冲击</td><td>评估快速温度变化</td><td>MIL-STD-883</td></tr>
+              <tr><td>高温高湿</td><td>评估湿热影响</td><td>JESD22</td></tr>
+            </tbody>
+          </table>
+
+          <h3 class="section-subtitle">机械试验</h3>
+          <ul class="content-list">
+            <li>振动测试</li>
+            <li>冲击测试</li>
+            <li>引脚强度测试</li>
+            <li>封装完整性测试</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">质量指标</h2>
+          
+          <ul class="content-list">
+            <li><strong>良率(Yield)</strong>：合格产品占总产量的比例</li>
+            <li><strong>DPPM</strong>：每百万件中缺陷数</li>
+            <li><strong>AQL</strong>：可接受质量水平</li>
+            <li><strong>FTY</strong>：最终测试良率</li>
+            <li><strong>CPK</strong>：过程能力指数</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <button class="back-to-top"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg></button>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
