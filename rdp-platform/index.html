@@ -1,0 +1,2462 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>微波通信与探测系统研发管理平台实施方案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #4a90e2;
+            --accent: #f39c12;
+            --text-primary: #262626;
+            --text-secondary: #595959;
+            --border: #d9d9d9;
+            --bg-light: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+        
+        .serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, #1e4a8a 100%);
+            color: white;
+            overflow-y: auto;
+            z-index: 50;
+            padding: 2rem 1.5rem;
+            box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .abstract-highlight {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .citation-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .citation-link:hover {
+            border-bottom-color: var(--secondary);
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 50%, transparent 100%);
+            margin: 4rem 0;
+        }
+        
+        @media (max-width: 1024px) {
+            .toc-fixed {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .toc-fixed.open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .hero-section .grid.grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 390px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+  <base target="_blank">
+</head>
+
+  <body class="bg-gray-50">
+    <!-- Fixed Table of Contents -->
+    <nav class="toc-fixed">
+      <div class="mb-8">
+        <h2 class="text-xl font-bold mb-4 serif">目录导航</h2>
+        <div class="h-px bg-white/30 mb-6"></div>
+      </div>
+
+      <ul class="space-y-3 text-sm">
+        <li>
+          <a href="#executive-summary" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">执行摘要</a>
+        </li>
+        <li>
+          <a href="#architecture" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">1. 总体架构设计</a>
+          <ul class="ml-4 mt-2 space-y-2 text-xs opacity-80">
+            <li>
+              <a href="#architecture-principles" class="block py-1 px-2 hover:bg-white/10 rounded">架构原则与目标</a>
+            </li>
+            <li>
+              <a href="#tech-stack" class="block py-1 px-2 hover:bg-white/10 rounded">技术栈选型</a>
+            </li>
+            <li>
+              <a href="#deployment" class="block py-1 px-2 hover:bg-white/10 rounded">部署架构</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#portal" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">2. 门户界面模块</a>
+        </li>
+        <li>
+          <a href="#user-management" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">3. 用户管理模块</a>
+        </li>
+        <li>
+          <a href="#project-management" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">4. 项目管理模块</a>
+        </li>
+        <li>
+          <a href="#project-development" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">5. 项目开发模块</a>
+        </li>
+        <li>
+          <a href="#product-shelf" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">6. 产品货架模块</a>
+        </li>
+        <li>
+          <a href="#technology-shelf" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">7. 技术货架模块</a>
+        </li>
+        <li>
+          <a href="#knowledge-base" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">8. 知识库模块</a>
+        </li>
+        <li>
+          <a href="#forum" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">9. 技术论坛模块</a>
+        </li>
+        <li>
+          <a href="#communication" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">10. 即时通信模块</a>
+        </li>
+        <li>
+          <a href="#implementation" class="block py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">11. 实施路线图</a>
+        </li>
+      </ul>
+
+      <div class="mt-12 pt-6 border-t border-white/30">
+        <p class="text-xs opacity-60">微波通信与探测系统</p>
+        <p class="text-xs opacity-60">研发管理平台</p>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section min-h-screen flex items-center">
+        <div class="container mx-auto px-8 py-16">
+          <div class="bento-grid">
+            <!-- Main Title Area -->
+            <div class="space-y-8">
+              <div class="space-y-4">
+                <div class="text-sm font-medium text-gray-500 tracking-wider uppercase">
+                  数字化研发管理解决方案
+                </div>
+                <h1 class="hero-title serif">
+                  微波通信与探测系统
+                  <br/>研发管理平台
+                  <br/>实施方案
+                </h1>
+              </div>
+
+              <div class="abstract-highlight p-6 rounded-2xl">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                  为微波通信与探测系统研发部门设计的完整数字化管理平台，采用<strong>微前端架构</strong>实现多团队独立开发，支持<strong>离线局域网部署</strong>，涵盖从需求对接到产品交付的全生命周期管理需求。
+                </p>
+              </div>
+
+              <div class="flex items-center space-x-6 text-sm text-gray-600">
+                <div class="flex items-center space-x-2">
+                  <i class="fas fa-microchip text-blue-600"></i>
+                  <span>微前端架构</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fas fa-network-wired text-green-600"></i>
+                  <span>局域网部署</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <i class="fas fa-users text-orange-600"></i>
+                  <span>多团队协同</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Highlights Grid -->
+            <div class="space-y-6">
+              <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
+                <h3 class="font-bold text-lg mb-4 text-gray-800">核心架构特点</h3>
+                <div class="space-y-3">
+                  <div class="flex items-start space-x-3">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div>
+                      <div class="font-medium">微前端模块化</div>
+                      <div class="text-sm text-gray-600">九大核心模块可插拔设计</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                    <div>
+                      <div class="font-medium">多团队独立开发</div>
+                      <div class="text-sm text-gray-600">产品/开发/技术团队并行</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
+                    <div>
+                      <div class="font-medium">离线局域网支持</div>
+                      <div class="text-sm text-gray-600">物理隔离安全保障</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6">
+                <h3 class="font-bold text-lg mb-4 text-gray-800">技术生态集成</h3>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                  <div class="text-center p-3 bg-white rounded-lg">
+                    <i class="fab fa-vuejs text-green-600 text-xl mb-2"></i>
+                    <div class="font-medium">Vue 3</div>
+                    <div class="text-xs text-gray-600">前端框架</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg">
+                    <i class="fab fa-java text-red-600 text-xl mb-2"></i>
+                    <div class="font-medium">Spring Boot</div>
+                    <div class="text-xs text-gray-600">后端服务</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg">
+                    <i class="fas fa-database text-blue-600 text-xl mb-2"></i>
+                    <div class="font-medium">PostgreSQL</div>
+                    <div class="text-xs text-gray-600">数据存储</div>
+                  </div>
+                  <div class="text-center p-3 bg-white rounded-lg">
+                    <i class="fab fa-git-alt text-orange-600 text-xl mb-2"></i>
+                    <div class="font-medium">Git</div>
+                    <div class="text-xs text-gray-600">版本控制</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section id="executive-summary" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 serif text-center">执行摘要</h2>
+
+            <div class="prose prose-lg max-w-none">
+              <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center p-6 bg-blue-50 rounded-2xl">
+                  <div class="text-3xl font-bold text-blue-600 mb-2">9</div>
+                  <div class="font-medium text-gray-800">核心功能模块</div>
+                  <div class="text-sm text-gray-600">覆盖研发全生命周期</div>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-2xl">
+                  <div class="text-3xl font-bold text-green-600 mb-2">4</div>
+                  <div class="font-medium text-gray-800">研发团队</div>
+                  <div class="text-sm text-gray-600">实体+虚拟团队协同</div>
+                </div>
+                <div class="text-center p-6 bg-orange-50 rounded-2xl">
+                  <div class="text-3xl font-bold text-orange-600 mb-2">100%</div>
+                  <div class="font-medium text-gray-800">离线支持</div>
+                  <div class="text-sm text-gray-600">局域网物理隔离</div>
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl mb-8">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">核心创新点</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-cube text-blue-600 mt-1"></i>
+                    <div>
+                      <strong>微前端架构：</strong>采用qiankun框架实现真正的模块化和团队自治，各团队可独立开发、部署和维护自己的模块
+                    </div>
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-tools text-green-600 mt-1"></i>
+                    <div>
+                      <strong>工具链集成：</strong>深度集成Obsidian、Altium Designer等专业工具，实现从设计到管理的无缝衔接
+                    </div>
+                  </li>
+                  <li class="flex items-start space-x-3">
+                    <i class="fas fa-shield-alt text-orange-600 mt-1"></i>
+                    <div>
+                      <strong>安全隔离：</strong>完整的离线局域网部署方案，满足国防领域严格的物理隔离要求
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <h3 class="text-2xl font-bold mb-6 serif">实施价值</h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold text-lg mb-4">对研发团队的价值</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li>• 统一的工作台，减少系统切换成本</li>
+                    <li>• 标准化的项目流程，降低管理复杂度</li>
+                    <li>• 知识资产的有效沉淀和复用</li>
+                    <li>• 跨团队协同效率显著提升</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg mb-4">对组织管理的价值</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li>• 研发过程数据化，支撑科学决策</li>
+                    <li>• 技术资产系统化管理，降低人员流失风险</li>
+                    <li>• 项目进度实时可视，风险提前预警</li>
+                    <li>• 符合质量体系要求的完整审计轨迹</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Architecture Section -->
+      <section id="architecture" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">1. 总体架构设计</h2>
+
+            <!-- Architecture Principles -->
+            <div id="architecture-principles" class="mb-16">
+              <h3 class="text-2xl font-bold mb-8 serif">1.1 架构原则与目标</h3>
+
+              <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                  <h4 class="text-xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-cube text-blue-600 mr-3"></i>
+                    微前端模块化架构
+                  </h4>
+                  <p class="text-gray-700 mb-4">
+                    采用<strong>qiankun框架</strong>构建微前端基座，实现真正的技术栈无关性和团队自治。各子应用通过标准化的生命周期钩子与基座交互，支持独立开发、独立部署。
+                  </p>
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="text-sm font-medium text-blue-800 mb-2">核心特性</div>
+                    <ul class="text-sm text-blue-700 space-y-1">
+                      <li>• JS沙箱隔离（Proxy实现）</li>
+                      <li>• CSS样式隔离（Shadow DOM）</li>
+                      <li>• 应用预加载和生命周期管理</li>
+                      <li>• 跨应用通信机制</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                  <h4 class="text-xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-users text-green-600 mr-3"></i>
+                    多团队独立开发
+                  </h4>
+                  <p class="text-gray-700 mb-4">
+                    适配部门组织架构，支持产品管理、产品开发、技术开发三个实体团队及综合管理虚拟团队的独立开发和部署需求。
+                  </p>
+                  <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="text-sm font-medium text-green-800 mb-2">团队分工</div>
+                    <ul class="text-sm text-green-700 space-y-1">
+                      <li>• 产品管理团队：需求管理、可靠性流程</li>
+                      <li>• 产品开发团队：A/B/C产品线定制</li>
+                      <li>• 技术开发团队：专业工具优化</li>
+                      <li>• 综合管理虚拟团队：管理模块维护</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+                <h4 class="text-xl font-bold mb-6 flex items-center">
+                  <i class="fas fa-shield-alt text-orange-600 mr-3"></i>
+                  离线局域网环境支持
+                </h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div class="text-center p-6 bg-orange-50 rounded-xl">
+                    <i class="fas fa-server text-orange-600 text-2xl mb-3"></i>
+                    <div class="font-medium text-gray-800 mb-2">网络层</div>
+                    <div class="text-sm text-gray-600">纯内网部署，物理隔离，服务器集群位于部门机房</div>
+                  </div>
+                  <div class="text-center p-6 bg-blue-50 rounded-xl">
+                    <i class="fas fa-code text-blue-600 text-2xl mb-3"></i>
+                    <div class="font-medium text-gray-800 mb-2">应用层</div>
+                    <div class="text-sm text-gray-600">零依赖外部CDN，前端资源完全本地打包</div>
+                  </div>
+                  <div class="text-center p-6 bg-green-50 rounded-xl">
+                    <i class="fas fa-database text-green-600 text-2xl mb-3"></i>
+                    <div class="font-medium text-gray-800 mb-2">数据层</div>
+                    <div class="text-sm text-gray-600">私有化数据库方案，数据不出机房</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div id="tech-stack" class="mb-16">
+              <h3 class="text-2xl font-bold mb-8 serif">1.2 技术栈选型</h3>
+
+              <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <!-- Frontend Stack -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                  <h4 class="text-xl font-bold mb-6 flex items-center">
+                    <i class="fab fa-js-square text-yellow-500 mr-3"></i>
+                    前端技术栈
+                  </h4>
+
+                  <div class="space-y-6">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                      <div class="font-medium text-gray-800">Vue.js 3 + TypeScript</div>
+                      <div class="text-sm text-gray-600">Composition API + 强类型检查，适合大型应用长期维护</div>
+                      <div class="mt-2 text-xs text-blue-600">
+                        <a href="https://vuejs.org" class="citation-link" target="_blank">Vue.js 官方文档</a> |
+                        <a href="https://www.typescriptlang.org" class="citation-link" target="_blank">TypeScript 官网</a>
+                      </div>
+                    </div>
+
+                    <div class="border-l-4 border-green-500 pl-4">
+                      <div class="font-medium text-gray-800">Element Plus / Ant Design Vue</div>
+                      <div class="text-sm text-gray-600">企业级组件库，支持主题定制和扩展</div>
+                      <div class="mt-2 text-xs text-green-600">
+                        <a href="https://element-plus.org" class="citation-link" target="_blank">Element Plus</a> |
+                        <a href="https://www.antdv.com" class="citation-link" target="_blank">Ant Design Vue</a>
+                      </div>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-4">
+                      <div class="font-medium text-gray-800">qiankun 微前端框架</div>
+                      <div class="text-sm text-gray-600">完善的沙箱隔离和生命周期管理</div>
+                      <div class="mt-2 text-xs text-purple-600">
+                        <a href="https://qiankun.umijs.org" class="citation-link" target="_blank">qiankun 官方文档</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Backend Stack -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                  <h4 class="text-xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-server text-blue-600 mr-3"></i>
+                    后端技术栈
+                  </h4>
+
+                  <div class="space-y-6">
+                    <div class="border-l-4 border-red-500 pl-4">
+                      <div class="font-medium text-gray-800">Spring Boot 3.x / Node.js</div>
+                      <div class="text-sm text-gray-600">异构架构设计，核心服务稳定，边缘服务高效</div>
+                      <div class="mt-2 text-xs text-red-600">
+                        <a href="https://spring.io/projects/spring-boot" class="citation-link" target="_blank">Spring Boot</a> |
+                        <a href="https://nodejs.org" class="citation-link" target="_blank">Node.js</a>
+                      </div>
+                    </div>
+
+                    <div class="border-l-4 border-indigo-500 pl-4">
+                      <div class="font-medium text-gray-800">PostgreSQL / MySQL</div>
+                      <div class="text-sm text-gray-600">企业级关系型数据库，支持复杂查询和事务</div>
+                      <div class="mt-2 text-xs text-indigo-600">
+                        <a href="https://www.postgresql.org" class="citation-link" target="_blank">PostgreSQL</a> |
+                        <a href="https://www.mysql.com" class="citation-link" target="_blank">MySQL</a>
+                      </div>
+                    </div>
+
+                    <div class="border-l-4 border-orange-500 pl-4">
+                      <div class="font-medium text-gray-800">Redis + Elasticsearch</div>
+                      <div class="text-sm text-gray-600">缓存加速 + 全文检索，提升系统响应速度</div>
+                      <div class="mt-2 text-xs text-orange-600">
+                        <a href="https://redis.io" class="citation-link" target="_blank">Redis</a> |
+                        <a href="https://www.elastic.co" class="citation-link" target="_blank">Elasticsearch</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Architecture Diagram -->
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h4 class="text-xl font-bold mb-6 text-center">技术架构概览</h4>
+                <img src="https://kimi-web-img.moonshot.cn/img/p5.toutiaoimg.com/3adad43628f8494fcc8c04683cc5833e52091e96" alt="微服务架构技术栈展示" class="w-full rounded-lg shadow-md" size="large" aspect="wide" query="微服务架构技术栈" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+              </div>
+            </div>
+
+            <!-- Deployment Architecture -->
+            <div id="deployment" class="mb-16">
+              <h3 class="text-2xl font-bold mb-8 serif">1.3 部署架构</h3>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+                <h4 class="text-xl font-bold mb-6">局域网服务器部署模式</h4>
+                <div class="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h5 class="font-medium text-gray-800 mb-4">标准部署拓扑</h5>
+                    <div class="bg-gray-50 p-4 rounded-lg font-mono text-sm">
+                      [用户终端] ←→ [Nginx负载均衡] ←→ [应用服务器集群]
+                      <br/>
+                                                                ↓
+                      <br/>
+                                              [PostgreSQL主从] ←→ [Redis集群]
+                      <br/>
+                                                                ↓
+                      <br/>
+                                              [MinIO对象存储]
+                      <br/>
+                                                                ↓
+                      <br/>
+                                              [Gitea/GitLab CE]
+                      <br/>
+                                                                ↓
+                      <br/>
+                                              [Elasticsearch集群]
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="font-medium text-gray-800 mb-4">服务器配置建议</h5>
+                    <div class="space-y-4">
+                      <div class="border-l-4 border-blue-500 pl-4">
+                        <div class="font-medium">负载均衡层</div>
+                        <div class="text-sm text-gray-600">Nginx，SSL终止，静态资源缓存</div>
+                      </div>
+                      <div class="border-l-4 border-green-500 pl-4">
+                        <div class="font-medium">应用服务层</div>
+                        <div class="text-sm text-gray-600">4核8G+，可水平扩展</div>
+                      </div>
+                      <div class="border-l-4 border-orange-500 pl-4">
+                        <div class="font-medium">数据服务层</div>
+                        <div class="text-sm text-gray-600">8核16G+，SSD存储</div>
+                      </div>
+                      <div class="border-l-4 border-purple-500 pl-4">
+                        <div class="font-medium">文件存储层</div>
+                        <div class="text-sm text-gray-600">大容量HDD，RAID10</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h4 class="text-xl font-bold mb-6">本地-服务器混合开发模式</h4>
+                <div class="grid md:grid-cols-4 gap-6">
+                  <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <i class="fas fa-download text-blue-600 text-xl"></i>
+                    </div>
+                    <div class="font-medium mb-2">环境搭建</div>
+                    <div class="text-sm text-gray-600">本地安装开发工具栈</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <i class="fas fa-code text-green-600 text-xl"></i>
+                    </div>
+                    <div class="font-medium mb-2">本地开发</div>
+                    <div class="text-sm text-gray-600">使用专业工具编辑</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <i class="fab fa-git-alt text-orange-600 text-xl"></i>
+                    </div>
+                    <div class="font-medium mb-2">版本提交</div>
+                    <div class="text-sm text-gray-600">Git自动化提交</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <i class="fas fa-upload text-purple-600 text-xl"></i>
+                    </div>
+                    <div class="font-medium mb-2">同步上传</div>
+                    <div class="text-sm text-gray-600">一键同步到服务器</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Portal Module -->
+      <section id="portal" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">2. 门户界面模块</h2>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+              <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold mb-6 serif">工作台设计</h3>
+                <div class="space-y-6">
+                  <div class="flex items-start space-x-4">
+                    <i class="fas fa-compass text-blue-600 text-xl mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">统一入口导航</div>
+                      <div class="text-sm text-gray-600">沉浸式深色顶部导航 + 可折叠左侧边栏 + 自适应主内容区</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <i class="fas fa-th-large text-green-600 text-xl mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">模块快捷入口</div>
+                      <div class="text-sm text-gray-600">可拖拽卡片式布局，支持自定义排序和显隐</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <i class="fas fa-bell text-orange-600 text-xl mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">个人待办与通知</div>
+                      <div class="text-sm text-gray-600">时间轴式任务聚合 + 多渠道消息推送</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                <h3 class="text-2xl font-bold mb-6 serif">开源基础方案</h3>
+                <div class="space-y-4">
+                  <div class="p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                    <div class="font-medium text-gray-800 mb-2">vue-element-admin 框架适配</div>
+                    <div class="text-sm text-gray-600 mb-3">
+                      基于GitHub Star超过80k的后台管理模板深度定制
+                    </div>
+                    <div class="text-xs text-yellow-700">
+                      <a href="https://github.com/Paniche/department_homepage" class="citation-link" target="_blank">
+                        参考项目链接
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="space-y-3">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span class="text-sm">框架升级 (Vue 2 → 3)</span>
+                      <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">2周</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span class="text-sm">微前端改造</span>
+                      <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">2周</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                      <span class="text-sm">功能替换与API对接</span>
+                      <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">1周</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                      <span class="text-sm">主题定制与工作台开发</span>
+                      <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">3周</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portal Features Detail -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">核心功能详解</h3>
+              <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                  <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-magic text-blue-600 text-2xl"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-3">权限自适应</h4>
+                  <p class="text-sm text-gray-600">
+                    基于RBAC模型实现千人千面的界面呈现，无权限功能自动隐藏，确保信息安全
+                  </p>
+                </div>
+                <div class="text-center">
+                  <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-palette text-green-600 text-2xl"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-3">主题定制</h4>
+                  <p class="text-sm text-gray-600">
+                    Design Tokens体系支持多主题切换，CSS变量运行时动态修改，确保品牌一致性
+                  </p>
+                </div>
+                <div class="text-center">
+                  <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-broadcast-tower text-orange-600 text-2xl"></i>
+                  </div>
+                  <h4 class="font-bold text-lg mb-3">动态路由</h4>
+                  <p class="text-sm text-gray-600">
+                    后端API根据用户角色动态生成菜单结构，前端路由守卫+后端接口鉴权双重保障
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- User Management Module -->
+      <section id="user-management" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">3. 用户管理模块</h2>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-xl font-bold mb-6 flex items-center">
+                  <i class="fas fa-sitemap text-blue-600 mr-3"></i>
+                  组织架构模型
+                </h3>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-blue-500 pl-4">
+                    <div class="font-medium text-gray-800">实体团队</div>
+                    <div class="text-sm text-gray-600">产品管理、产品开发、技术开发</div>
+                  </div>
+                  <div class="border-l-4 border-green-500 pl-4">
+                    <div class="font-medium text-gray-800">虚拟团队</div>
+                    <div class="text-sm text-gray-600">综合管理兼职角色</div>
+                  </div>
+                  <div class="border-l-4 border-orange-500 pl-4">
+                    <div class="font-medium text-gray-800">多角色叠加</div>
+                    <div class="text-sm text-gray-600">一人双岗权限组合</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-xl font-bold mb-6 flex items-center">
+                  <i class="fas fa-user-tag text-green-600 mr-3"></i>
+                  角色权限体系
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex items-center space-x-3">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="text-sm">系统管理员</div>
+                  </div>
+                  <div class="flex items-center space-x-3">
+                    <div class="w-3 h-3 bg-orange-500 rounded-full"></div>
+                    <div class="text-sm">部门领导</div>
+                  </div>
+                  <div class="flex items-center space-x-3">
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="text-sm">团队组长</div>
+                  </div>
+                  <div class="flex items-center space-x-3">
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div class="text-sm">设计师</div>
+                  </div>
+                  <div class="flex items-center space-x-3">
+                    <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <div class="text-sm">其他人员</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-xl font-bold mb-6 flex items-center">
+                  <i class="fas fa-graduation-cap text-purple-600 mr-3"></i>
+                  职称体系
+                </h3>
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between">
+                    <span>设计员</span>
+                    <span class="text-gray-500">0-2年</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>助理工程师</span>
+                    <span class="text-gray-500">2-5年</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>工程师</span>
+                    <span class="text-gray-500">5-10年</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>高级工程师</span>
+                    <span class="text-gray-500">10-15年</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>研究员</span>
+                    <span class="text-gray-500">15年+</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- User Profile Features -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">个人主页功能</h3>
+              <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-blue-50 rounded-xl">
+                  <i class="fas fa-user-circle text-blue-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">基本信息</h4>
+                  <p class="text-sm text-gray-600">工号、入职时间、专业方向、技能标签</p>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-xl">
+                  <i class="fas fa-trophy text-green-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">荣誉资质</h4>
+                  <p class="text-sm text-gray-600">奖项、专利、论文、证书时间轴展示</p>
+                </div>
+                <div class="text-center p-6 bg-orange-50 rounded-xl">
+                  <i class="fas fa-project-diagram text-orange-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">项目履历</h4>
+                  <p class="text-sm text-gray-600">历史项目卡片网格，支持多维度筛选</p>
+                </div>
+                <div class="text-center p-6 bg-purple-50 rounded-xl">
+                  <i class="fas fa-chart-radar text-purple-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">能力雷达</h4>
+                  <p class="text-sm text-gray-600">六维能力评估，支持多时间点对比</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Permission Visualization -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">可视化角色配置</h3>
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-lg font-bold mb-4">团队-岗位矩阵热力图</h4>
+                  <img src="https://kimi-web-img.moonshot.cn/img/s2.zimgs.cn/e279c6f1be7e5d1647d88d7f5338ce119f6b8057" alt="团队岗位矩阵热力图" class="w-full rounded-lg shadow-md mb-4" size="medium" aspect="wide" style="photo" query="团队岗位矩阵热力图" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+                  <div class="text-sm text-gray-600">
+                    颜色深度表示人员数量，点击单元格展开人员列表，支持矩阵式权限配置
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold mb-4">权限树形展示</h4>
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="font-mono text-sm space-y-2">
+                      <div>├─ 项目管理</div>
+                      <div>│  ├─ 项目创建 [✓]</div>
+                      <div>│  ├─ 项目编辑 [✓]</div>
+                      <div>│  ├─ 项目删除 [✗]</div>
+                      <div>│  └─ 项目导出 [✓]</div>
+                      <div>├─ 用户管理</div>
+                      <div>│  ├─ 用户查看 [✓]</div>
+                      <div>│  └─ 用户编辑 [✗]</div>
+                      <div>└─ 系统配置</div>
+                      <div>    └─ 全拒接 [✗]</div>
+                    </div>
+                  </div>
+                  <div class="text-sm text-gray-600 mt-4">
+                    支持批量勾选、权限继承、差异对比，权限变更审计日志保留10年
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Project Management Module -->
+      <section id="project-management" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">4. 项目管理模块</h2>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+              <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold mb-6 serif">项目全生命周期管理</h3>
+                <div class="space-y-6">
+                  <div class="flex items-start space-x-4">
+                    <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                    <div>
+                      <div class="font-medium text-gray-800">信息录入</div>
+                      <div class="text-sm text-gray-600">项目名称、代号、简介、起止时间、预算、风险等级</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                    <div>
+                      <div class="font-medium text-gray-800">类别选择</div>
+                      <div class="text-sm text-gray-600">单机/模块/软件/技术开发等，决定流程模板</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <div class="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                    <div>
+                      <div class="font-medium text-gray-800">流程绑定</div>
+                      <div class="text-sm text-gray-600">确认/调整流程模板，预览完整活动图</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <div class="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold">4</div>
+                    <div>
+                      <div class="font-medium text-gray-800">团队分配</div>
+                      <div class="text-sm text-gray-600">指定负责人，系统推荐候选人并提示负荷</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <div class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold">5</div>
+                    <div>
+                      <div class="font-medium text-gray-800">计划确认</div>
+                      <div class="text-sm text-gray-600">查看甘特图，调整里程碑，正式创建</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                <h3 class="text-2xl font-bold mb-6 serif">项目类别体系</h3>
+                <div class="space-y-4">
+                  <div class="p-4 bg-blue-50 rounded-lg">
+                    <div class="font-medium text-blue-800 mb-2">单机开发</div>
+                    <div class="text-sm text-blue-600">交付完整产品，型谱审查，设计定型</div>
+                  </div>
+                  <div class="p-4 bg-green-50 rounded-lg">
+                    <div class="font-medium text-green-800 mb-2">模块开发</div>
+                    <div class="text-sm text-green-600">形成可复用模块，模块认证，货架评审</div>
+                  </div>
+                  <div class="p-4 bg-orange-50 rounded-lg">
+                    <div class="font-medium text-orange-800 mb-2">软件开发</div>
+                    <div class="text-sm text-orange-600">可运行软件，代码审查，版本发布</div>
+                  </div>
+                  <div class="p-4 bg-purple-50 rounded-lg">
+                    <div class="font-medium text-purple-800 mb-2">技术开发</div>
+                    <div class="text-sm text-purple-600">突破关键技术，技术评审，成果转化</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Scheduling Engine -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">自动排程引擎</h3>
+              <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-blue-50 rounded-xl">
+                  <i class="fas fa-calculator text-blue-600 text-2xl mb-4"></i>
+                  <h4 class="font-bold mb-2">工期计算</h4>
+                  <p class="text-sm text-gray-600">三点估计法+历史数据校准</p>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-xl">
+                  <i class="fas fa-link text-green-600 text-2xl mb-4"></i>
+                  <h4 class="font-bold mb-2">依赖建模</h4>
+                  <p class="text-sm text-gray-600">FS/SS/FF/SF四种关系类型</p>
+                </div>
+                <div class="text-center p-6 bg-orange-50 rounded-xl">
+                  <i class="fas fa-user-clock text-orange-600 text-2xl mb-4"></i>
+                  <h4 class="font-bold mb-2">资源校验</h4>
+                  <p class="text-sm text-gray-600">人员日历+设备预约+负荷预警</p>
+                </div>
+                <div class="text-center p-6 bg-purple-50 rounded-xl">
+                  <i class="fas fa-chart-gantt text-purple-600 text-2xl mb-4"></i>
+                  <h4 class="font-bold mb-2">甘特图</h4>
+                  <p class="text-sm text-gray-600">五级缩放+拖拽调整+基线对比</p>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                <div class="flex items-center space-x-3">
+                  <i class="fas fa-info-circle text-yellow-600"></i>
+                  <div>
+                    <div class="font-medium text-yellow-800">MS Project集成</div>
+                    <div class="text-sm text-yellow-700">支持MPP/XML格式双向导入导出，智能字段映射</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Dashboard -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">项目仪表盘</h3>
+              <div class="grid lg:grid-cols-4 gap-6">
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                  <h4 class="font-bold text-blue-800 mb-4">进度维度</h4>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                      <span>计划完成率</span>
+                      <span class="font-medium">85%</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>SPI指标</span>
+                      <span class="font-medium">0.95</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>关键路径健康度</span>
+                      <span class="font-medium text-green-600">良好</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
+                  <h4 class="font-bold text-green-800 mb-4">成本维度</h4>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                      <span>预算执行率</span>
+                      <span class="font-medium">72%</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>CPI指标</span>
+                      <span class="font-medium">1.1</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>成本偏差</span>
+                      <span class="font-medium text-green-600">-8%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl">
+                  <h4 class="font-bold text-orange-800 mb-4">质量维度</h4>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                      <span>缺陷密度</span>
+                      <span class="font-medium">0.3/KLOC</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>测试通过率</span>
+                      <span class="font-medium">96.5%</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>评审问题数</span>
+                      <span class="font-medium">12</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-red-50 to-red-100 rounded-xl">
+                  <h4 class="font-bold text-red-800 mb-4">风险维度</h4>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                      <span>开放风险数</span>
+                      <span class="font-medium">5</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>高风险数</span>
+                      <span class="font-medium text-red-600">2</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>应对措施完成率</span>
+                      <span class="font-medium">80%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-bold mb-4">可视化形式</h4>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex items-center space-x-2">
+                      <i class="fas fa-circle text-blue-500 text-xs"></i>
+                      <span>环形进度条、S曲线、燃尽图</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <i class="fas fa-circle text-green-500 text-xs"></i>
+                      <span>预算执行曲线、类别占比饼图</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <i class="fas fa-circle text-orange-500 text-xs"></i>
+                      <span>控制图、帕累托图、趋势分析</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <i class="fas fa-circle text-red-500 text-xs"></i>
+                      <span>风险矩阵、TOP10清单</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-4">预警规则</h4>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                      <span>进度偏差</span>
+                      <span class="text-orange-600">&gt;10% 黄色预警</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>成本超支</span>
+                      <span class="text-red-600">&gt;10% 红色预警</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>测试通过率</span>
+                      <span class="text-red-600">&lt;95% 预警</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>新增高风险</span>
+                      <span class="text-red-600">强制提醒</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Overview -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 serif text-center">项目总览视图</h3>
+              <div class="grid md:grid-cols-4 gap-6 mb-8">
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                  <i class="fas fa-filter text-blue-600 text-xl mb-2"></i>
+                  <div class="font-medium text-sm">产品线筛选</div>
+                  <div class="text-xs text-gray-600">A/B/C/通用/基础</div>
+                </div>
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                  <i class="fas fa-calendar-alt text-green-600 text-xl mb-2"></i>
+                  <div class="font-medium text-sm">时间筛选</div>
+                  <div class="text-xs text-gray-600">年/季/月/自定义</div>
+                </div>
+                <div class="text-center p-4 bg-orange-50 rounded-lg">
+                  <i class="fas fa-user text-orange-600 text-xl mb-2"></i>
+                  <div class="font-medium text-sm">负责人筛选</div>
+                  <div class="text-xs text-gray-600">我负责/我参与/指定</div>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-lg">
+                  <i class="fas fa-chart-bar text-purple-600 text-xl mb-2"></i>
+                  <div class="font-medium text-sm">状态筛选</div>
+                  <div class="text-xs text-gray-600">规划中/进行中/暂停/结项</div>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center p-4 border-2 border-blue-200 rounded-lg">
+                  <i class="fas fa-th text-blue-600 text-2xl mb-3"></i>
+                  <div class="font-medium">卡片网格</div>
+                  <div class="text-sm text-gray-600">项目卡片瀑布流展示</div>
+                </div>
+                <div class="text-center p-4 border-2 border-green-200 rounded-lg">
+                  <i class="fas fa-list text-green-600 text-2xl mb-3"></i>
+                  <div class="font-medium">列表视图</div>
+                  <div class="text-sm text-gray-600">详细信息的表格展示</div>
+                </div>
+                <div class="text-center p-4 border-2 border-orange-200 rounded-lg">
+                  <i class="fas fa-chart-gantt text-orange-600 text-2xl mb-3"></i>
+                  <div class="font-medium">甘特图</div>
+                  <div class="text-sm text-gray-600">时间线视图展示进度</div>
+                </div>
+                <div class="text-center p-4 border-2 border-purple-200 rounded-lg">
+                  <i class="fas fa-columns text-purple-600 text-2xl mb-3"></i>
+                  <div class="font-medium">看板视图</div>
+                  <div class="text-sm text-gray-600">状态流转的看板展示</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Project Development Module -->
+      <section id="project-development" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">5. 项目开发模块</h2>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">流程引擎核心</h3>
+                <div class="space-y-6">
+                  <div class="flex items-start space-x-4">
+                    <i class="fas fa-project-diagram text-blue-600 text-xl mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">流程模板绑定</div>
+                      <div class="text-sm text-gray-600">项目类别决定流程模板，支持版本管理和自定义偏离</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <i class="fas fa-eye text-green-600 text-xl mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">流程全景视图</div>
+                      <div class="text-sm text-gray-600">SVG图形化展示完整流程，当前活动高亮闪烁</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <i class="fas fa-mouse-pointer text-orange-600 text-xl mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">活动节点交互</div>
+                      <div class="text-sm text-gray-600">点击展开详情面板：定义、输入输出、交付物、指南</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">任务执行面板</h3>
+                <div class="space-y-4">
+                  <div class="p-4 bg-blue-50 rounded-lg">
+                    <div class="font-medium text-blue-800 mb-2">任务认领机制</div>
+                    <div class="text-sm text-blue-600">指派制/认领制/竞争制，状态流转可视化</div>
+                  </div>
+                  <div class="p-4 bg-green-50 rounded-lg">
+                    <div class="font-medium text-green-800 mb-2">进度填报</div>
+                    <div class="text-sm text-green-600">百分比滑块+剩余工期+问题描述</div>
+                  </div>
+                  <div class="p-4 bg-orange-50 rounded-lg">
+                    <div class="font-medium text-orange-800 mb-2">交付物上传</div>
+                    <div class="text-sm text-orange-600">多文件、多版本、格式校验、病毒扫描</div>
+                  </div>
+                  <div class="p-4 bg-purple-50 rounded-lg">
+                    <div class="font-medium text-purple-800 mb-2">完成确认</div>
+                    <div class="text-sm text-purple-600">交付物校验+审核状态校验+问题关闭校验</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Design Tool Integration -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">设计工具深度集成</h3>
+              <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-blue-50 rounded-xl">
+                  <i class="fab fa-markdown text-blue-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">Markdown编辑</h4>
+                  <p class="text-sm text-gray-600">vditor/milkdown，实时预览，数学公式，Mermaid图表</p>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-xl">
+                  <i class="fas fa-edit text-green-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">Obsidian集成</h4>
+                  <p class="text-sm text-gray-600">桌面端插件+WebDAV同步，保留双向链接和图谱</p>
+                </div>
+                <div class="text-center p-6 bg-orange-50 rounded-xl">
+                  <i class="fas fa-microchip text-orange-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">Altium Designer</h4>
+                  <p class="text-sm text-gray-600">自定义URL协议，点击文件直接打开本地AD工具</p>
+                </div>
+                <div class="text-center p-6 bg-purple-50 rounded-xl">
+                  <i class="fas fa-code-branch text-purple-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">版本管理</h4>
+                  <p class="text-sm text-gray-600">Git自动化提交，冲突可视化解决</p>
+                </div>
+              </div>
+              <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                <h4 class="font-bold mb-4">工作流程</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div class="text-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <i class="fas fa-file-alt text-blue-600"></i>
+                    </div>
+                    <div class="font-medium mb-2">模板实例化</div>
+                    <div class="text-sm text-gray-600">变量替换，自动生成项目专属文件</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <i class="fas fa-tools text-green-600"></i>
+                    </div>
+                    <div class="font-medium mb-2">本地编辑</div>
+                    <div class="text-sm text-gray-600">调用专业工具进行设计开发</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <i class="fas fa-upload text-orange-600"></i>
+                    </div>
+                    <div class="font-medium mb-2">同步提交</div>
+                    <div class="text-sm text-gray-600">Git版本控制，自动同步到服务器</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Collaboration Features -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">协同开发功能</h3>
+              <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                  <h4 class="font-bold mb-4 flex items-center">
+                    <i class="fas fa-question-circle text-blue-600 mr-3"></i>
+                    输入疑问反馈
+                  </h4>
+                  <ul class="space-y-2 text-sm text-gray-600">
+                    <li>• 活动界面直接提交疑问</li>
+                    <li>• @相关人员快速通知</li>
+                    <li>• 富文本+截图附件支持</li>
+                    <li>• 讨论线程式回复</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-4 flex items-center">
+                    <i class="fas fa-history text-green-600 mr-3"></i>
+                    多方回复记录
+                  </h4>
+                  <ul class="space-y-2 text-sm text-gray-600">
+                    <li>• 输入变更自动记录对比</li>
+                    <li>• 时间轴查看完整历史</li>
+                    <li>• 关键决策强制填写理由</li>
+                    <li>• 版本间差异高亮显示</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-4 flex items-center">
+                    <i class="fas fa-search text-orange-600 mr-3"></i>
+                    过程审计追溯
+                  </h4>
+                  <ul class="space-y-2 text-sm text-gray-600">
+                    <li>• 完整操作日志记录</li>
+                    <li>• 时间轴式查看方式</li>
+                    <li>• 敏感操作二次确认</li>
+                    <li>• 符合质量体系要求</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Smart Recommendations -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">智能关联推荐</h3>
+              <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-tags text-blue-600 text-2xl"></i>
+                  </div>
+                  <h4 class="font-bold mb-3">标签化知识关联</h4>
+                  <p class="text-sm text-gray-600">
+                    基于项目、活动、交付物、知识库条目的多维度标签匹配，智能推荐相关资源
+                  </p>
+                </div>
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-file-alt text-green-600 text-2xl"></i>
+                  </div>
+                  <h4 class="font-bold mb-3">项目报告推荐</h4>
+                  <p class="text-sm text-gray-600">
+                    同类项目、相似指标、历史优秀案例的自动挖掘和推荐，支持经验复用
+                  </p>
+                </div>
+                <div class="text-center">
+                  <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-graduation-cap text-orange-600 text-2xl"></i>
+                  </div>
+                  <h4 class="font-bold mb-3">论文专利关联</h4>
+                  <p class="text-sm text-gray-600">
+                    技术领域关键词匹配，引用关系追踪，构建完整的知识图谱
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Product Shelf Module -->
+      <section id="product-shelf" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">6. 产品货架模块</h2>
+
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 p-8 rounded-2xl mb-12">
+              <h3 class="text-2xl font-bold mb-6 serif text-center">IPD重用策略数字化</h3>
+              <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center p-4 bg-white rounded-xl">
+                  <i class="fas fa-box text-blue-600 text-2xl mb-3"></i>
+                  <div class="font-medium">单机产品</div>
+                  <div class="text-sm text-gray-600">A/B/C线整机</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-xl">
+                  <i class="fas fa-puzzle-piece text-green-600 text-2xl mb-3"></i>
+                  <div class="font-medium">功能模块</div>
+                  <div class="text-sm text-gray-600">变频/频率源等</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-xl">
+                  <i class="fas fa-code text-orange-600 text-2xl mb-3"></i>
+                  <div class="font-medium">软件</div>
+                  <div class="text-sm text-gray-600">嵌入式/工具软件</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-xl">
+                  <i class="fas fa-cogs text-purple-600 text-2xl mb-3"></i>
+                  <div class="font-medium">基础组件</div>
+                  <div class="text-sm text-gray-600">元器件/标准件等</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">产品详情展示</h3>
+                <div class="space-y-4">
+                  <div class="p-4 border-l-4 border-blue-500 bg-blue-50">
+                    <div class="font-medium text-blue-800 mb-2">概览信息</div>
+                    <div class="text-sm text-blue-600">产品图片、关键指标、成熟度等级、选用统计</div>
+                  </div>
+                  <div class="p-4 border-l-4 border-green-500 bg-green-50">
+                    <div class="font-medium text-green-800 mb-2">详细介绍</div>
+                    <div class="text-sm text-green-600">功能描述、工作原理、技术特点、应用场景</div>
+                  </div>
+                  <div class="p-4 border-l-4 border-orange-500 bg-orange-50">
+                    <div class="font-medium text-orange-800 mb-2">测试数据</div>
+                    <div class="text-sm text-orange-600">性能测试、环境试验、可靠性数据</div>
+                  </div>
+                  <div class="p-4 border-l-4 border-purple-500 bg-purple-50">
+                    <div class="font-medium text-purple-800 mb-2">应用履历</div>
+                    <div class="text-sm text-purple-600">应用项目、时间、效果评价、问题记录</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">选用与集成</h3>
+                <div class="space-y-6">
+                  <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                    <i class="fas fa-shopping-cart text-blue-600 text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2">购物车式选用</h4>
+                    <p class="text-sm text-gray-600">浏览 → 加入购物车 → 确认选用 → 全套资料一键加入项目</p>
+                  </div>
+                  <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
+                    <i class="fas fa-headset text-green-600 text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2">技术支持对接</h4>
+                    <p class="text-sm text-gray-600">技术咨询(异步)、技术交流(会议)、现场支持(复杂场景)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Version Management -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">版本与迭代管理</h3>
+              <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                  <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fab fa-git-alt text-blue-600 text-2xl"></i>
+                  </div>
+                  <h4 class="font-bold mb-3">Git式版本管理</h4>
+                  <p class="text-sm text-gray-600">
+                    重大变更创建新版本，保留旧版本供追溯，支持版本间差异对比
+                  </p>
+                </div>
+                <div class="text-center">
+                  <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-copy text-green-600 text-2xl"></i>
+                  </div>
+                  <h4 class="font-bold mb-3">相似项目创建</h4>
+                  <p class="text-sm text-gray-600">
+                    复制产品信息为模板，修改关键参数，快速启动衍生开发
+                  </p>
+                </div>
+                <div class="text-center">
+                  <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-sync-alt text-orange-600 text-2xl"></i>
+                  </div>
+                  <h4 class="font-bold mb-3">迭代修改开发</h4>
+                  <p class="text-sm text-gray-600">
+                    创建迭代项目，关联原产品，完成后更新货架版本
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Multi-dimensional Organization -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">多维度组织方式</h3>
+              <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-blue-50 rounded-xl">
+                  <h4 class="font-bold mb-4 text-blue-800">技术领域</h4>
+                  <div class="space-y-2 text-sm text-blue-600">
+                    <div>• 天线技术</div>
+                    <div>• 射频技术</div>
+                    <div>• 数字技术</div>
+                    <div>• 电源技术</div>
+                    <div>• 结构技术</div>
+                    <div>• 软件技术</div>
+                  </div>
+                </div>
+                <div class="p-6 bg-green-50 rounded-xl">
+                  <h4 class="font-bold mb-4 text-green-800">应用场景</h4>
+                  <div class="space-y-2 text-sm text-green-600">
+                    <div>• 通信系统</div>
+                    <div>• 探测系统</div>
+                    <div>• 导航系统</div>
+                    <div>• 电子对抗</div>
+                    <div>• 综合系统</div>
+                  </div>
+                </div>
+                <div class="p-6 bg-orange-50 rounded-xl">
+                  <h4 class="font-bold mb-4 text-orange-800">成熟度等级</h4>
+                  <div class="space-y-2 text-sm text-orange-600">
+                    <div>• TRL 1-3：原理验证</div>
+                    <div>• TRL 4-6：工程验证</div>
+                    <div>• TRL 7-9：产品验证</div>
+                    <div>• 货架产品</div>
+                    <div>• 成熟产品</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Technology Shelf Module -->
+      <section id="technology-shelf" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">7. 技术货架模块</h2>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-12">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">技术树可视化</h3>
+              <div class="grid lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-blue-50 rounded-xl">
+                  <h4 class="font-bold mb-4 text-blue-800 flex items-center">
+                    <i class="fas fa-drafting-compass mr-2"></i>
+                    设计技术
+                  </h4>
+                  <div class="space-y-3 text-sm text-blue-600">
+                    <div class="border-l-2 border-blue-300 pl-3">
+                      <div class="font-medium">集成技术</div>
+                      <div class="text-xs">系统架构、指标分解、接口协调</div>
+                    </div>
+                    <div class="border-l-2 border-blue-300 pl-3">
+                      <div class="font-medium">天线技术</div>
+                      <div class="text-xs">微带、阵列、相控阵、宽带天线</div>
+                    </div>
+                    <div class="border-l-2 border-blue-300 pl-3">
+                      <div class="font-medium">射频技术</div>
+                      <div class="text-xs">LNA、PA、Mixer、滤波器、PLL</div>
+                    </div>
+                    <div class="border-l-2 border-blue-300 pl-3">
+                      <div class="font-medium">数字技术</div>
+                      <div class="text-xs">FPGA、高速ADC/DAC、RFSoC</div>
+                    </div>
+                    <div class="border-l-2 border-blue-300 pl-3">
+                      <div class="font-medium">电源技术</div>
+                      <div class="text-xs">DC-DC、LDO、EMI滤波、电源管理</div>
+                    </div>
+                    <div class="border-l-2 border-blue-300 pl-3">
+                      <div class="font-medium">嵌入式软件</div>
+                      <div class="text-xs">驱动开发、RTOS、通信协议</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-6 bg-green-50 rounded-xl">
+                  <h4 class="font-bold mb-4 text-green-800 flex items-center">
+                    <i class="fas fa-flask mr-2"></i>
+                    试验技术
+                  </h4>
+                  <div class="space-y-3 text-sm text-green-600">
+                    <div class="border-l-2 border-green-300 pl-3">
+                      <div class="font-medium">环境试验</div>
+                      <div class="text-xs">高低温、湿热、振动、冲击</div>
+                    </div>
+                    <div class="border-l-2 border-green-300 pl-3">
+                      <div class="font-medium">可靠性试验</div>
+                      <div class="text-xs">寿命试验、加速试验、HALT</div>
+                    </div>
+                    <div class="border-l-2 border-green-300 pl-3">
+                      <div class="font-medium">EMC试验</div>
+                      <div class="text-xs">EMS、EMI、静电放电、浪涌</div>
+                    </div>
+                    <div class="border-l-2 border-green-300 pl-3">
+                      <div class="font-medium">天线测试</div>
+                      <div class="text-xs">方向图、增益、VSWR、隔离度</div>
+                    </div>
+                    <div class="border-l-2 border-green-300 pl-3">
+                      <div class="font-medium">设备操作</div>
+                      <div class="text-xs">矢量网络分析仪、频谱仪、信号源</div>
+                    </div>
+                    <div class="border-l-2 border-green-300 pl-3">
+                      <div class="font-medium">数据处理</div>
+                      <div class="text-xs">采集、分析、统计、可视化</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-6 bg-orange-50 rounded-xl">
+                  <h4 class="font-bold mb-4 text-orange-800 flex items-center">
+                    <i class="fas fa-desktop mr-2"></i>
+                    仿真技术
+                  </h4>
+                  <div class="space-y-3 text-sm text-orange-600">
+                    <div class="border-l-2 border-orange-300 pl-3">
+                      <div class="font-medium">电磁仿真</div>
+                      <div class="text-xs">HFSS、CST、FEKO电磁场分析</div>
+                    </div>
+                    <div class="border-l-2 border-orange-300 pl-3">
+                      <div class="font-medium">热仿真</div>
+                      <div class="text-xs">ANSYS热分析、ICEPAK、Flotherm</div>
+                    </div>
+                    <div class="border-l-2 border-orange-300 pl-3">
+                      <div class="font-medium">结构仿真</div>
+                      <div class="text-xs">静力学、动力学、疲劳分析</div>
+                    </div>
+                    <div class="border-l-2 border-orange-300 pl-3">
+                      <div class="font-medium">系统仿真</div>
+                      <div class="text-xs">ADS、SystemVue、MATLAB/Simulink</div>
+                    </div>
+                    <div class="border-l-2 border-orange-300 pl-3">
+                      <div class="font-medium">建模方法</div>
+                      <div class="text-xs">几何建模、网格划分、边界条件</div>
+                    </div>
+                    <div class="border-l-2 border-orange-300 pl-3">
+                      <div class="font-medium">结果分析</div>
+                      <div class="text-xs">收敛性判断、误差分析、优化方法</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Technology Details -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">技术详情管理</h3>
+                <div class="space-y-6">
+                  <div class="p-4 border-l-4 border-blue-500 bg-blue-50">
+                    <div class="font-medium text-blue-800 mb-2">差异化展示模板</div>
+                    <div class="text-sm text-blue-600">
+                      方法类、电路类、方案类等不同类型技术采用专属展示模板，交互式原理图和参数调整
+                    </div>
+                  </div>
+                  <div class="p-4 border-l-4 border-green-500 bg-green-50">
+                    <div class="font-medium text-green-800 mb-2">关联文件查看</div>
+                    <div class="text-sm text-green-600">
+                      设计报告、仿真文件、测试数据、论文专利的集中展示和版本管理
+                    </div>
+                  </div>
+                  <div class="p-4 border-l-4 border-orange-500 bg-orange-50">
+                    <div class="font-medium text-orange-800 mb-2">技术项目创建</div>
+                    <div class="text-sm text-orange-600">
+                      基于货架技术创建深入研究项目，成果自动回流更新货架版本
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">技术货架特点</h3>
+                <div class="space-y-4">
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-book text-blue-600 mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">知识沉淀</div>
+                      <div class="text-sm text-gray-600">技术方法、经验技巧的系统性沉淀</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-layer-group text-green-600 mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">层次结构</div>
+                      <div class="text-sm text-gray-600">从基础理论到工程应用的完整技术链</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-sync-alt text-orange-600 mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">持续更新</div>
+                      <div class="text-sm text-gray-600">技术迭代和演进的历史记录</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-users text-purple-600 mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">专家社区</div>
+                      <div class="text-sm text-gray-600">技术交流和问题讨论的开放平台</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Technology Applications -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">技术应用与推广</h3>
+              <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                  <i class="fas fa-lightbulb text-blue-600 text-2xl mb-3"></i>
+                  <div class="font-medium text-sm">创新孵化</div>
+                  <div class="text-xs text-gray-600">新技术孵化和验证平台</div>
+                </div>
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                  <i class="fas fa-clipboard-check text-green-600 text-2xl mb-3"></i>
+                  <div class="font-medium text-sm">设计参考</div>
+                  <div class="text-xs text-gray-600">成熟技术的设计参考和借鉴</div>
+                </div>
+                <div class="text-center p-4 bg-orange-50 rounded-lg">
+                  <i class="fas fa-user-graduate text-orange-600 text-2xl mb-3"></i>
+                  <div class="font-medium text-sm">培训教材</div>
+                  <div class="text-xs text-gray-600">新员工培训和技能提升</div>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-lg">
+                  <i class="fas fa-handshake text-purple-600 text-2xl mb-3"></i>
+                  <div class="font-medium text-sm">技术交流</div>
+                  <div class="text-xs text-gray-600">跨团队技术交流和分享</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Knowledge Base Module -->
+      <section id="knowledge-base" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">8. 知识库模块</h2>
+
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 p-8 rounded-2xl mb-12">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">知识分类体系</h3>
+              <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-4 bg-white rounded-xl">
+                  <h4 class="font-bold mb-3 text-blue-800 flex items-center">
+                    <i class="fas fa-book mr-2"></i>理论知识
+                  </h4>
+                  <div class="space-y-2 text-sm text-blue-600">
+                    <div>• 电子书</div>
+                    <div>• 论文专利</div>
+                    <div>• 专业知识</div>
+                  </div>
+                </div>
+                <div class="p-4 bg-white rounded-xl">
+                  <h4 class="font-bold mb-3 text-green-800 flex items-center">
+                    <i class="fas fa-gavel mr-2"></i>标准规范
+                  </h4>
+                  <div class="space-y-2 text-sm text-green-600">
+                    <div>• 国内标准</div>
+                    <div>• 国外标准</div>
+                    <div>• 行业标准</div>
+                  </div>
+                </div>
+                <div class="p-4 bg-white rounded-xl">
+                  <h4 class="font-bold mb-3 text-orange-800 flex items-center">
+                    <i class="fas fa-file-contract mr-2"></i>制度文件
+                  </h4>
+                  <div class="space-y-2 text-sm text-orange-600">
+                    <div>• 质量体系</div>
+                    <div>• 公司制度</div>
+                    <div>• 部门规定</div>
+                  </div>
+                </div>
+                <div class="p-4 bg-white rounded-xl">
+                  <h4 class="font-bold mb-3 text-purple-800 flex items-center">
+                    <i class="fas fa-sitemap mr-2"></i>流程说明
+                  </h4>
+                  <div class="space-y-2 text-sm text-purple-600">
+                    <div>• L1-L4级流程</div>
+                    <div>• 业务流程</div>
+                    <div>• 办事流程</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">知识检索应用</h3>
+                <div class="space-y-6">
+                  <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                    <div class="font-medium text-blue-800 mb-2">全文搜索引擎</div>
+                    <div class="text-sm text-blue-600">
+                      Elasticsearch + IK分词器，支持模糊查询、同义词、拼音搜索
+                    </div>
+                    <div class="mt-2 text-xs text-blue-500">
+                      <a href="https://www.elastic.co" class="citation-link" target="_blank">Elasticsearch 官网</a>
+                    </div>
+                  </div>
+                  <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                    <div class="font-medium text-green-800 mb-2">智能推荐算法</div>
+                    <div class="text-sm text-green-600">
+                      基于用户行为、项目标签、浏览历史的协同过滤推荐
+                    </div>
+                  </div>
+                  <div class="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500">
+                    <div class="font-medium text-orange-800 mb-2">引用追踪分析</div>
+                    <div class="text-sm text-orange-600">
+                      知识条目被引用次数、引用来源、影响范围分析
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">高级知识类型</h3>
+                <div class="space-y-4">
+                  <div class="p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                    <div class="font-medium text-yellow-800 mb-2">正反面案例</div>
+                    <div class="text-sm text-yellow-600">
+                      设计复盘案例、技术归零质量案例、典型问题解决方案
+                    </div>
+                  </div>
+                  <div class="p-4 bg-red-50 rounded-lg border-l-4 border-red-500">
+                    <div class="font-medium text-red-800 mb-2">仿真模型</div>
+                    <div class="text-sm text-red-600">
+                      ANSYS、CST仿真文件，包含建模方法、参数设置、结果分析
+                    </div>
+                  </div>
+                  <div class="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
+                    <div class="font-medium text-purple-800 mb-2">软件使用指南</div>
+                    <div class="text-sm text-purple-600">
+                      常用工程设计软件的入门指南和使用技巧
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- External Tool Integration -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">外部工具深度集成</h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                  <h4 class="font-bold mb-4 text-blue-800 flex items-center">
+                    <i class="fas fa-edit mr-3"></i>
+                    Obsidian集成
+                  </h4>
+                  <div class="space-y-3 text-sm text-blue-700">
+                    <div>• 桌面端插件+WebDAV/Git双向同步</div>
+                    <div>• 保留双向链接和知识图谱功能</div>
+                    <div>• 文件路径与Web端保持一致</div>
+                    <div>• 支持Markdown格式和附件管理</div>
+                  </div>
+                  <div class="mt-4 text-xs text-blue-600">
+                    <a href="https://obsidian.md" class="citation-link" target="_blank">Obsidian 官网</a>
+                  </div>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
+                  <h4 class="font-bold mb-4 text-green-800 flex items-center">
+                    <i class="fas fa-bookmark mr-3"></i>
+                    Zotero集成
+                  </h4>
+                  <div class="space-y-3 text-sm text-green-700">
+                    <div>• 浏览器插件+API对接</div>
+                    <div>• 文献管理和引用生成</div>
+                    <div>• 知识库关联和全文索引</div>
+                    <div>• 标签系统和分类管理</div>
+                  </div>
+                  <div class="mt-4 text-xs text-green-600">
+                    <a href="https://www.zotero.org" class="citation-link" target="_blank">Zotero 官网</a>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                <h4 class="font-bold mb-4">集成优势</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                  <div class="text-center">
+                    <i class="fas fa-sync text-blue-600 text-xl mb-2"></i>
+                    <div class="font-medium text-sm">双向同步</div>
+                    <div class="text-xs text-gray-600">本地编辑与云端实时同步</div>
+                  </div>
+                  <div class="text-center">
+                    <i class="fas fa-link text-green-600 text-xl mb-2"></i>
+                    <div class="font-medium text-sm">知识关联</div>
+                    <div class="text-xs text-gray-600">跨平台知识链接和引用</div>
+                  </div>
+                  <div class="text-center">
+                    <i class="fas fa-search text-orange-600 text-xl mb-2"></i>
+                    <div class="font-medium text-sm">统一检索</div>
+                    <div class="text-xs text-gray-600">全文搜索和智能推荐</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Knowledge Applications -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">知识应用场景</h3>
+              <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                  <i class="fas fa-graduation-cap text-blue-600 text-2xl mb-3"></i>
+                  <div class="font-medium text-sm">学习培训</div>
+                  <div class="text-xs text-gray-600">新员工入职培训和技能提升</div>
+                </div>
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                  <i class="fas fa-lightbulb text-green-600 text-2xl mb-3"></i>
+                  <div class="font-medium text-sm">设计参考</div>
+                  <div class="text-xs text-gray-600">项目设计时的技术参考和借鉴</div>
+                </div>
+                <div class="text-center p-4 bg-orange-50 rounded-lg">
+                  <i class="fas fa-exclamation-triangle text-orange-600 text-2xl mb-3"></i>
+                  <div class="font-medium text-sm">问题排查</div>
+                  <div class="text-xs text-gray-600">技术问题的原因分析和解决</div>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-lg">
+                  <i class="fas fa-chart-line text-purple-600 text-2xl mb-3"></i>
+                  <div class="font-medium text-sm">技术预见</div>
+                  <div class="text-xs text-gray-600">技术发展趋势和方向判断</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Forum Module -->
+      <section id="forum" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">9. 技术论坛模块</h2>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+              <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold mb-6 serif">论坛核心功能</h3>
+                <div class="space-y-6">
+                  <div class="flex items-start space-x-4">
+                    <i class="fas fa-comments text-blue-600 text-xl mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">版块分类管理</div>
+                      <div class="text-sm text-gray-600">按技术领域、项目类型、综合讨论组织版块</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <i class="fas fa-edit text-green-600 text-xl mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">帖子发布与回复</div>
+                      <div class="text-sm text-gray-600">富文本编辑、代码高亮、附件上传、@提及功能</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <i class="fas fa-question-circle text-orange-600 text-xl mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">技术问答机制</div>
+                      <div class="text-sm text-gray-600">提问-回答-采纳-悬赏，优质答案沉淀</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <i class="fas fa-star text-purple-600 text-xl mt-1"></i>
+                    <div>
+                      <div class="font-medium text-gray-800">精华内容沉淀</div>
+                      <div class="text-sm text-gray-600">管理员标记、自动推荐、归档至知识库</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">系统联动集成</h3>
+                <div class="space-y-4">
+                  <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                    <div class="font-medium text-blue-800 mb-2">项目问题转论坛</div>
+                    <div class="text-sm text-blue-600">
+                      项目开发中的疑问一键发布为论坛帖子，扩大求助范围，集思广益
+                    </div>
+                  </div>
+                  <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                    <div class="font-medium text-green-800 mb-2">解决方案归档</div>
+                    <div class="text-sm text-green-600">
+                      论坛优质答案经审核后进入知识库分类体系，形成永久技术资产
+                    </div>
+                  </div>
+                  <div class="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500">
+                    <div class="font-medium text-orange-800 mb-2">专家认证机制</div>
+                    <div class="text-sm text-orange-600">
+                      技术专家认证、积分系统、等级体系，激励高质量技术分享
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Forum Features -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">论坛特色功能</h3>
+              <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-blue-50 rounded-xl">
+                  <i class="fas fa-search-plus text-blue-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">智能搜索</h4>
+                  <p class="text-sm text-gray-600">全文搜索、标签筛选、热门推荐</p>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-xl">
+                  <i class="fas fa-user-check text-green-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">专家认证</h4>
+                  <p class="text-sm text-gray-600">技术专家认证、积分系统、等级体系</p>
+                </div>
+                <div class="text-center p-6 bg-orange-50 rounded-xl">
+                  <i class="fas fa-trophy text-orange-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">悬赏机制</h4>
+                  <p class="text-sm text-gray-600">技术问题悬赏、优质答案奖励</p>
+                </div>
+                <div class="text-center p-6 bg-purple-50 rounded-xl">
+                  <i class="fas fa-bookmark text-purple-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">精华归档</h4>
+                  <p class="text-sm text-gray-600">优质内容自动归档至知识库</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Community Building -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">技术社区建设</h3>
+              <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                  <h4 class="font-bold mb-4 flex items-center">
+                    <i class="fas fa-users text-blue-600 mr-3"></i>
+                    用户激励
+                  </h4>
+                  <ul class="space-y-2 text-sm text-gray-600">
+                    <li>• 积分系统和等级体系</li>
+                    <li>• 专家认证和技术头衔</li>
+                    <li>• 优质内容奖励机制</li>
+                    <li>• 年度技术贡献评选</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-4 flex items-center">
+                    <i class="fas fa-chart-line text-green-600 mr-3"></i>
+                    内容运营
+                  </h4>
+                  <ul class="space-y-2 text-sm text-gray-600">
+                    <li>• 技术专题活动策划</li>
+                    <li>• 热点技术讨论引导</li>
+                    <li>• 精华内容定期推送</li>
+                    <li>• 技术趋势分析报告</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-4 flex items-center">
+                    <i class="fas fa-shield-alt text-orange-600 mr-3"></i>
+                    质量管理
+                  </h4>
+                  <ul class="space-y-2 text-sm text-gray-600">
+                    <li>• 内容审核和过滤机制</li>
+                    <li>• 敏感词和违规内容检测</li>
+                    <li>• 用户举报和反馈处理</li>
+                    <li>• 优质内容标识和推荐</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Communication Module -->
+      <section id="communication" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">10. 即时通信模块</h2>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">Mattermost深度集成</h3>
+                <div class="space-y-6">
+                  <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                    <div class="font-medium text-blue-800 mb-2">私有化部署</div>
+                    <div class="text-sm text-blue-600">
+                      服务端二进制部署，PostgreSQL后端，Nginx反向代理，完全内网隔离
+                    </div>
+                    <div class="mt-2 text-xs text-blue-500">
+                      <a href="https://github.com/mattermost/mattermost" class="citation-link" target="_blank">
+                        Mattermost GitHub仓库
+                      </a>
+                    </div>
+                  </div>
+                  <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                    <div class="font-medium text-green-800 mb-2">用户体系对接</div>
+                    <div class="text-sm text-green-600">
+                      OAuth 2.0/SAML与平台统一认证，自动同步组织架构和权限
+                    </div>
+                  </div>
+                  <div class="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500">
+                    <div class="font-medium text-orange-800 mb-2">项目频道自动创建</div>
+                    <div class="text-sm text-orange-600">
+                      项目创建时调用Mattermost API创建私有频道，成员自动加入
+                    </div>
+                  </div>
+                  <div class="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
+                    <div class="font-medium text-purple-800 mb-2">消息与状态联动</div>
+                    <div class="text-sm text-purple-600">
+                      项目里程碑、任务完成、问题升级自动推送至对应频道
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 serif">嵌入式通信能力</h3>
+                <div class="space-y-6">
+                  <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                    <i class="fas fa-comments text-blue-600 text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2">项目内即时沟通</h4>
+                    <p class="text-sm text-gray-600">项目开发界面嵌入Mattermost小窗口，上下文不切换</p>
+                  </div>
+                  <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
+                    <i class="fas fa-file-upload text-green-600 text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2">文件快速分享</h4>
+                    <p class="text-sm text-gray-600">拖拽上传，自动关联项目和活动，权限继承</p>
+                  </div>
+                  <div class="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl">
+                    <i class="fas fa-video text-orange-600 text-3xl mb-4"></i>
+                    <h4 class="font-bold mb-2">会议与评审集成</h4>
+                    <p class="text-sm text-gray-600">一键发起语音/视频会议，会议纪要自动归档</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Communication Features -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">通信安全与权限</h3>
+              <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-blue-50 rounded-xl">
+                  <i class="fas fa-shield-alt text-blue-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">端到端加密</h4>
+                  <p class="text-sm text-gray-600">消息传输端到端加密，确保通信安全</p>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-xl">
+                  <i class="fas fa-user-lock text-green-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">权限继承</h4>
+                  <p class="text-sm text-gray-600">频道权限与项目权限自动同步和继承</p>
+                </div>
+                <div class="text-center p-6 bg-orange-50 rounded-xl">
+                  <i class="fas fa-history text-orange-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">消息审计</h4>
+                  <p class="text-sm text-gray-600">完整的消息历史记录和审计功能</p>
+                </div>
+                <div class="text-center p-6 bg-purple-50 rounded-xl">
+                  <i class="fas fa-database text-purple-600 text-3xl mb-4"></i>
+                  <h4 class="font-bold mb-2">数据留存</h4>
+                  <p class="text-sm text-gray-600">消息数据本地存储，符合保密要求</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile and Desktop -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">多端协同支持</h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-bold mb-4 flex items-center">
+                    <i class="fas fa-mobile-alt text-blue-600 mr-3"></i>
+                    移动端支持
+                  </h4>
+                  <ul class="space-y-2 text-sm text-gray-600">
+                    <li>• Mattermost移动端APP</li>
+                    <li>• 响应式Web界面适配</li>
+                    <li>• 消息推送通知</li>
+                    <li>• 移动端文件预览</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-4 flex items-center">
+                    <i class="fas fa-desktop text-green-600 mr-3"></i>
+                    桌面端支持
+                  </h4>
+                  <ul class="space-y-2 text-sm text-gray-600">
+                    <li>• 桌面客户端应用</li>
+                    <li>• 系统托盘常驻</li>
+                    <li>• 快捷键和全局搜索</li>
+                    <li>• 大文件快速传输</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Implementation Roadmap -->
+      <section id="implementation" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 serif text-center">11. 实施路线图</h2>
+
+            <div class="relative">
+              <!-- Timeline -->
+              <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+
+              <!-- Phase 1 -->
+              <div class="relative mb-16">
+                <div class="flex items-center">
+                  <div class="w-1/2 pr-8 text-right">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                      <h3 class="text-xl font-bold mb-4 text-blue-600">第一阶段：基础框架</h3>
+                      <div class="text-sm text-gray-600 mb-4">
+                        <div class="font-medium text-gray-800 mb-2">周期：1-2个月</div>
+                        <ul class="space-y-1">
+                          <li>• 微前端架构搭建</li>
+                          <li>• 门户界面与用户管理</li>
+                          <li>• 基础权限与组织建模</li>
+                        </ul>
+                      </div>
+                      <div class="bg-blue-50 p-3 rounded-lg">
+                        <div class="font-medium text-blue-800 mb-2">关键里程碑</div>
+                        <div class="text-xs text-blue-600">基座应用可加载演示子应用，设计师可登录查看个人工作台</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center relative z-10">
+                    <span class="text-white font-bold text-sm">1</span>
+                  </div>
+                  <div class="w-1/2 pl-8"></div>
+                </div>
+              </div>
+
+              <!-- Phase 2 -->
+              <div class="relative mb-16">
+                <div class="flex items-center">
+                  <div class="w-1/2 pr-8"></div>
+                  <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center relative z-10">
+                    <span class="text-white font-bold text-sm">2</span>
+                  </div>
+                  <div class="w-1/2 pl-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                      <h3 class="text-xl font-bold mb-4 text-green-600">第二阶段：项目核心</h3>
+                      <div class="text-sm text-gray-600 mb-4">
+                        <div class="font-medium text-gray-800 mb-2">周期：2-3个月</div>
+                        <ul class="space-y-1">
+                          <li>• 项目管理模块开发</li>
+                          <li>• 项目开发模块开发</li>
+                          <li>• 流程引擎与工具集成</li>
+                        </ul>
+                      </div>
+                      <div class="bg-green-50 p-3 rounded-lg">
+                        <div class="font-medium text-green-800 mb-2">关键里程碑</div>
+                        <div class="text-xs text-green-600">可创建完整项目并跟踪进度，端到端设计工具链打通</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phase 3 -->
+              <div class="relative mb-16">
+                <div class="flex items-center">
+                  <div class="w-1/2 pr-8 text-right">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                      <h3 class="text-xl font-bold mb-4 text-orange-600">第三阶段：资产沉淀</h3>
+                      <div class="text-sm text-gray-600 mb-4">
+                        <div class="font-medium text-gray-800 mb-2">周期：2-3个月</div>
+                        <ul class="space-y-1">
+                          <li>• 产品货架模块开发</li>
+                          <li>• 技术货架模块开发</li>
+                          <li>• 知识库模块开发</li>
+                        </ul>
+                      </div>
+                      <div class="bg-orange-50 p-3 rounded-lg">
+                        <div class="font-medium text-orange-800 mb-2">关键里程碑</div>
+                        <div class="text-xs text-orange-600">产品货架可选用，技术资产可沉淀，知识可检索推荐</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center relative z-10">
+                    <span class="text-white font-bold text-sm">3</span>
+                  </div>
+                  <div class="w-1/2 pl-8"></div>
+                </div>
+              </div>
+
+              <!-- Phase 4 -->
+              <div class="relative">
+                <div class="flex items-center">
+                  <div class="w-1/2 pr-8"></div>
+                  <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center relative z-10">
+                    <span class="text-white font-bold text-sm">4</span>
+                  </div>
+                  <div class="w-1/2 pl-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                      <h3 class="text-xl font-bold mb-4 text-purple-600">第四阶段：协同生态</h3>
+                      <div class="text-sm text-gray-600 mb-4">
+                        <div class="font-medium text-gray-800 mb-2">周期：1-2个月</div>
+                        <ul class="space-y-1">
+                          <li>• 技术论坛模块开发</li>
+                          <li>• 即时通信深度集成</li>
+                          <li>• 全系统联调优化</li>
+                        </ul>
+                      </div>
+                      <div class="bg-purple-50 p-3 rounded-lg">
+                        <div class="font-medium text-purple-800 mb-2">关键里程碑</div>
+                        <div class="text-xs text-purple-600">平台正式上线运行，技术交流活跃，知识持续沉淀</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Success Metrics -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 p-8 rounded-2xl mt-12">
+              <h3 class="text-2xl font-bold mb-8 serif text-center">成功指标</h3>
+              <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center p-4 bg-white rounded-xl">
+                  <div class="text-2xl font-bold text-blue-600 mb-2">100%</div>
+                  <div class="font-medium text-gray-800">系统可用性</div>
+                  <div class="text-sm text-gray-600">7×24小时稳定运行</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-xl">
+                  <div class="text-2xl font-bold text-green-600 mb-2">90%</div>
+                  <div class="font-medium text-gray-800">用户满意度</div>
+                  <div class="text-sm text-gray-600">系统易用性和功能完整性</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-xl">
+                  <div class="text-2xl font-bold text-orange-600 mb-2">80%</div>
+                  <div class="font-medium text-gray-800">知识沉淀率</div>
+                  <div class="text-sm text-gray-600">项目经验和技术资产沉淀</div>
+                </div>
+                <div class="text-center p-4 bg-white rounded-xl">
+                  <div class="text-2xl font-bold text-purple-600 mb-2">30%</div>
+                  <div class="font-medium text-gray-800">效率提升</div>
+                  <div class="text-sm text-gray-600">研发协同效率提升</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold mb-4 serif">微波通信与探测系统研发管理平台</h3>
+              <p class="text-gray-400 max-w-2xl mx-auto">
+                采用微前端架构，支持离线局域网部署，覆盖研发全生命周期的数字化管理平台
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+              <div>
+                <h4 class="font-bold mb-3">核心技术</h4>
+                <div class="space-y-1 text-sm text-gray-400">
+                  <div>微前端架构 (qiankun)</div>
+                  <div>Vue 3 + TypeScript</div>
+                  <div>Spring Boot / Node.js</div>
+                  <div>PostgreSQL / Elasticsearch</div>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-bold mb-3">核心模块</h4>
+                <div class="space-y-1 text-sm text-gray-400">
+                  <div>门户界面与用户管理</div>
+                  <div>项目管理与开发</div>
+                  <div>产品/技术货架</div>
+                  <div>知识库与论坛</div>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-bold mb-3">特色功能</h4>
+                <div class="space-y-1 text-sm text-gray-400">
+                  <div>离线局域网部署</div>
+                  <div>多团队独立开发</div>
+                  <div>专业工具集成</div>
+                  <div>知识资产沉淀</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8">
+              <div class="text-sm text-gray-500">
+                <p>文档版本：v1.0 | 编制日期：2026-02-20</p>
+                <p class="mt-2">© 微波通信与探测系统研发部门数字化平台建设</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.createElement('button');
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        menuToggle.className = 'fixed top-4 left-4 z-50 bg-white p-3 rounded-lg shadow-lg lg:hidden';
+        menuToggle.onclick = () => {
+            const toc = document.querySelector('.toc-fixed');
+            toc.classList.toggle('open');
+        };
+        document.body.appendChild(menuToggle);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const toc = document.querySelector('.toc-fixed');
+            const isClickInsideToc = toc.contains(event.target);
+            const isClickOnMenuToggle = menuToggle.contains(event.target);
+            
+            if (toc.classList.contains('open') && !isClickInsideToc && !isClickOnMenuToggle) {
+                toc.classList.remove('open');
+            }
+        });
+
+        // Highlight active section in TOC
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('.toc-fixed a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('bg-white/20');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('bg-white/20');
+                }
+            });
+        });
+    </script>
+  
+
+</body></html>
